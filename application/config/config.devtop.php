@@ -2,7 +2,7 @@
 
 $config['static_js'] = '/hsd/static/js/';
 $config['static_css'] = '/hsd/static/css/';
-$config['static_images'] = '/hsd/static/css/';
+$config['static_images'] = '/hsd/static/images/';
 
 /*
 |--------------------------------------------------------------------------
