@@ -6,12 +6,16 @@ class Home extends CI_Controller {
         parent::__construct();
 
         $this->load->helper(array(
-            'url'
+            'url',
+            'static'
         ));
 
     }
 	public function index()
 	{
-		$this->load->view('home');
+        $this->load->view('template', array(
+            'title' => 'humble software development - home',
+            'page' => 'home'
+        ));
 	}
 }
