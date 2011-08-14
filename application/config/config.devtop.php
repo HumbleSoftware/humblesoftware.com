@@ -4,6 +4,9 @@ $config['static_js'] = '/hsd/static/js/';
 $config['static_css'] = '/hsd/static/css/';
 $config['static_images'] = '/hsd/static/images/';
 
+$config['admin_email'] = 'carl@humblesoftware.com';
+
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
