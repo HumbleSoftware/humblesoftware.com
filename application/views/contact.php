@@ -12,7 +12,7 @@
 		<div><label for="subject">Subject:</label><input id="subject" type="text" <?php if (isset($subject)) { echo "value=\"{$subject}\" "; } ?>name="subject" /></div>
 		<label for="feedback">Message:</label>
 		<textarea id="feedback" name="feedback" rows="21" cols="125"></textarea>
+        <?php echo $recaptcha; ?>
 		<div><input id="submit" type="submit" name="submit" value="Send Feedback" /></div>
     </fieldset>
 </form>
-
