@@ -1,10 +1,13 @@
 (function () {
 
-window.Humble.Trig = {};
+if (typeof(Humble) == 'undefined') window.Humble = {};
+Humble.Trig = {};
+Humble.Trig.init = init;
 
 var unit = 100,
     canvas, context, canvas2, context2,
-    height, width, xAxis, yAxis;
+    height, width, xAxis, yAxis,
+    draw;
 
 /**
  * Init function.
@@ -39,7 +42,7 @@ function init() {
  * This function draws one frame of the animation, waits 20ms, and then calls
  * itself again.
  */
-var draw = function () {
+draw = function () {
     
     // Clear the canvas
     context.clearRect(0, 0, width, height);
@@ -74,7 +77,7 @@ var draw = function () {
     // Update the time and draw again
     draw.seconds = draw.seconds - .02;
     draw.t = draw.seconds*Math.PI;
-    setTimeout('draw();', 20);
+    setTimeout(draw, 20);
 };
 draw.seconds = 0;
 draw.t = 0;
