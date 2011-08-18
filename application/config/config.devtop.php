@@ -3,6 +3,7 @@
 $config['static_js'] = '/hsd/static/js/';
 $config['static_css'] = '/hsd/static/css/';
 $config['static_images'] = '/hsd/static/images/';
+$config['static_lib'] = '/hsd/static/lib/';
 
 $config['admin_email'] = 'carl@humblesoftware.com';
 
