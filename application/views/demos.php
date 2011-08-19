@@ -6,13 +6,6 @@
 	http://www.reddit.com/tb/bnzgx</a>. 
 </p>
 
-<script type="text/javascript">
-Event.observe(document, 'dom:loaded', function (e) {
-    init();
-	prettyPrint();
-});
-</script>
-
 <div id="canvas-container" style="width: 800px; height: 300px;">
     <canvas id="sineCanvas"  style="width: 800px; height: 300px;"></canvas>
 </div>
@@ -20,12 +13,16 @@ Event.observe(document, 'dom:loaded', function (e) {
 <p></p>
 
 <h3>
-   Listing <span class="file">Trig.js</span>:
-   <span class="snippetShow">
+    Listing <span class="file">Trig.js</span>:
+    <span class="snippetShow">
         <a id="snippetShowTwo" onclick="toggleSnippet($('snippetShowTwo'), $('snippetTwo'));">(hide)</a>
+<pre><code class="prettyprint"><?php echo htmlentities(file_get_contents('../static/js/demos/Trig.js', FILE_USE_INCLUDE_PATH)); ?></code></pre>
     </span>
 </h3>
 
 <div id="snippetTwo" class="snippet">
-    <code class="prettyprint"><?php /*echo htmlentities(file_get_contents('demos/js/Trig.js', FILE_USE_INCLUDE_PATH));*/ ?></code>
 </div>
+<?php
+$includes->js('demos/Trig.js');
+$includes->js('demos/TrigDemo.js');
+?>

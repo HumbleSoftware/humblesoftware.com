@@ -5,6 +5,10 @@ class Demos extends CI_Controller {
     {
         parent::__construct();
 
+        $this->load->library(array(
+            'includes'
+        ));
+
         $this->load->helper(array(
             'url',
             'static'
@@ -14,6 +18,7 @@ class Demos extends CI_Controller {
     public function index()
     {
         $this->load->view('template', array(
+            'includes' => $this->includes,
             'title' => 'humble software development - demos',
             'page' => 'demos'
         ));
