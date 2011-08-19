@@ -10,11 +10,19 @@ class Includes
 
     }
 
+    function css($stylesheet) {
+        array_push($this->_css, $script);
+    }
+
     function js($script) {
         array_push($this->_js, $script);
     }
 
     function getJS() {
         return $this->_js;
+    }
+
+    function getCSS() {
+        return $this->_css;
     }
 }
