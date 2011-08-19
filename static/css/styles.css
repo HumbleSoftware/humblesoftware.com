@@ -234,12 +234,21 @@ textarea {
 	height: 320px; 
 }
 #submit {
-	float: right;
+  border: 1px solid #333;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  background: #fff;
+  font-size: 18px;
 	width: auto;
-	margin: 8px 96px 32px 0px;
+  margin: 6px 0px 0px 88px;
+  padding: 6px 9px 4px 9px;
 }
 span.label {
     margin-left: 16px;
+}
+.errors {
+  color: #e00;
 }
 /**
  * Effects
@@ -334,6 +343,10 @@ span.label {
 .feedbackItem .feedback .label {
     margin-left: -9000px;
 }
+#recaptcha_widget_div {
+    margin-left: 86px;
+}
+
 /**
  * Downloads
  */
