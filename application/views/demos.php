@@ -22,7 +22,3 @@
 
 <div id="snippetTwo" class="snippet">
 </div>
-<?php
-$includes->js('demos/Trig.js');
-$includes->js('demos/TrigDemo.js');
-?>

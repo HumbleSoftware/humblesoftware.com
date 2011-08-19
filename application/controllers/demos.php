@@ -17,6 +17,10 @@ class Demos extends CI_Controller {
     }
     public function index()
     {
+        $this->includes->css('demos.css');
+        $this->includes->js('demos/Trig.js');
+        $this->includes->js('demos/TrigDemo.js');
+
         $this->load->view('template', array(
             'includes' => $this->includes,
             'title' => 'humble software development - demos',
