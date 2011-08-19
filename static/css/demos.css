@@ -59,7 +59,7 @@ code {
     padding: 0px 0px 3px 6px;
     padding-left: 20px;
     margin-left: 16px;
-    background: url('../../img/leftshadow.gif') repeat-y;
+    background: url('../images/leftshadow.gif') repeat-y;
 }
 .snippetShow {
     font-weight: normal; font-size: 12px; color: #999999; float: right; cursor: pointer;
