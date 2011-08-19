@@ -11,7 +11,7 @@ class Includes
     }
 
     function css($stylesheet) {
-        array_push($this->_css, $script);
+        array_push($this->_css, $stylesheet);
     }
 
     function js($script) {
