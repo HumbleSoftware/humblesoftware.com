@@ -1,5 +1,5 @@
 <IfModule mod_rewrite.c>
     RewriteEngine on
-    RewriteCond $1 !^(static|index\.php)
+    RewriteCond $1 !^(movemytaxes|static|index\.php)
     RewriteRule ^(.*)$ index.php/$1
 </IfModule>
