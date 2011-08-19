@@ -16,9 +16,9 @@
     Listing <span class="file">Trig.js</span>:
     <span class="snippetShow">
         <a id="snippetShowTwo" onclick="toggleSnippet($('snippetShowTwo'), $('snippetTwo'));">(hide)</a>
-<pre><code class="prettyprint"><?php echo htmlentities(file_get_contents('../static/js/demos/Trig.js', FILE_USE_INCLUDE_PATH)); ?></code></pre>
     </span>
 </h3>
 
 <div id="snippetTwo" class="snippet">
+    <code class="prettyprint"><?php echo htmlentities(file_get_contents('../static/js/demos/Trig.js', FILE_USE_INCLUDE_PATH)); ?></code>
 </div>
