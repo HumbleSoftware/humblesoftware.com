@@ -213,7 +213,6 @@ fieldset {
 /**
  * Contact
  */
-.contact .label { display: block; float: left; width: 80px; }
 .contact form {
     margin-left: 16px;
 }
@@ -221,6 +220,8 @@ fieldset {
     margin-top: 36px;
 }
 label {
+    float: left;
+    display: block;
     margin-top: 2px;
     width: 90px;
     float: left;
