@@ -13,8 +13,8 @@
   <li<?php echo ($financePage == 'source' ? ' class="currentPage"' : ''); ?>>
     <a href="<?php echo base_url(); ?>finance/source"><span>source</span></a>
   </li>
-  <li>
-    <a href="<?php echo base_url(); ?>contact?subject=HumbleFinance%20Feedback#Feedback"><span>feedback</span></a>
+  <li<?php echo ($financePage == 'feedback' ? ' class="currentPage"' : ''); ?>>
+    <a href="<?php echo base_url(); ?>finance/feedback"><span>feedback</span></a>
   </li>
 </ul>
 </div>

@@ -58,5 +58,15 @@ class Finance extends CI_Controller {
             'financePage' => 'source'
         ));
     }
+
+    public function feedback()
+    {
+        $this->load->view('template', array(
+            'includes' => $this->includes,
+            'title' => 'humble finance - feedback',
+            'page' => 'finance/feedback',
+            'financePage' => 'feedback'
+        ));
+    }
 }
 
