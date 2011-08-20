@@ -32,40 +32,40 @@ class Finance extends CI_Controller {
     public function index()
     {
         $this->load->view('template', array(
-            'includes' => $this->includes,
-            'title' => 'humble finance',
-            'page' => 'finance/index',
-            'financePage' => 'index'
+            'includes'      => $this->includes,
+            'title'         => 'humble finance',
+            'page'          => 'finance/index',
+            'financePage'   => 'index'
         ));
     }
 
     public function documentation()
     {
         $this->load->view('template', array(
-            'includes' => $this->includes,
-            'title' => 'humble finance - documentation',
-            'page' => 'finance/documentation',
-            'financePage' => 'documentation'
+            'includes'      => $this->includes,
+            'title'         => 'humble finance - documentation',
+            'page'          => 'finance/documentation',
+            'financePage'   => 'documentation'
         ));
     }
 
     public function source()
     {
         $this->load->view('template', array(
-            'includes' => $this->includes,
-            'title' => 'humble finance - source',
-            'page' => 'finance/source',
-            'financePage' => 'source'
+            'includes'      => $this->includes,
+            'title'         => 'humble finance - source',
+            'page'          => 'finance/source',
+            'financePage'   => 'source'
         ));
     }
 
     public function feedback()
     {
         $this->load->view('template', array(
-            'includes' => $this->includes,
-            'title' => 'humble finance - feedback',
-            'page' => 'finance/feedback',
-            'financePage' => 'feedback'
+            'includes'      => $this->includes,
+            'title'         => 'humble finance - feedback',
+            'page'          => 'finance/feedback',
+            'financePage'   => 'feedback'
         ));
     }
 }
