@@ -1,6 +1,8 @@
+<?php $this->load->view('finance/links.php'); ?>
+
 <p>
 HumbleFinance is an open source project distributed under the MIT License.  It is hosted on <a href="http://github.com/HumbleSoftware/HumbleVisualization" alt="GitHub">GitHub</a>.
-<a href="<?php echo HumbleConfig::$SITE_PREFIX; ?>contact?subject=HumbleFinance%20Feedback#Feedback">Feedback</a> is welcome!
+<a href="<?php echo base_url(); ?>contact?subject=HumbleFinance%20Feedback#Feedback">Feedback</a> is welcome!
 </p>
 
 <h3>Download</h3>
@@ -16,7 +18,7 @@ HumbleFinance is an open source project distributed under the MIT License.  It i
 </h3>
 
 <div id="listingOne" class="snippet" style="display: none">
-<code><?php include 'changelog.xhtml';?></code>
+<code><?php $this->load->view('finance/changelog.php');?></code>
 </div>
 
 <h3 style="margin-top: 28px;">
@@ -27,7 +29,7 @@ HumbleFinance is an open source project distributed under the MIT License.  It i
 </h3>
 
 <div id="listingTwo" class="snippet" style="display: none">
-<code><?php include 'finance.js.xhtml';?></code>
+<code><?php $this->load->view('finance/finance.js.php');?></code>
 </div>
 
 
