@@ -1,6 +1,6 @@
 <?php $this->load->view('top.php'); ?>
-<?php $this->load->view('header.php'); ?>
-<?php $this->load->view('links.php'); ?>
+<?php $this->load->view(isset($template_header) ? $template_header.'.php' : 'header.php'); ?>
+<?php $this->load->view(isset($template_links) ? $template_links.'.php' : 'links.php'); ?>
 
 <div id="content-container">
     <div id="content">
