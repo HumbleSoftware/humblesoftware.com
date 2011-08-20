@@ -61,12 +61,32 @@ class Finance extends CI_Controller {
 
     public function feedback()
     {
-        $this->load->view('template', array(
-            'includes'      => $this->includes,
-            'title'         => 'humble finance - feedback',
-            'page'          => 'finance/feedback',
-            'financePage'   => 'feedback'
-        ));
+        $this->load->library('feedback', array('label'=>'finance'));
+
+        if ($this->feedback->validate()) {
+            $this->feedback->send();
+            $this->load->view('template', array(
+                'includes'      => $this->includes,
+                'title'         => 'humble finance - feedback',
+                'page'          => 'finance/feedback_thankyou',
+                'name'          => $this->input->post('name'),
+                'financePage'   => 'feedback'
+            ));
+        } else {
+            $this->load->view('template', array(
+                'includes'      => $this->includes,
+                'title'         => 'humble finance - feedback',
+                'page'          => 'finance/feedback',
+                'financePage'   => 'feedback',
+                'recaptcha'     => $this->recaptcha->get_html(),
+                'subject'       => 'Humble Finance Feedback'
+            ));
+        }
+    }
+
+    public function _check_captcha($val)
+    {
+        return $this->feedback->check_captcha($val);
     }
 }
 
