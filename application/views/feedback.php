@@ -1,6 +1,6 @@
 <h3 class="feedback"><a name="Feedback"></a>Feedback:</h3>
 
-<?php echo form_open('contact'); ?>
+<?php echo form_open(base_url().$page); ?>
 
     <div class="errors">
     <?php echo validation_errors(); ?>
