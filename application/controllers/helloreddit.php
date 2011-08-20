@@ -16,6 +16,11 @@ class HelloReddit extends CI_Controller {
         ));
 
         $this->includes->css('helloreddit.css');
+
+        $agent = $_SERVER['HTTP_USER_AGENT'];
+        if (stripos($agent, 'blackberry') !== false) {
+            $this->includes->css('helloreddit.blackberry.css');
+        } 
     }
 
     public function index()
