@@ -1,0 +1,10 @@
+<script type="text/javascript">
+	Event.observe(window, 'dom:loaded', function (e) {
+		Event.observe($('downloadLink'), 'click', function (e) {
+			$('downloadParagraph').update("Enjoy HelloReddit!");
+		});
+	});
+</script>
+
+<h3>Thank you for your purchase <?php echo $user->get('email'); ?>!</h3>
+<p id="downloadParagraph">Click <a id="downloadLink" href="<?php echo HumbleConfig::$WEB_ROOT; ?>download?action=getKey&email=<?php echo $user->get('email'); ?>">here</a> to download HelloReddit.</p>
