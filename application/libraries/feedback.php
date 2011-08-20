@@ -1,6 +1,35 @@
 <?php
 class Feedback
 {
+
+    protected $_validation_rules = array(
+        array(
+            'field' => 'recaptcha_response_field',
+            'label' => 'lang:recaptcha_field_name',
+            'rules' => 'required|callback__check_captcha'
+        ),
+        array(
+            'field' => 'name',
+            'label' => 'Name',
+            'rules' => ''
+        ),
+        array(
+            'field' => 'email',
+            'label' => 'Email',
+            'rules' => 'valid_email'
+        ),
+        array(
+            'field' => 'feedback',
+            'label' => 'Message',
+            'rules' => 'required'
+        ),
+        array(
+            'field' => 'subject',
+            'label' => 'Subject',
+            'rules' => ''
+        )
+    );
+
     function __construct()
     {
         $this->CI =& get_instance();
@@ -24,33 +53,7 @@ class Feedback
     public function validate()
     {
         $this->CI->form_validation->set_message('_check_captcha', $this->CI->lang->line('recaptcha_incorrect_response'));
-        $this->CI->form_validation->set_rules(array(
-            array(
-                'field' => 'recaptcha_response_field',
-                'label' => 'lang:recaptcha_field_name',
-                'rules' => 'required|callback__check_captcha'
-            ),
-            array(
-                'field' => 'name',
-                'label' => 'Name',
-                'rules' => ''
-            ),
-            array(
-                'field' => 'email',
-                'label' => 'Email',
-                'rules' => 'valid_email'
-            ),
-            array(
-                'field' => 'feedback',
-                'label' => 'Message',
-                'rules' => 'required'
-            ),
-            array(
-                'field' => 'subject',
-                'label' => 'Subject',
-                'rules' => ''
-            )
-        ));
+        $this->CI->form_validation->set_rules($this->_validation_rules);
 
         if ($this->CI->form_validation->run()) {
             return true;
