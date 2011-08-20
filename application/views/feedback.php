@@ -1,4 +1,11 @@
+<h3 class="feedback"><a name="Feedback"></a>Feedback:</h3>
+
 <?php echo form_open('contact'); ?>
+
+    <div class="errors">
+    <?php echo validation_errors(); ?>
+    </div>
+
     <input type="hidden" name="action" value="feedback" />
 	<fieldset>
         <div>
