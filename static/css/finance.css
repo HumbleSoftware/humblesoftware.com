@@ -146,9 +146,3 @@ code {
 .documentation .snippet {
     margin-left: 20px;
 }
-label {
-    float: none;
-}
-input {
-    width: auto;
-}
