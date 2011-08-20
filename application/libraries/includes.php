@@ -11,11 +11,19 @@ class Includes
     }
 
     function css($stylesheet) {
-        array_push($this->_css, $stylesheet);
+        if (is_array($stylesheet)) {
+            $this->_css = array_unique(array_merge($this->_css, $stylesheet));
+        } else {
+            array_push($this->_css, $stylesheet);
+        }
     }
 
     function js($script) {
-        array_push($this->_js, $script);
+        if (is_array($script)) {
+            $this->_js = array_unique(array_merge($this->_js, $script));
+        } else {
+            array_push($this->_js, $script);
+        }
     }
 
     function getJS() {
