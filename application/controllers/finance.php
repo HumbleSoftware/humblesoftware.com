@@ -14,9 +14,6 @@ class Finance extends CI_Controller {
             'static'
         ));
 
-    }
-    public function index()
-    {
         $this->includes->css('finance.css');
         $this->includes->js(array(
             'finance/prototype.min.js',
@@ -31,11 +28,24 @@ class Finance extends CI_Controller {
             'finance/demo.js'
         ));
 
+    }
+    public function index()
+    {
         $this->load->view('template', array(
             'includes' => $this->includes,
-            'title' => 'humble finance - index',
+            'title' => 'humble finance',
             'page' => 'finance/index',
             'financePage' => 'index'
+        ));
+    }
+
+    public function documentation()
+    {
+        $this->load->view('template', array(
+            'includes' => $this->includes,
+            'title' => 'humble finance - documentation',
+            'page' => 'finance/documentation',
+            'financePage' => 'documentation'
         ));
     }
 }
