@@ -1,3 +1,5 @@
+<?php $this->load->view('finance/links.php'); ?>
+
 <h3>About</h3>
 <p>
 HumbleFinance is an HTML5 data visualization tool similar to the Flash tool on 
@@ -6,7 +8,7 @@ is written entirely in JavaScript, using the Prototype and Flotr libraries.
 </p>
 <p>
 Though this tool lends itself well to the display of financial data, it can be 
-used to display any two 2d data sets which share an axis.  Please <a href="<?php echo HumbleConfig::$SITE_PREFIX; ?>contact?subject=HumbleFinance%20Feedback#Feedback">write me</a> with 
+used to display any two 2d data sets which share an axis.  Please <a href="<?php echo base_url(); ?>contact?subject=HumbleFinance%20Feedback#Feedback">write me</a> with 
 any neat examples of data.
 </p>
 
