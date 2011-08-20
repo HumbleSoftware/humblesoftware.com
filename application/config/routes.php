@@ -3,3 +3,5 @@
 $route['default_controller'] = 'home';
 
 $route['404_override'] = '';
+
+$route['helloreddit/home'] = 'helloreddit/index';
