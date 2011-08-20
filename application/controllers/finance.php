@@ -34,7 +34,8 @@ class Finance extends CI_Controller {
         $this->load->view('template', array(
             'includes' => $this->includes,
             'title' => 'humble finance - index',
-            'page' => 'finance/index'
+            'page' => 'finance/index',
+            'financePage' => 'index'
         ));
     }
 }
