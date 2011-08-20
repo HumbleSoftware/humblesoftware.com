@@ -6,6 +6,6 @@ $lang['recaptcha_no_remoteip'] = 'For security reasons, you must pass the remote
 $lang['recaptcha_socket_fail'] = 'Could not open socket';
 
 
-$lang['recaptcha_incorrect_response'] = 'Incorrect Security Image Response';
+$lang['recaptcha_incorrect_response'] = 'Incorrect reCaptcha Response';
 $lang['recaptcha_field_name'] = 'Security Image';
 $lang['recaptcha_html_error'] = 'Error loading security image.  Please try again later';
