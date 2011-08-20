@@ -30,9 +30,11 @@ class Feedback
         )
     );
 
-    function __construct()
+    function __construct($params = null)
     {
         $this->CI =& get_instance();
+
+        $this->_label = ($params && $params['label'] ? $params['label'] : '');
 
         $helpers = array(
             'email',
@@ -64,13 +66,14 @@ class Feedback
 
     public function send()
     {
+        $label      = ($this->_label ? '+'.$this->_label : '');
         $name       = $this->CI->input->post('name');
         $email      = $this->CI->input->post('email');
         $subject    = $this->CI->input->post('subject');
         $feedback   = $this->CI->input->post('feedback');
         $message    = "{$feedback}\r\n\r\n{$name}\r\n";
         $recipient  = $this->CI->config->item('admin_email');
-        $headers    = "From: feedback@humblesoftware.com\r\n";
+        $headers    = "From: feedback{$label}@humblesoftware.com\r\n";
 
         if ($email) $headers .= "Reply-To: {$email}\r\n";
 
