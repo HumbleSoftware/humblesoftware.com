@@ -1,4 +1,5 @@
-<h3 class="feedback"><a name="Feedback"></a>Feedback:</h3>
+<div class="feedback">
+<h3><a name="Feedback"></a>Feedback:</h3>
 
 <?php echo form_open(base_url().$page); ?>
 
@@ -7,7 +8,7 @@
     </div>
 
     <input type="hidden" name="action" value="feedback" />
-	<fieldset>
+    <fieldset>
         <div>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" value="<?php echo set_value('name'); ?>"/>
@@ -24,6 +25,7 @@
             <textarea id="feedback" name="feedback" rows="21" cols="125"><?php echo set_value('feedback'); ?></textarea>
         </div>
         <?php echo $recaptcha; ?>
-		<div><input id="submit" type="submit" name="submit" value="Send Feedback" /></div>
+        <div><input id="submit" type="submit" name="submit" value="Send Feedback" /></div>
     </fieldset>
 </form>
+</div>
