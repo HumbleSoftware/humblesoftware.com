@@ -23,53 +23,8 @@ Chrome, or Safari.
 
 <script type="text/javascript">
 </script>
-<div id="finance">
-  <div id="labels">
-    <div id="financeTitle">NASDAQ:GOOG</div>
-    <div id="time">
-      <a onclick="HumbleFinance.zoom(5);">1w</a>
-      <a onclick="HumbleFinance.zoom(21);">1m</a>
-      <a onclick="HumbleFinance.zoom(65);">3m</a>
-      <a onclick="HumbleFinance.zoom(127);">6m</a>
-      <a onclick="HumbleFinance.zoom(254);">1y</a>
-      <a onclick="HumbleFinance.zoom(1265);">5y</a>
-    </div>
-    <div id="dateRange"></div>
-  </div>
-</div>
 
-<h3>
-  Listing <span class="file">HTML</span>:
-  <span class="snippetShow">
-    <a id="snippetShowOne" onclick="toggleSnippet($('snippetShowOne'), $('snippetOne'));">(hide)</a>
-  </span>
-</h3>
+<?php $this->load->view('finance/finance.weeks.php'); ?>
 
-<div id="snippetOne" class="snippet">
-  <code class="prettyprint">&lt;div id="finance"&gt;
-  &lt;div id="labels"&gt;
-    &lt;div id="financeTitle"&gt;NASDAQ:GOOG&lt;/div&gt;
-    &lt;div id="time"&gt;
-      &lt;a onclick="HumbleFinance.zoom(5);"&gt;1w&lt;/a&gt;
-      &lt;a onclick="HumbleFinance.zoom(21);"&gt;1m&lt;/a&gt;
-      &lt;a onclick="HumbleFinance.zoom(65);"&gt;3m&lt;/a&gt;
-      &lt;a onclick="HumbleFinance.zoom(127);"&gt;6m&lt;/a&gt;
-      &lt;a onclick="HumbleFinance.zoom(254);"&gt;1y&lt;/a&gt;
-      &lt;a onclick="HumbleFinance.zoom(1265);"&gt;5y&lt;/a&gt;
-    &lt;/div&gt;
-    &lt;div id="dateRange"&gt;&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code>
-</div>
-
-<h3>
-  Listing <span class="file">demo.js</span>:
-  <span class="snippetShow">
-    <a id="snippetShowTwo" onclick="toggleSnippet($('snippetShowTwo'), $('snippetTwo'));">(hide)</a>
-  </span>
-</h3>
-
-<div id="snippetTwo" class="snippet">
-  <code class="prettyprint"><?php echo htmlentities(file_get_contents('../static/js/finance/demo.js', FILE_USE_INCLUDE_PATH)); ?></code>
-</div>
+<?php $this->load->view('listing', array('name' => 'HTML', 'file' => '../application/views/finance/finance.weeks.php')); ?>
+<?php $this->load->view('listing', array('name' => 'demo.js', 'file' => '../static/js/finance/demo.js')); ?>
