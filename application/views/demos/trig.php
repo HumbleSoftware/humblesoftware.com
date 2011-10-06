@@ -10,15 +10,4 @@
     <canvas id="sineCanvas"  style="width: 800px; height: 300px;"></canvas>
 </div>
 
-<p></p>
-
-<h3>
-    Listing <span class="file">Trig.js</span>:
-    <span class="snippetShow">
-        <a id="snippetShowTwo" onclick="toggleSnippet($('snippetShowTwo'), $('snippetTwo'));">(hide)</a>
-    </span>
-</h3>
-
-<div id="snippetTwo" class="snippet">
-    <code class="prettyprint"><?php echo htmlentities(file_get_contents('../static/js/demos/Trig.js', FILE_USE_INCLUDE_PATH)); ?></code>
-</div>
+<?php $this->load->view('snippet', array('name' => 'Trig.js', 'file' => '../static/js/demos/Trig.js')); ?>
