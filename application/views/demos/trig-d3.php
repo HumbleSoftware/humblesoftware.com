@@ -8,4 +8,4 @@
 
 <div id="trig"></div>
 
-<?php $this->load->view('snippet', array('name' => 'trig-d3.js', 'file' => '../static/js/demos/trig-d3.js')); ?>
+<?php $this->load->view('listing', array('name' => 'trig-d3.js', 'file' => '../static/js/demos/trig-d3.js')); ?>
