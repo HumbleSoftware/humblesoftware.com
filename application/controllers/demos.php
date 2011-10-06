@@ -24,7 +24,7 @@ class Demos extends CI_Controller {
         $this->load->view('template', array(
             'includes' => $this->includes,
             'title' => 'humble software development - demos',
-            'page' => 'demos'
+            'page' => 'demos/demos'
         ));
     }
 }
