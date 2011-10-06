@@ -10,15 +10,4 @@ HumbleFinance is an open source project distributed under the MIT License.  It i
 <div><a href="https://github.com/HumbleSoftware/HumbleVisualization/tarball/master" alt="HumbleFiance tar">HumbleFinance tar (GitHub)</a></div>
 <div><a href="https://github.com/HumbleSoftware/HumbleVisualization/zipball/master" alt="HumbleFiance zip">HumbleFinance zip (GitHub)</a></div>
 
-<h3 style="margin-top: 28px;">
-	Listing <span class="file">HumbleFinance.js</span>:
-    <span class="snippetShow">
-        <a id="showTwo" onclick="toggleSnippet($('showTwo'), $('listingTwo'));">(show)</a>
-    </span>
-</h3>
-
-<div id="listingTwo" class="snippet" style="display: none">
-<code><?php $this->load->view('finance/finance.js.php');?></code>
-</div>
-
-
+<?php $this->load->view('listing', array('name' => 'HumbleFinance.js', 'listingContent' => $this->load->view('finance/finance.js.php', '', true))); ?>
