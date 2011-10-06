@@ -1,5 +1,6 @@
 (function () {
 
+
 var BODY                = 'body',
     CLICK               = 'click',
 
@@ -7,6 +8,8 @@ var BODY                = 'body',
     CN_SNIPPET          = '.snippet',
     CN_TOGGLE           = '.toggle',
     S_TOGGLE            = 'div.listing .toggle',
+
+    $                   = jQuery,
 
 // HSD declared above
 HSD = {
@@ -46,9 +49,7 @@ function handleListingToggle (e) {
 // Namespacing
 window.HSD = HSD;
 
-
 // Initialize
 init();
-
 
 })();
