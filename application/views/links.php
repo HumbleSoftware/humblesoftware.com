@@ -8,7 +8,7 @@
                 <li<?php echo ($page == 'projects' ? ' class="current-page"' : '') ?>>
                     <a href="<?php echo base_url(); ?>projects"><span>projects</span></a>
                 </li>
-                <li<?php echo ($category == 'demos' ? ' class="current-page"' : '') ?>>
+                <li<?php echo (isset($category) && $category == 'demos' ? ' class="current-page"' : '') ?>>
                     <a href="<?php echo base_url(); ?>demos"><span>demos</span></a>
                 </li>
                 <li>
