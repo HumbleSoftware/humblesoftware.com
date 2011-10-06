@@ -29,9 +29,7 @@ HSD = {
       snippet.show();
     }
   }
-
 };
-
 
 function init () {
 
