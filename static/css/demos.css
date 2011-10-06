@@ -51,23 +51,6 @@
     background: transparent;
     text-align: left;
 }
-code {
-    white-space: pre;
-    text-align: left;
-}
-.snippet {
-    padding: 0px 0px 3px 6px;
-    padding-left: 20px;
-    margin-left: 16px;
-    background: url('../images/leftshadow.gif') repeat-y;
-}
-.snippetShow {
-    font-weight: normal; font-size: 12px; color: #999999; float: right; cursor: pointer;
-}
-.file {
-	font-family: monospace;
-	font-size: 1.2em;
-}
 .documentation p {
     font-size: 14px;
     padding-left: 20px;

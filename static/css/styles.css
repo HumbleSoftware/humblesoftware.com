@@ -373,3 +373,26 @@ span.label {
     font-size: 12px;
     width: 120px; float: left;
 }
+
+/* Listing */
+.listing .toggle {
+  font-weight: normal;
+  font-size: 12px;
+  color: #777;
+  float: right;
+  cursor: pointer;
+}
+.listing .file {
+	font-family: monospace;
+	font-size: 1.2em;
+}
+.listing .snippet {
+  padding: 0px 0px 3px 6px;
+  padding-left: 20px;
+  margin-left: 16px;
+  background: url('../images/leftshadow.gif') repeat-y;
+}
+.listing .snippet code {
+  white-space: pre;
+  text-align: left;
+}
