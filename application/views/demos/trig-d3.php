@@ -8,16 +8,4 @@
 
 <div id="trig"></div>
 
-<div class="listing">
-  <h3>Listing
-    <span class="file">trig-d3.js</span>:
-    <span>
-      <a class="listing-hide">(hide)</a>
-    </span>
-  </h3>
-
-  <div class="snippet">
-    <code class="prettyprint"><?php echo htmlentities(file_get_contents('../static/js/demos/trig-d3.js', FILE_USE_INCLUDE_PATH)); ?></code>
-  </div>
-</div>
-
+<?php $this->load->view('snippet', array('name' => 'trig-d3.js', 'file' => '../static/js/demos/trig-d3.js')); ?>
