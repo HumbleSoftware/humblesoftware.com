@@ -133,7 +133,7 @@
 
     time += .015;
 
-    setTimeout(draw, 20);
+    setTimeout(draw, 35);
   }
   draw();
 

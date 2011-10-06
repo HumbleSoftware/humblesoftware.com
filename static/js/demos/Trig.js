@@ -75,9 +75,9 @@ draw = function () {
     context.fillText("t = "+Math.floor(Math.abs(draw.seconds)), 10, 20);
     
     // Update the time and draw again
-    draw.seconds = draw.seconds - .02;
+    draw.seconds = draw.seconds - .007;
     draw.t = draw.seconds*Math.PI;
-    setTimeout(draw, 20);
+    setTimeout(draw, 35);
 };
 draw.seconds = 0;
 draw.t = 0;
