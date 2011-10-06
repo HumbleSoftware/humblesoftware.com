@@ -4,6 +4,7 @@ var BODY                = 'body',
     CLICK               = 'click',
 
     CN_LISTING          = '.listing',
+    CN_SNIPPET          = '.snippet',
     CN_LISTING_TOGGLE   = '.listing-show, .listing-hide',
     CN_LISTING_SHOW     = '.listing-show',
     CN_LISTING_HIDE     = '.listing-hide',
@@ -11,23 +12,36 @@ var BODY                = 'body',
 // HSD declared above
 HSD = {
 
-  toggleListing : function (listing) {
+  toggleListing : function (element) {
 
-    listing = $(listing).closest(CN_LISTING);
-    if (!listing.hasClass(CN_LISTING)) throw "Not a listing.";
+    var
+      listing = $(element).closest(CN_LISTING),
+      snippet = listing.find(CN_SNIPPET),
+      button  = listing.find(CN_LISTING_TOGGLE);
 
+    if (snippet.is(':visible')) {
+      button.text('(show)');
+      snippet.hide();
+    } else {
+      button.text('(hide)');
+      snippet.show();
+    }
   }
 
 };
 
 
 function init () {
+
+  // Toggle Snipett
   $('body').delegate(CN_LISTING_TOGGLE, CLICK, handleListingToggle);
+
+  // PrettyPrint
+  prettyPrint();
 }
 
 function handleListingToggle (e) {
   HSD.toggleListing(e.target);
-  console.log(e);
 }
 
 // Namespacing
