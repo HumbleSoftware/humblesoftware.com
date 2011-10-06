@@ -24,7 +24,8 @@ class Demos extends CI_Controller {
         $this->load->view('template', array(
             'includes' => $this->includes,
             'title' => 'humble software development - demos',
-            'page' => 'demos/demos'
+            'page' => 'demos/demos',
+            'category' => 'demos'
         ));
     }
     public function trig()
@@ -36,7 +37,8 @@ class Demos extends CI_Controller {
         $this->load->view('template', array(
             'includes' => $this->includes,
             'title' => 'humble software development - demos',
-            'page' => 'demos/trig'
+            'page' => 'demos/trig',
+            'category' => 'demos'
         ));
     }
     public function trig_d3()
@@ -49,7 +51,8 @@ class Demos extends CI_Controller {
         $this->load->view('template', array(
             'includes' => $this->includes,
             'title' => 'humble software development - demos',
-            'page' => 'demos/trig-d3'
+            'page' => 'demos/trig-d3',
+            'category' => 'demos'
         ));
     }
 }
