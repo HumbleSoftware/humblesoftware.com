@@ -2,7 +2,7 @@
   <h3>Listing
   <span class="file"><?php echo $name; ?></span>:
     <span>
-      <a class="listing-hide">(hide)</a>
+      <a class="toggle">(hide)</a>
     </span>
   </h3>
 
