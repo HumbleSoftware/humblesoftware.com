@@ -55,4 +55,19 @@ class Demos extends CI_Controller {
             'category' => 'demos'
         ));
     }
+    public function fortune()
+    {
+        $this->includes->css('demos.css');
+        $this->includes->css('demos/fortune.css');
+        $this->includes->js('d3.min.js');
+        $this->includes->js('demos/f500.min.js');
+        $this->includes->js('demos/fortune.js');
+
+        $this->load->view('template', array(
+            'includes' => $this->includes,
+            'title' => 'humble software development - fortune 500 demo',
+            'page' => 'demos/fortune',
+            'category' => 'demos'
+        ));
+    }
 }
