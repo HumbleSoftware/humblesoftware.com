@@ -1,0 +1,130 @@
+
+var
+
+// Requires 
+  fs          = require('fs'),
+  _           = require('underscore'),
+
+// Constants
+  FILE        = 'fortune_500_1955-present.txt',
+  HEIGHT      = 500,
+  WIDTH       = 800,
+  REVENUE     = 'revenue',
+  PROFIT      = 'profit',
+  YEAR        = 'year',
+  TRANSLATION = {
+    year : {
+      min     : 1954,
+      max     : 2010,
+      domain  : WIDTH
+    },
+    profit : {
+      min     : 0,
+      max     : Math.log(5e10),
+      domain  : WIDTH
+    },
+    revenue : {
+      min     : 0,
+      max     : Math.log(6e11),
+      domain  : WIDTH
+    }
+  }
+
+// Variables
+  nameMap     = {},
+  nameIndex   = 0,
+  output      = { names : [], values : [] };
+
+
+// Read file
+fs.readFile(FILE, 'utf8', function (err, data) {
+  if (err) throw err;
+  process_file (data);
+
+  _.each(nameMap, function (index, name) {
+    output.names[index] = name;
+  });
+
+  console.log('var F500 = {};');
+  console.log('F500.names = ');
+  console.dir(output.names);
+  console.log('F500.values= ');
+  console.dir(output.values);
+});
+
+function process_line (line, index) {
+
+  if (index === 0) return;
+
+  var
+    index   = null,
+    parts   = line.split(/\t/),
+    year    = translate(parseFloat(parts[0]), YEAR),
+    rank    = parseFloat(parts[1]),
+    name    = parts[2],
+    revenue = parts[3],
+    profit  = parts[4];
+
+  revenue = translate(
+    Math.log(parseFloat(revenue.replace(',',''))),
+    REVENUE
+  );
+
+  profit  = parseFloat(profit.replace(',',''));
+  if (profit < 0) {
+    profit  = translate(profit, PROFIT);
+  } else {
+    profit  = translateLog(profit, PROFIT);
+  }
+
+  if (rank >= 500) return;
+  if (typeof (nameMap[name]) === 'undefined') {
+    nameMap[name] = nameIndex;
+    nameIndex++;
+  }
+
+  index = nameMap[name];
+
+  if (typeof (output.values[index]) === 'undefined') {
+    output.values[index] = [];
+  }
+
+  output.values[index].push([
+    year,
+    rank,
+    revenue,
+    profit
+  ]);
+}
+
+function process_file (data) {
+  data.split(/\r\n/).forEach(process_line);
+}
+
+function translate (value, type) {
+
+  var
+    t       = TRANSLATION[type],
+    min     = t.min,
+    max     = t.max,
+    range   = max - min,
+    domain  = WIDTH;
+
+  value = domain * ( value - min ) / range;
+
+  return value;
+}
+
+function translateLog (value, type) {
+
+  var
+    t       = TRANSLATION[type],
+    min     = t.min,
+    max     = t.max,
+    range   = max - min,
+    domain  = WIDTH;
+
+  value = HEIGHT - domain * ( Math.log(value) - min ) / range;
+
+  return value;
+}

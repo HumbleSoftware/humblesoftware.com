@@ -1,0 +1,13 @@
+.chart path,
+.chart circle,
+.chart line {
+  stroke: steelblue;
+  stroke-width: 1px;
+  fill: none;
+}
+
+.trig text {
+  fill: #444;
+  font-family: sans-serif;
+  font-size: 22;
+}
