@@ -1,5 +1,46 @@
+.chart {
+  position: relative;
+  height: 540px;
+}
+.controls {
+  position: absolute;
+  bottom: 10px;
+}
 .control {
   padding: 0px 12px;
   cursor: pointer;
   float: left;
+}
+.company {
+  font-size: 12px;
+  display: none;
+  border: 2px solid #4863a0;
+  color: #222;
+/*  border: 2px solid #666; */
+  padding: 6px 6px 8px 6px;
+  background: #fff;
+  position: absolute;
+  border-radius: 5px;
+}
+.company .name {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0px 40px 6px 0px;
+  white-space: nowrap;
+}
+.company .year {
+  position: absolute;
+  right: 6px;
+  top: 7px;
+}
+.company .year .label {
+  display: none;
+}
+.company .data div {
+  display: inline-block;
+}
+.company .label {
+  text-align: right;
+  margin-right: 8px;
+  width: 50%;
 }

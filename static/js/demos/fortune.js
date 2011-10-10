@@ -8,6 +8,12 @@
 
     ID_CHART  = '#chart',
 
+    /*
+    COLOR     = 'rgba(123,142,186,.8)',
+    HIGHLIGHT = 'rgba(72,99,160,1)',
+    */
+    COLOR     = 'rgba(72,99,160,.8)',
+    HIGHLIGHT = 'rgba(210,20,20,1)',
     RANK      = 'rank',
     PROFIT    = 'profit',
     REVENUE   = 'revenue',
@@ -18,6 +24,12 @@
       revenue : 2,
       profit  : 3
     },
+    TRANSLATIONS = {
+      year    : function (v) { return Math.round((v + .5) * (2010 - 1954) / 800 + 1954) },
+      rank    : function (v) { return v + .5; },
+      revenue : function (v) { return v; },
+      profit  : function (v) { return v; }
+    }
 
     width     = 800,
     height    = 502,
@@ -25,9 +37,11 @@
     xmax      = 2010,
     ymin      = 0,
     ymax      = 500, 
-    vis       = d3.select(ID_CHART).append('canvas'),
-    context   = vis[0][0].getContext('2d'),
-    current   = RANK;
+    vis       = $(ID_CHART).append('<canvas></canvas>').find('canvas'),
+    company   = $('.company'),
+    context   = vis[0].getContext('2d'),
+    selected  = null,
+    type      = RANK;
 
   init();
 
@@ -45,7 +59,7 @@
       i, j,
       x, y;
 
-    console.time('draw');
+    //console.time('draw');
     context.clearRect(0, 0, width, height);
     context.beginPath();
 
@@ -66,7 +80,12 @@
 
     context.closePath();
     context.stroke();
-    console.timeEnd('draw');
+
+    if (selected !== null)
+       drawCompany(type, selected, increment);
+
+    //console.timeEnd('draw');
+
   }
 
   function search (type, x, y) {
@@ -88,20 +107,14 @@
 
       for (j = 0; j < length2; j++) {
 
-        if (Math.abs(data[j][year] - x) < 7.5) {
-          if (Math.abs(data[j][index] - y) < 1) {
-            return i;
-          }
+        if (Math.abs(data[j][year] - x) < 7.5 && Math.abs(data[j][index] - y) < 1) {
+          return {i : i, j : j};
         }
       }
     }
   }
 
-  //console.time('search');
-  //drawCompany(RANK, search(RANK, 700, 400));
-  //console.timeEnd('search');
-
-  function drawCompany (type, index) {
+  function drawCompany (type, index, increment) {
 
     var
       name      = F500.names[index],
@@ -116,15 +129,16 @@
     context.save();
 
     context
-      .strokeStyle = 'rgba(150,0,0,1)';
+      .strokeStyle = HIGHLIGHT;
     context
-      .lineWidth = '1.5';
+      .lineWidth = '3.5';
 
     context.beginPath();
 
-    for (i = 1; i < values.length; i++) {
+    for (i = 0; i < values.length; i++) {
       x = values[i][year];
-      y = values[i][type];
+      //y = values[i][type];
+      y = increment * values[i][type] + ( 1 - increment ) * (values[i].previous || values[i][index]);
       context.moveTo(x - nameWidth, y);
       context.lineTo(x + nameWidth, y);
     }
@@ -136,18 +150,58 @@
     context.restore();
   }
 
+  function display (i, j) {
+
+    var
+      values  = F500.values[i][j],
+      name    = F500.names[i],
+      x       = values[MAP[YEAR]],
+      y       = values[MAP[type]],
+      html    = '<div class="value name">' + name + '</div>',
+      key;
+
+    for (key in MAP) {
+      html += '<div class="data ' + key + '">';
+      html += '<div class="label">' + key + '</div>';
+      html += '<div class="value">' + TRANSLATIONS[key](values[MAP[key]]) + '</div>';
+      html += '</div>';
+    }
+
+    company.html(html).show().css({
+      left : x - company.width() / 2,
+      top  : y + 4
+    });
+  }
+
   function init () {
 
     var
-      type      = RANK,
       previous  = null,
       increment = 0,
       timeout   = null,
-      animating = false;
+      animating = false,
+      chart     = $(ID_CHART);
 
     visualization();
     draw(RANK, 1);
+
     $('.controls .control').click(switchType);
+    vis.click(function (e) {
+
+      var
+        position = vis.offset(),
+        x = e.pageX - position.left,
+        y = e.pageY - position.top,
+        result = search(type, x, y);
+
+      if (result) {
+        selected = result.i;
+        draw(type, 1);
+        display(result.i, result.j);
+      } else {
+        selected = null; 
+      }
+    });
 
     function switchType (e) {
       var
@@ -197,12 +251,13 @@
   }
 
   function visualization () {
+
     vis
       .attr('width', width)
       .attr('height', height);
 
     context
-      .strokeStyle = 'rgba(72,99,160,.72)';
+      .strokeStyle = COLOR;
     context
       .lineWidth = '1px';
   }
