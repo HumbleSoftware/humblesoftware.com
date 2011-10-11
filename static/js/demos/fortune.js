@@ -61,7 +61,7 @@
       i, j,
       x, y;
 
-    //console.time('draw');
+    console.time('draw');
     context.clearRect(0, 0, width, height);
     context.beginPath();
 
@@ -86,8 +86,7 @@
     if (selected !== null)
       drawCompany(type, selected, increment);
 
-    //console.timeEnd('draw');
-
+    console.timeEnd('draw');
   }
 
   function search (type, x, y) {
@@ -116,12 +115,12 @@
     }
   }
 
-  function drawCompany (type, index, increment) {
+  function drawCompany (type, selected, increment) {
 
     var
-      name      = F500.names[index],
+      name      = F500.names[selected.i],
       nameWidth = name.length / 4,
-      values    = F500.values[index],
+      values    = F500.values[selected.i],
       year      = C_MAP[YEAR],
       typeIndex = C_MAP[type],
       x, y,
@@ -138,7 +137,7 @@
 
     for (i = 0; i < values.length; i++) {
       x = values[i][year];
-      y = increment * values[i][typeIndex] + ( 1 - increment ) * (values[i].previous || values[i][index]);
+      y = increment * values[i][typeIndex] + ( 1 - increment ) * (values[i].previous || values[i][selected.i]);
       context.moveTo(x - nameWidth, y);
       context.lineTo(x + nameWidth, y);
     }
@@ -148,6 +147,8 @@
     context.closePath();
     context.stroke();
     context.restore();
+
+    positionDisplay(selected.i, selected.j, increment);
   }
 
   function display (i, j) {
@@ -155,8 +156,6 @@
     var
       values  = F500.values[i][j],
       name    = F500.names[i],
-      x       = values[C_MAP[YEAR]],
-      y       = values[C_MAP[type]],
       html    = '<div class="company-content"><div class="value name">' + name + '</div>',
       key;
 
@@ -169,9 +168,20 @@
 
     html += '</div><div class="company-arrow"></div>';
 
-    company.html(html).show().css({
+    company.html(html).show();
+  }
+
+  function positionDisplay (i, j, increment) {
+
+    var
+      values  = F500.values[i][j],
+      index   = C_MAP[type],
+      x       = values[C_MAP[YEAR]],
+      y       = increment * values[index] + ( 1 - increment ) * (values.previous || 0);
+
+    company.css({
       left : x - company.width() / 2,
-      top  : y + 4
+      top  : Math.round(y + 4)
     });
   }
 
@@ -197,11 +207,13 @@
         result = search(type, x, y);
 
       if (result) {
-        selected = result.i;
-        draw(type, 1);
+        selected = result;
         display(result.i, result.j);
+        draw(type, 1);
       } else {
         selected = null; 
+        company.hide();
+        draw(type, 1);
       }
     });
 
