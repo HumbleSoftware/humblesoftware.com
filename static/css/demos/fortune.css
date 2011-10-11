@@ -14,12 +14,23 @@
 .company {
   font-size: 12px;
   display: none;
-  border: 2px solid #4863a0;
   color: #222;
-/*  border: 2px solid #666; */
+  position: absolute;
+}
+.company-arrow {
+  background: url('../../images/demos/fortune-arrow.png') top center no-repeat;
+  position: absolute;
+  left: 50%;
+  margin-left: -6px;
+  width: 13px;
+  height: 7px;
+  top: 0px;
+}
+.company-content {
+  margin-top: 5px;
+  border: 2px solid #4863a0;
   padding: 6px 6px 8px 6px;
   background: #fff;
-  position: absolute;
   border-radius: 5px;
 }
 .company .name {

@@ -157,7 +157,7 @@
       name    = F500.names[i],
       x       = values[C_MAP[YEAR]],
       y       = values[C_MAP[type]],
-      html    = '<div class="value name">' + name + '</div>',
+      html    = '<div class="company-content"><div class="value name">' + name + '</div>',
       key;
 
     for (key in D_MAP) {
@@ -166,6 +166,8 @@
       html += '<div class="value">' + (TRANSLATIONS[key] ? TRANSLATIONS[key](values[D_MAP[key]]) : values[D_MAP[key]]) + '</div>';
       html += '</div>';
     }
+
+    html += '</div><div class="company-arrow"></div>';
 
     company.html(html).show().css({
       left : x - company.width() / 2,
