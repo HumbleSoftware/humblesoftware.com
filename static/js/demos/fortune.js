@@ -255,11 +255,7 @@
           animate();
         }, 10);
       } else {
-        timeout = setTimeout (function () {
-          draw (type, 1);
-          increment = 0;
-          animating = false;
-        }, 15);
+        animating = false;
       }
     }
   }
