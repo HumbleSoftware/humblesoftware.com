@@ -28540,7 +28540,7 @@ Year	Rank	Company	Revenue (in millions)	Profit (in millions)
 2009	39	MetLife	55,085.00	3,209.00
 2009	40	Goldman Sachs Group	53,579.00	2,322.00
 2009	41	Sunoco	51,652.00	776
-2009	41	Wells Fargo	51,652.00	2,655.00
+2009	42	Wells Fargo	51,652.00	2,655.00
 2009	43	United Parcel Service	51,486.00	3,003.00
 2009	44	Caterpillar	51,324.00	3,557.00
 2009	45	Medco Health Solutions	51,258.00	1,102.90
