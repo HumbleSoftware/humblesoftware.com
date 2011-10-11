@@ -8,27 +8,29 @@
 
     ID_CHART  = '#chart',
 
-    /*
-    COLOR     = 'rgba(123,142,186,.8)',
-    HIGHLIGHT = 'rgba(72,99,160,1)',
-    */
     COLOR     = 'rgba(72,99,160,.8)',
     HIGHLIGHT = 'rgba(210,20,20,1)',
     RANK      = 'rank',
     PROFIT    = 'profit',
     REVENUE   = 'revenue',
     YEAR      = 'year',
-    MAP       = {
+
+    D_MAP     = { // Data Map
       year    : 0,
-      rank    : 1,
+      rank    : 1, 
       revenue : 2,
       profit  : 3
-    },
+    }
+
+    C_MAP     = { // Chart Map
+      year    : 0,
+      rank    : 1, 
+      revenue : 4,
+      profit  : 5
+    }
+
     TRANSLATIONS = {
-      year    : function (v) { return Math.round((v + .5) * (2010 - 1954) / 800 + 1954) },
-      rank    : function (v) { return v + .5; },
-      revenue : function (v) { return v; },
-      profit  : function (v) { return v; }
+      year    : function (v) { return Math.round((v + .5) * (2011 - 1954) / 800 + 1954) },
     }
 
     width     = 800,
@@ -48,8 +50,8 @@
   function draw (type, increment) {
 
     var
-      year    = MAP[YEAR],
-      index   = MAP[type],
+      year    = C_MAP[YEAR],
+      index   = C_MAP[type],
       names   = F500.names,
       values  = F500.values,
       length1 = values.length,
@@ -71,7 +73,7 @@
 
       for (j = 0; j < length2; j++) {
         x = data[j][year];
-        y = increment * data[j][index] + ( 1 - increment ) * (data[j].previous || data[j][index]);
+        y = increment * data[j][index] + ( 1 - increment ) * (data[j].previous || data[j][index]) - .5;
         context.moveTo(x - nameWidth, y);
         context.lineTo(x + nameWidth, y);
         data[j].previous = y;
@@ -82,7 +84,7 @@
     context.stroke();
 
     if (selected !== null)
-       drawCompany(type, selected, increment);
+      drawCompany(type, selected, increment);
 
     //console.timeEnd('draw');
 
@@ -91,8 +93,8 @@
   function search (type, x, y) {
 
     var
-      year    = MAP[YEAR],
-      index   = MAP[type],
+      year    = C_MAP[YEAR],
+      index   = C_MAP[type],
       names   = F500.names,
       values  = F500.values,
       length1 = values.length,
@@ -120,11 +122,10 @@
       name      = F500.names[index],
       nameWidth = name.length / 4,
       values    = F500.values[index],
-      year      = MAP[YEAR],
+      year      = C_MAP[YEAR],
+      typeIndex = C_MAP[type],
       x, y,
       i;
-
-    type = MAP[type];
 
     context.save();
 
@@ -137,13 +138,12 @@
 
     for (i = 0; i < values.length; i++) {
       x = values[i][year];
-      //y = values[i][type];
-      y = increment * values[i][type] + ( 1 - increment ) * (values[i].previous || values[i][index]);
+      y = increment * values[i][typeIndex] + ( 1 - increment ) * (values[i].previous || values[i][index]);
       context.moveTo(x - nameWidth, y);
       context.lineTo(x + nameWidth, y);
     }
 
-    context.moveTo(values[0][year], values[0][type]);
+    context.moveTo(values[0][year], values[0][typeIndex]);
 
     context.closePath();
     context.stroke();
@@ -155,15 +155,15 @@
     var
       values  = F500.values[i][j],
       name    = F500.names[i],
-      x       = values[MAP[YEAR]],
-      y       = values[MAP[type]],
+      x       = values[D_MAP[YEAR]],
+      y       = values[D_MAP[type]],
       html    = '<div class="value name">' + name + '</div>',
       key;
 
-    for (key in MAP) {
+    for (key in D_MAP) {
       html += '<div class="data ' + key + '">';
       html += '<div class="label">' + key + '</div>';
-      html += '<div class="value">' + TRANSLATIONS[key](values[MAP[key]]) + '</div>';
+      html += '<div class="value">' + (TRANSLATIONS[key] ? TRANSLATIONS[key](values[D_MAP[key]]) : values[D_MAP[key]]) + '</div>';
       html += '</div>';
     }
 
@@ -261,6 +261,45 @@
     context
       .lineWidth = '1px';
   }
+
+  function calculatePoints () {
+
+    var
+      rBase   = height / Math.log(6e5),
+      pBase   = height / ( 2 * Math.log(1e6) ),
+      rIndex  = D_MAP[REVENUE],
+      pIndex  = D_MAP[PROFIT],
+      values  = F500.values,
+      length1 = values.length,
+      length2,
+      data,
+      i, j;
+
+    for (i = 0; i < length1; i++) {
+
+      data = values[i];
+      length2 = data.length;
+
+      for (j = 0; j < length2; j++) {
+        data[j].push(translateRevenue(data[j][rIndex]));
+        data[j].push(translateProfit(data[j][pIndex]));
+      }
+    }
+
+    function translateRevenue (v) {
+      return Math.round(height - Math.log(v) * rBase);
+    }
+
+    function translateProfit (v) {
+      return (v < 0) ?
+        profit = Math.round(height / 2 + Math.log(-10 * v) * pBase):
+        profit = Math.round(height / 2 - Math.log(10 * v) * pBase);
+    }
+  }
+
+  setTimeout( function () {
+    calculatePoints();
+  }, 10);
 
 })();
 
