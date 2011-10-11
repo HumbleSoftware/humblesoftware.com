@@ -155,8 +155,8 @@
     var
       values  = F500.values[i][j],
       name    = F500.names[i],
-      x       = values[D_MAP[YEAR]],
-      y       = values[D_MAP[type]],
+      x       = values[C_MAP[YEAR]],
+      y       = values[C_MAP[type]],
       html    = '<div class="value name">' + name + '</div>',
       key;
 
