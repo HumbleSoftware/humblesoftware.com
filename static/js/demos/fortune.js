@@ -61,7 +61,6 @@
       i, j,
       x, y;
 
-    console.time('draw');
     context.clearRect(0, 0, width, height);
     context.beginPath();
 
@@ -85,16 +84,13 @@
 
     if (selected !== null)
       drawCompany(type, selected, increment);
-
-    console.timeEnd('draw');
   }
 
-  function search (type, x, y) {
+  function search (type, x, y, exact) {
 
     var
       year    = C_MAP[YEAR],
       index   = C_MAP[type],
-      names   = F500.names,
       values  = F500.values,
       length1 = values.length,
       length2,
@@ -106,10 +102,17 @@
       data    = values[i];
       length2 = data.length;
 
-      for (j = 0; j < length2; j++) {
-
-        if (Math.abs(data[j][year] - x) < 7.5 && Math.abs(data[j][index] - y) < 1) {
-          return {i : i, j : j};
+      if (exact) {
+        for (j = 0; j < length2; j++) {
+          if (Math.abs(data[j][year] - x) < 7 && data[j][index] == y) {
+            return {i : i, j : j};
+          }
+        }
+      } else {
+        for (j = 0; j < length2; j++) {
+          if (Math.abs(data[j][year] - x) < 7 && Math.abs(data[j][index] - y) < 1) {
+            return {i : i, j : j};
+          }
         }
       }
     }
@@ -198,6 +201,32 @@
     draw(RANK, 1);
 
     $('.controls .control').click(switchType);
+
+    $(window).keydown(function (e) {
+
+      if (selected === null)
+        return;
+
+      var
+        values  = F500.values,
+        data    = values[selected.i][selected.j],
+        x       = data[C_MAP[YEAR]],
+        y       = data[C_MAP[RANK]],
+        result;
+
+      switch (e.keyCode)
+      {
+        case 37 : x -= 14; break;
+        case 38 : y--; break;
+        case 39 : x += 14; break;
+        case 40 : y++; break;
+        default : return;
+      }
+
+      result = search(RANK, x, y, true);
+      setSelected(result);
+    });
+
     vis.click(function (e) {
 
       var
@@ -206,16 +235,20 @@
         y = e.pageY - position.top,
         result = search(type, x, y);
 
-      if (result) {
-        selected = result;
-        display(result.i, result.j);
+      setSelected(result);
+    });
+
+    function setSelected (o) {
+      if (o) {
+        selected = o;
+        display(o.i, o.j);
         draw(type, 1);
       } else {
         selected = null; 
         company.hide();
         draw(type, 1);
       }
-    });
+    }
 
     function switchType (e) {
       var
