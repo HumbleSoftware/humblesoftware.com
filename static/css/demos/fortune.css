@@ -4,7 +4,8 @@
 }
 .controls {
   position: absolute;
-  bottom: 10px;
+  top: -24px;
+  right: 0px;
 }
 .control {
   padding: 0px 12px;
@@ -54,4 +55,18 @@
   text-align: right;
   margin-right: 8px;
   width: 50%;
+}
+
+.labels {
+  position: absolute;
+  left: 0px;
+  top: 504px;
+  width: 840px;
+  margin-left: -20px;
+}
+.labels .label {
+  text-align: center;
+  width: 70px;
+  font-size: 12px;
+  float: left;
 }
