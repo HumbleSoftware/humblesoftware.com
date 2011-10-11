@@ -12,10 +12,11 @@ var
   REVENUE     = 'revenue',
   PROFIT      = 'profit',
   YEAR        = 'year',
+
   TRANSLATION = {
     year : {
       min     : 1954,
-      max     : 2010,
+      max     : 2011,
       range   : WIDTH
     },
     profit : {
@@ -33,7 +34,8 @@ var
 // Variables
   nameMap     = {},
   nameIndex   = 0,
-  output      = { names : [], values : [] };
+  output      = { names : [], values : [] },
+  count       = 0;
 
 
 // Read file
@@ -54,31 +56,19 @@ fs.readFile(FILE, 'utf8', function (err, data) {
 
 function process_line (line, index) {
 
-  if (index === 0) return;
+  if (index === 0 || !line) return;
 
   var
     index   = null,
     parts   = line.split(/\t/),
     year    = translate(parseFloat(parts[0]), YEAR),
-    rank    = parseFloat(parts[1]) - .5,
+    rank    = parseFloat(parts[1]),
     name    = parts[2],
     revenue = parts[3],
     profit  = parts[4];
 
-  revenue = HEIGHT - translate(
-    Math.log(parseFloat(revenue.replace(',',''))),
-    REVENUE
-  );
-
-  profit = parseFloat(profit.replace(',',''));
-  if (profit < 0) {
-    profit = HEIGHT / 2 + translate(Math.log(-10 * profit), PROFIT);
-  } else if (profit > 0) {
-    profit = HEIGHT / 2 - translate(Math.log(10 * profit), PROFIT);
-  } else {
-    //console.log(profit, name);
-    //profit = HEIGHT / 2 - translate(0, PROFIT);
-  }
+  revenue = parseFloat(revenue.replace(',', ''));
+  profit  = parseFloat(profit.replace(',',''));
 
   if (rank >= 500) return;
   if (typeof (nameMap[name]) === 'undefined') {
@@ -115,6 +105,6 @@ function translate (value, type) {
 
   value = range * ( value - min ) / domain;
 
-  return Math.round(value) - .5;
+  return Math.round(value);
 }
 
