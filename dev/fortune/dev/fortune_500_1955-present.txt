@@ -29646,7 +29646,7 @@ Year	Rank	Company	Revenue (in millions)	Profit (in millions)
 2010	145	Southern	15,743.0	1,643.0
 2010	146	Health Net	15,713.2	-49.0
 2010	147	FPL Group	15,643.0	1,615.0
-2010	148	L-3	Communications	15,615.0	901.0
+2010	148	L-3 Communications	15,615.0	901.0
 2010	149	Constellation Energy	15,598.8	4,443.4
 2010	150	Occidental Petroleum	15,531.0	2,915.0
 2010	151	Colgate-Palmolive	15,327.0	2,291.0
@@ -29955,7 +29955,7 @@ Year	Rank	Company	Revenue (in millions)	Profit (in millions)
 2010	454	Alliant Techsystems	4,583.2	155.1
 2010	455	Washington Post	4,569.7	92.8
 2010	456	Las Vegas Sands	4,563.1	-354.5
-2010	457	Group	1	Automotive	4,525.7	34.8
+2010	457	Group 1 Automotive	4,525.7	34.8
 2010	458	Genzyme	4,515.5	422.3
 2010	459	Allergan	4,503.6	621.3
 2010	460	Broadcom	4,490.3	65.3
