@@ -289,7 +289,7 @@
     }
 
     function translateRevenue (v) {
-      return Math.round(height - Math.log(v) * rBase);
+      return Math.round(height - Math.log(v - 40) * rBase);
     }
 
     function translateProfit (v) {
