@@ -3,9 +3,15 @@
 <div id="chart" class="chart">
 
 <div class="controls">
+  <div class="label">showing:</div>
   <div class="control rank">Rank</div>
   <div class="control revenue">Revenue</div>
   <div class="control profit">Profit</div>
+</div>
+
+<div class="inflation">
+  <input id="inflation-checkbox" type="checkbox"></input>
+  <label for="inflation-checkbox">adjust for inflation</label>
 </div>
 
 <div class="labels">

@@ -1,17 +1,40 @@
 .chart {
   position: relative;
   height: 540px;
+  padding-top: 54px;
 }
+
+/* Controls */
 .controls {
   position: absolute;
-  top: -24px;
+  top: 0px;
   right: 0px;
+  font-size: 12px;
 }
-.control {
+.control, .controls .label {
   padding: 0px 12px;
-  cursor: pointer;
   float: left;
 }
+.control {
+  cursor: pointer;
+}
+
+/* Inflation */
+.inflation {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  font-size: 12px;
+  width: 200px;
+  text-align: right;
+  padding-right: 10px;
+}
+.inflation label {
+  width: 150px;
+  display: inline;
+}
+
+/* Company */
 .company {
   font-size: 12px;
   display: none;
@@ -57,10 +80,12 @@
   width: 50%;
 }
 
+/* Labels */
+
 .labels {
   position: absolute;
   left: 0px;
-  top: 504px;
+  top: 558px;
   width: 840px;
   margin-left: -20px;
 }
