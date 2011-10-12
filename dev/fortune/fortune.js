@@ -1,6 +1,6 @@
 //
 // Fortune 500
-// Copyright 2010 Humble Software Development
+// Copyright 2011 Humble Software Development
 //
 
 (function () {
@@ -382,10 +382,13 @@
       yIndex    = D_MAP[YEAR],
       values    = F500.values,
       inflation = F500.inflation,
+      half      = height / 2,
       length1   = values.length,
       length2,
       data,
+      datum,
       year,
+      v,
       i, j;
 
     for (i = 0; i < length1; i++) {
@@ -394,22 +397,19 @@
       length2 = data.length;
 
       for (j = 0; j < length2; j++) {
-        year = data[j][yIndex];
-        data[j].push(translateRevenue(data[j][rIndex]));
-        data[j].push(translateRevenue(data[j][rIndex] * inflation[year]));
-        data[j].push(translateProfit(data[j][pIndex]));
-        data[j].push(translateProfit(data[j][pIndex] * inflation[year]));
+        datum = data[j];
+        year = datum[yIndex];
+        datum.push(Math.round(height - Math.log(datum[rIndex] - 40) * rBase));
+        datum.push(Math.round(height - Math.log(datum[rIndex] * inflation[year] - 40) * rBase));
+        v = datum[pIndex];
+        if (v < 0) {
+          datum.push(Math.round(half + Math.log(-10 * v) * pBase));
+          datum.push(Math.round(half + Math.log(-10 * v * inflation[year]) * pBase));
+        } else {
+          datum.push(Math.round(half - Math.log(10 * v) * pBase));
+          datum.push(Math.round(half - Math.log(10 * v * inflation[year]) * pBase));
+        }
       }
-    }
-
-    function translateRevenue (v) {
-      return Math.round(height - Math.log(v - 40) * rBase);
-    }
-
-    function translateProfit (v) {
-      return (v < 0) ?
-        profit = Math.round(height / 2 + Math.log(-10 * v) * pBase):
-        profit = Math.round(height / 2 - Math.log(10 * v) * pBase);
     }
   }
 
