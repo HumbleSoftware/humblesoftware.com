@@ -252,8 +252,12 @@
         default : return;
       }
 
+      e.preventDefault();
+
       result = search(RANK, x, y, true);
       setSelected(result);
+
+      return false;
     });
 
     vis.click(function (e) {
