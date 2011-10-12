@@ -114,6 +114,9 @@
 .company .year .label {
   display: none;
 }
+.company .data {
+  white-space: nowrap;
+}
 .company .data div {
   display: inline-block;
 }
