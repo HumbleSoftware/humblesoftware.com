@@ -70,7 +70,7 @@ function process_line (line, index) {
   revenue = parseFloat(revenue.replace(',', ''));
   profit  = parseFloat(profit.replace(',',''));
 
-  if (rank >= 500) return;
+  if (rank > 500) return;
   if (typeof (nameMap[name]) === 'undefined') {
     nameMap[name] = nameIndex;
     nameIndex++;
