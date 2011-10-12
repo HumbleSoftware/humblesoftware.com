@@ -11,11 +11,13 @@
     COLOR     = 'rgba(72,99,160,.8)',
     COLOR     = 'rgba(72,72,72,.8)',
     COLOR     = 'rgba(72,72,72,.3)',
-    COLOR     = 'rgba(72,99,160,.4)',
-    HIGHLIGHT = 'rgba(210,20,20,1)',
+    COLOR     = 'rgba(181,192,217,1)',
+    HIGHLIGHT = 'rgba(200,30,30,1)',
     RANK      = 'rank',
     PROFIT    = 'profit',
+    I_PROFIT  = 'iProfit',
     REVENUE   = 'revenue',
+    I_REVENUE = 'iRevenue',
     YEAR      = 'year',
 
     D_MAP     = { // Data Map
@@ -26,10 +28,12 @@
     }
 
     C_MAP     = { // Chart Map
-      year    : 0,
-      rank    : 1, 
-      revenue : 4,
-      profit  : 5
+      year      : 0,
+      rank      : 1, 
+      revenue   : 4,
+      iRevenue  : 5,
+      profit    : 6,
+      iProfit   : 7
     }
 
     TRANSLATIONS = {
@@ -125,7 +129,7 @@
 
     var
       name      = F500.names[selected.i],
-      nameWidth = name.length / 4,
+      nameWidth = Math.max(name.length / 4, 3),
       values    = F500.values[selected.i],
       year      = C_MAP[YEAR],
       typeIndex = C_MAP[type],
@@ -137,7 +141,7 @@
     context
       .strokeStyle = HIGHLIGHT;
     context
-      .lineWidth = '3.5';
+      .lineWidth = '2.5';
 
     context.beginPath();
 
@@ -205,6 +209,23 @@
 
     $('.controls .control').click(switchType);
 
+    $('#inflation-checkbox').change(function (e) {
+      var
+        inflation = getInflation();
+
+      if (inflation) {
+        if (type == REVENUE)
+          doType(I_REVENUE);
+        else if (type == PROFIT)
+          doType(I_PROFIT);
+      } else {
+        if (type == I_REVENUE)
+          doType(REVENUE);
+        else if (type == I_PROFIT)
+          doType(PROFIT);
+      }
+    });
+
     $(window).keydown(function (e) {
 
       if (selected === null)
@@ -253,29 +274,45 @@
       }
     }
 
+    function getInflation () {
+      return !!$('#inflation-checkbox').attr('checked');
+    }
+
     function switchType (e) {
       var
-        prevType = type,
-        types = [RANK, REVENUE, PROFIT];
+        inflation = getInflation(),
+        types = [RANK, REVENUE, PROFIT],
+        newType;
 
       for (var i in types) {
         if ($(e.target).hasClass(types[i])) {
 
-          if (types[i] === type) return;
+          newType = types[i];
+          if (newType === type) return;
 
           $('.controls .control').removeClass('selected');
           $(e.target).addClass('selected');
 
-          type = types[i];
-          previous = prevType;
-          increment = 0;
+          if (inflation) {
+            if (newType == REVENUE)
+              newType = I_REVENUE;
+            else if (newType == PROFIT)
+              newType = I_PROFIT;
+          }
 
-          if (!animating) animate();
+          doType(newType);
 
           return;
         }
       }
-    };
+    }
+
+    function doType (t) {
+      previous = type;
+      type = t;
+      increment = 0;
+      if (!animating) animate();
+    }
 
     function animate () {
 
@@ -314,14 +351,17 @@
   function calculatePoints () {
 
     var
-      rBase   = height / Math.log(6e5),
-      pBase   = height / ( 2 * Math.log(1e6) ),
-      rIndex  = D_MAP[REVENUE],
-      pIndex  = D_MAP[PROFIT],
-      values  = F500.values,
-      length1 = values.length,
+      rBase     = height / Math.log(6e5),
+      pBase     = height / ( 2 * Math.log(1e6) ),
+      rIndex    = D_MAP[REVENUE],
+      pIndex    = D_MAP[PROFIT],
+      yIndex    = D_MAP[YEAR],
+      values    = F500.values,
+      inflation = F500.inflation,
+      length1   = values.length,
       length2,
       data,
+      year,
       i, j;
 
     for (i = 0; i < length1; i++) {
@@ -330,8 +370,11 @@
       length2 = data.length;
 
       for (j = 0; j < length2; j++) {
+        year = data[j][yIndex];
         data[j].push(translateRevenue(data[j][rIndex]));
+        data[j].push(translateRevenue(data[j][rIndex] * inflation[year]));
         data[j].push(translateProfit(data[j][pIndex]));
+        data[j].push(translateProfit(data[j][pIndex] * inflation[year]));
       }
     }
 
