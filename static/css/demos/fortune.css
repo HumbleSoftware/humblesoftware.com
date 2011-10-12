@@ -12,11 +12,23 @@
   font-size: 12px;
 }
 .control, .controls .label {
-  padding: 0px 12px;
   float: left;
+  text-align: center;
+}
+.control.rank {
+  width: 52px;
+}
+.control.revenue {
+  width: 70px;
+}
+.control.profit {
+  width: 52px;
 }
 .control {
   cursor: pointer;
+}
+.control.selected {
+  font-weight: bold;
 }
 
 /* Inflation */

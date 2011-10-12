@@ -4,7 +4,7 @@
 
 <div class="controls">
   <div class="label">showing:</div>
-  <div class="control rank">Rank</div>
+  <div class="control rank selected">Rank</div>
   <div class="control revenue">Revenue</div>
   <div class="control profit">Profit</div>
 </div>

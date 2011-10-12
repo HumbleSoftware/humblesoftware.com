@@ -9,6 +9,9 @@
     ID_CHART  = '#chart',
 
     COLOR     = 'rgba(72,99,160,.8)',
+    COLOR     = 'rgba(72,72,72,.8)',
+    COLOR     = 'rgba(72,72,72,.3)',
+    COLOR     = 'rgba(72,99,160,.4)',
     HIGHLIGHT = 'rgba(210,20,20,1)',
     RANK      = 'rank',
     PROFIT    = 'profit',
@@ -259,6 +262,9 @@
         if ($(e.target).hasClass(types[i])) {
 
           if (types[i] === type) return;
+
+          $('.controls .control').removeClass('selected');
+          $(e.target).addClass('selected');
 
           type = types[i];
           previous = prevType;
