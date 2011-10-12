@@ -1,5 +1,6 @@
 //
 // Fortune 500
+// Copyright 2010 Humble Software Development
 //
 
 (function () {
