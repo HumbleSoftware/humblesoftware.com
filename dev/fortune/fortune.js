@@ -344,17 +344,16 @@
       animating = true;
       clearTimeout(timeout);
 
-      if
-        (!increment) increment = .05;
-      else
-        increment += .05;
+      if (!increment) increment = .08;
+      else increment += .08;
+      if (increment > 1) increment = 1;
 
       draw (type, (1 + Math.sin(-Math.PI / 2 - increment * Math.PI))/2);
 
       if (increment < 1) {
         timeout = setTimeout (function () {
           animate();
-        }, 10);
+        }, 25);
       } else {
         animating = false;
       }
