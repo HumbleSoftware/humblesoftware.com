@@ -211,7 +211,6 @@
     start = new Date();
     draw(RANK, 1);
     doAnimations = ((new Date()) - start < 150 ? true : false);
-    doAnimations = false;
 
     $('.controls .control').click(switchType);
 
