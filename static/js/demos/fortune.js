@@ -202,10 +202,16 @@
       increment = 0,
       timeout   = null,
       animating = false,
-      chart     = $(ID_CHART);
+      chart     = $(ID_CHART),
+      doAnimations,
+      start;
 
     visualization();
+    
+    start = new Date();
     draw(RANK, 1);
+    doAnimations = ((new Date()) - start < 150 ? true : false);
+    doAnimations = false;
 
     $('.controls .control').click(switchType);
 
@@ -315,6 +321,11 @@
     }
 
     function animate () {
+
+      if (!doAnimations) {
+        draw(type, 1);
+        return;
+      }
 
       animating = true;
       clearTimeout(timeout);
