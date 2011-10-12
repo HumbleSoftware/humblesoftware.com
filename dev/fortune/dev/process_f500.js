@@ -7,6 +7,7 @@ var
 
 // Constants
   FILE        = 'fortune_500_1955-present.txt',
+  INFLATION   = 'inflation.txt',
   HEIGHT      = 500,
   WIDTH       = 800,
   REVENUE     = 'revenue',
@@ -34,7 +35,7 @@ var
 // Variables
   nameMap     = {},
   nameIndex   = 0,
-  output      = { names : [], values : [] },
+  output      = { names : [], values : [], inflation : {} },
   count       = 0;
 
 
@@ -50,8 +51,33 @@ fs.readFile(FILE, 'utf8', function (err, data) {
   console.log('var F500 = {};');
   console.log('F500.names = ');
   console.dir(output.names);
-  console.log('F500.values= ');
+  console.log('F500.values = ');
   console.dir(output.values);
+
+  fs.readFile(INFLATION, 'utf8', function (err, data) {
+
+    var
+      inflation = [];
+
+    data.split(/\n/).forEach(function (value) {
+      if (!value) return;
+      inflation.push(parseFloat(value));
+    });
+
+    for (var i = 0; i < inflation.length; i++) {
+      inflation[i] = 1;
+      for (var j = i+1; j < inflation.length; j++) {
+        inflation[i] = inflation[i] * (1 + inflation[j]/100);
+      }
+    }
+
+    for (var i = 1955; i <= 2010; i++) {
+      output.inflation[translate(i, YEAR)] = parseFloat(inflation[i - 1955].toPrecision(3));
+    }
+
+    console.log('F500.inflation = ');
+    console.log(output.inflation);
+  });
 });
 
 function process_line (line, index) {
@@ -107,4 +133,3 @@ function translate (value, type) {
 
   return Math.round(value);
 }
-
