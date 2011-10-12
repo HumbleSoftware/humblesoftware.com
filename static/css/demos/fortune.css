@@ -52,6 +52,7 @@
   display: none;
   color: #222;
   position: absolute;
+  margin-top: 54px;
 }
 .company-arrow {
   background: url('../../images/demos/fortune-arrow.png') top center no-repeat;
@@ -78,7 +79,7 @@
 .company .year {
   position: absolute;
   right: 6px;
-  top: 7px;
+  top: 15px;
 }
 .company .year .label {
   display: none;
