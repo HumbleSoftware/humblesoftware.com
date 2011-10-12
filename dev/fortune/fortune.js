@@ -25,7 +25,7 @@
       rank    : 1, 
       revenue : 2,
       profit  : 3
-    }
+    },
 
     C_MAP     = { // Chart Map
       year      : 0,
@@ -34,11 +34,13 @@
       iRevenue  : 5,
       profit    : 6,
       iProfit   : 7
-    }
+    },
 
     TRANSLATIONS = {
       year    : function (v) { return Math.round((v + .5) * (2011 - 1954) / 800 + 1954) },
-    }
+      revenue : format,
+      profit  : format 
+    },
 
     width     = 800,
     height    = 502,
@@ -53,6 +55,14 @@
     type      = RANK;
 
   init();
+
+  function format (v) {
+    if (v > 1000) {
+      return '$'+(Math.round(v/100)/10)+'b'; 
+    } else {
+      return '$'+(Math.round(10 * v)/10)+'m'; 
+    }
+  }
 
   function draw (type, increment) {
 
