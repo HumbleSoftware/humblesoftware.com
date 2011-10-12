@@ -69,6 +69,7 @@
   display: inline-block;
   width: auto;
   padding-bottom: 2px;
+  cursor: pointer;
 }
 .inflation input {
   position: relative;
