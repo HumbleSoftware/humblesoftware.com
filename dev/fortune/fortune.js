@@ -19,6 +19,7 @@
     I_PROFIT  = 'iProfit',
     REVENUE   = 'revenue',
     I_REVENUE = 'iRevenue',
+    PREVIOUS = 'previous',
     YEAR      = 'year',
 
     D_MAP     = { // Data Map
@@ -31,10 +32,11 @@
     C_MAP     = { // Chart Map
       year      : 0,
       rank      : 1, 
-      revenue   : 4,
-      iRevenue  : 5,
-      profit    : 6,
-      iProfit   : 7
+      previous  : 4,
+      revenue   : 5,
+      iRevenue  : 6,
+      profit    : 7,
+      iProfit   : 8
     },
 
     TRANSLATIONS = {
@@ -65,14 +67,25 @@
     }
   }
 
+  /**
+   * Main draw routine.
+   *
+   * This routine draws about the lines representing the data, about 27500 
+   * points at once and represents the main critical section.
+   *
+   * Optimizations include precalculating the data, array access vs. 
+   * refinement, and using a single path and stroke.
+   */
   function draw (type, increment) {
 
     var
       year    = C_MAP[YEAR],
       index   = C_MAP[type],
+      pIndex  = C_MAP[PREVIOUS],
       names   = F500.names,
       values  = F500.values,
       length1 = values.length,
+      dec     = 1 - increment,
       length2,
       data,
       nameWidth,
@@ -90,10 +103,10 @@
 
       for (j = 0; j < length2; j++) {
         x = data[j][year];
-        y = increment * data[j][index] + ( 1 - increment ) * (data[j].previous || data[j][index]) - .5;
+        data[j][pIndex] = y =
+          increment * data[j][index] + dec * (data[j][pIndex] || data[j][index]);
         context.moveTo(x - nameWidth, y);
         context.lineTo(x + nameWidth, y);
-        data[j].previous = y;
       }
     }
 
@@ -369,9 +382,23 @@
     context
       .strokeStyle = COLOR;
     context
+      .translate(0, -.5);
+    context
       .lineWidth = '1px';
   }
 
+  /**
+   * Precalculate revenue, price and inflation.
+   *
+   * Revenue and profit are stored as actual values (in millions).  This value
+   * is displayed to the user in the company popup.  To draw the data, these
+   * values need to be translated to their y coordinates.
+   *
+   * This translation is precalculated for speed at draw time and calculated
+   * client-side to keep the data size down.
+   *
+   * Run after first draw.
+   */
   function calculatePoints () {
 
     var
@@ -380,6 +407,7 @@
       rIndex    = D_MAP[REVENUE],
       pIndex    = D_MAP[PROFIT],
       yIndex    = D_MAP[YEAR],
+      rank      = D_MAP[RANK],
       values    = F500.values,
       inflation = F500.inflation,
       half      = height / 2,
