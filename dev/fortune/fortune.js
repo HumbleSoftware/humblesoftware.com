@@ -71,7 +71,9 @@
    * Main draw routine.
    *
    * This routine draws about the lines representing the data, about 27500 
-   * points at once and represents the main critical section.
+   * points at once and represents the main critical section.  Previous
+   * drawn values are remembered and used, together with the increment
+   * paramenter, to render frames of animation.
    *
    * Optimizations include precalculating the data, array access vs. 
    * refinement, and using a single path and stroke.
@@ -407,7 +409,6 @@
       rIndex    = D_MAP[REVENUE],
       pIndex    = D_MAP[PROFIT],
       yIndex    = D_MAP[YEAR],
-      rank      = D_MAP[RANK],
       values    = F500.values,
       inflation = F500.inflation,
       half      = height / 2,
