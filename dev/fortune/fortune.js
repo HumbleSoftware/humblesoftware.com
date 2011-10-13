@@ -158,6 +158,7 @@
       nameWidth = Math.max(name.length / 4, 3),
       values    = F500.values[selected.i],
       year      = C_MAP[YEAR],
+      previous  = C_MAP[PREVIOUS],
       typeIndex = C_MAP[type],
       x, y,
       i;
@@ -173,7 +174,7 @@
 
     for (i = 0; i < values.length; i++) {
       x = values[i][year];
-      y = increment * values[i][typeIndex] + ( 1 - increment ) * (values[i].previous || values[i][selected.i]);
+      y = increment * values[i][typeIndex] + ( 1 - increment ) * (values[i][previous] || values[i][selected.i]);
       context.moveTo(x - nameWidth, y);
       context.lineTo(x + nameWidth, y);
     }
