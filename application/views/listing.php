@@ -1,9 +1,7 @@
 <div class="listing">
-  <h3>Listing
-  <span class="file"><?php echo $name; ?></span>:
-    <span>
-      <a class="toggle">(hide)</a>
-    </span>
+  <h3>
+    <span class="file"><?php echo $name; ?></span>:
+    <span><a class="toggle">(hide)</a></span>
   </h3>
 
   <div class="snippet">
