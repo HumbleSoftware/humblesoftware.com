@@ -213,8 +213,9 @@
     var
       values  = F500.values[i][j],
       index   = C_MAP[type],
+      prev    = C_MAP[PREVIOUS],
       x       = values[C_MAP[YEAR]],
-      y       = increment * values[index] + ( 1 - increment ) * (values.previous || 0);
+      y       = increment * values[index] + ( 1 - increment ) * (values[prev] || 0);
 
     company.css({
       left : x - company.width() / 2,
