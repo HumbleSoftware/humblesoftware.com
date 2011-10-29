@@ -49,6 +49,19 @@ and development services, as well as maintain several projects.
 
         <div class="projectItem">
             <span class="title">
+                <a href="http://www.github.com/HumbleSoftware/js-imagediff/">js-imagediff</a>
+            </span>
+            <span class="icon">
+                <a href="http://www.github.com/HumbleSoftware/js-imagediff/"><img style="border: 0px;" alt="Sample image diff." src="<?php static_image(); ?>products/js-imagediff.png" /></a>
+            </span>
+            <span class="description">
+                A JS / Canvas imagediff utilitity.  Brings image diff to the browser and Canvas
+                unit testing to <a href="http://pivotal.github.com/jasmine/" alt="Jasmine BDD">Jasmine</a>.
+            </span>
+        </div>
+
+        <div class="projectItem">
+            <span class="title">
                 <a href="<?php echo base_url(); ?>helloreddit/home">HelloReddit</a>
             </span>
             <span class="icon">
