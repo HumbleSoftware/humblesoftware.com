@@ -18,12 +18,9 @@ class Demos extends CI_Controller {
     public function index()
     {
         $this->includes->css('demos.css');
-        $this->includes->js('demos/Trig.js');
-        $this->includes->js('demos/TrigDemo.js');
-
         $this->load->view('template', array(
             'includes' => $this->includes,
-            'title' => 'humble software development - demos',
+            'title' => 'humble software development - javascript demos',
             'page' => 'demos/demos',
             'category' => 'demos'
         ));
@@ -36,7 +33,7 @@ class Demos extends CI_Controller {
 
         $this->load->view('template', array(
             'includes' => $this->includes,
-            'title' => 'humble software development - demos',
+            'title' => 'humble software development - trig demo',
             'page' => 'demos/trig',
             'category' => 'demos'
         ));
@@ -50,7 +47,7 @@ class Demos extends CI_Controller {
 
         $this->load->view('template', array(
             'includes' => $this->includes,
-            'title' => 'humble software development - demos',
+            'title' => 'humble software development - d3 trig demo',
             'page' => 'demos/trig-d3',
             'category' => 'demos'
         ));
@@ -65,7 +62,7 @@ class Demos extends CI_Controller {
 
         $this->load->view('template', array(
             'includes' => $this->includes,
-            'title' => 'humble software development - fortune 500 demo',
+            'title' => 'humble software development - fortune 500 canvas visualization demo',
             'page' => 'demos/fortune',
             'category' => 'demos'
         ));
