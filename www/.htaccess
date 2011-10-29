@@ -1,5 +1,7 @@
 <IfModule mod_rewrite.c>
     RewriteEngine on
+    RewriteRule sitemap.xml static/files/sitemap.xml
+    RewriteRule sitemap.html static/files/sitemap.html
     RewriteCond $1 !^(movemytaxes|static|index\.php)
     RewriteRule ^(.*)$ index.php/$1
 </IfModule>

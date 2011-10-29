@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://www.humblesoftware.com/</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.humblesoftware.com/home</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.humblesoftware.com/projects</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.humblesoftware.com/demos</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.humblesoftware.com/contact</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.humblesoftware.com/finance/index</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.humblesoftware.com/movemytaxes/</loc>
+  <lastmod>2011-08-21T02:26:19+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.humblesoftware.com/helloreddit/home</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.humblesoftware.com/demos/fortune</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.humblesoftware.com/demos/trig</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.humblesoftware.com/demos/trig_d3</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.humblesoftware.com/finance/documentation</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.humblesoftware.com/finance/source</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.humblesoftware.com/finance/feedback</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.humblesoftware.com/helloreddit/features</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.humblesoftware.com/helloreddit/feedback</loc>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://www.humblesoftware.com/contact?subject=HumbleFinance%20Feedback</loc>
+  <changefreq>monthly</changefreq>
+</url>
+</urlset>
