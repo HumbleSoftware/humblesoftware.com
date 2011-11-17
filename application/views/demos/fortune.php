@@ -2,7 +2,7 @@
 
 <h2>Fortune 500 Demo</h2>
 
-<p id="summary" style="text-align: center;">
+<p class="summary" style="text-align: center;">
 As seen on <a href="http://fathom.info/fortune500/">Fathom</a>, done in Canvas and JavaScript.  Best viewed in Chrome or Firefox.  Click to select points; navigate with arrow keys.
 </p>
 

@@ -4,15 +4,6 @@
 .subTitle {
 	font-size: 16px;
 }
-#summary {
-	padding: 16px 24px;
-	margin: 20px 40px 40px 40px;
-    border: 1px solid #AACCFF;
-    border-radius: 24px;
-    -moz-border-radius: 24px;
-    -webkit-border-radius: 24px;
-	text-align: justify;
-}
 #subLinks {
 	width: 600px;
 	height: 20px;
