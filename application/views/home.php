@@ -19,7 +19,7 @@ and development services, as well as maintain several projects.
 
 		<h3>Projects:</h3>
 
-		<div class="projectItem">
+		<div class="project">
 			<span class="title">
 				<a href="<?php echo base_url(); ?>finance/index">HumbleFinance</a>
 			</span>
@@ -34,7 +34,7 @@ and development services, as well as maintain several projects.
 			</span>
 		</div>
 
-        <div class="projectItem">
+        <div class="project">
             <span class="title">
                 <a href="<?php echo base_url(); ?>movemytaxes/">Move My Taxes</a>
             </span>
@@ -47,7 +47,7 @@ and development services, as well as maintain several projects.
             </span>
 		</div>
 
-        <div class="projectItem">
+        <div class="project">
             <span class="title">
                 <a href="http://www.github.com/HumbleSoftware/js-imagediff/">js-imagediff</a>
             </span>
@@ -60,7 +60,7 @@ and development services, as well as maintain several projects.
             </span>
         </div>
 
-        <div class="projectItem">
+        <div class="project">
             <span class="title">
                 <a href="<?php echo base_url(); ?>helloreddit/home">HelloReddit</a>
             </span>
