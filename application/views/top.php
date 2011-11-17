@@ -3,7 +3,7 @@
 <head>
     <title><?php echo $title; ?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="description=" content="<?php echo isset($page_description) ? $page_description : 'Humble software development provides JavaScript, HTML5, Canvas and information search and retrieval software development.'; ?>" />
+    <meta name="description" content="<?php echo isset($page_description) ? $page_description : 'Humble software development provides JavaScript, HTML5, Canvas and information search and retrieval software development.'; ?>" />
     <link rel="icon" type="image/gif" href="<?php static_image(); ?>favicon.gif" />
     <link rel="stylesheet" type="text/css" href="<?php static_css(); ?>styles.css" />
     <link rel="stylesheet" type="text/css" href="<?php static_lib(); ?>google-code-prettify/prettify.css" />
