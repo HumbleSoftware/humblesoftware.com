@@ -35,7 +35,7 @@
             </span>
             <span class="description">
                 A JS / Canvas imagediff utilitity.  Brings image diff to the browser and Canvas
-                unit testing to <a href="http://pivotal.github.com/jasmine/" alt="Jasmine BDD">Jasmine</a>.
+                unit testing to <a href="http://pivotal.github.com/jasmine/">Jasmine</a>.
             </span>
         </div>
 
