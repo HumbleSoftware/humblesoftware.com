@@ -15,6 +15,15 @@ class Flotr2 extends CI_Controller {
         ));
 
     }
+    public function index()
+    {
+        $this->load->view('template', array(
+            'includes'          => $this->includes,
+            'title'             => 'flotr2',
+            'page'              => 'flotr2/index',
+            'page_description'  => 'Flotr 2 HTML5 and Canvas graphing library home page.'
+        ));
+    }
     public function examples()
     {
         $this->includes->css('flotr.css');
@@ -29,9 +38,9 @@ class Flotr2 extends CI_Controller {
 
         $this->load->view('template', array(
             'includes'          => $this->includes,
-            'title'             => 'flotr2',
+            'title'             => 'flotr2 - examples',
             'page'              => 'flotr2/examples',
-            'page_description'  => 'Flotr 2 HTML5 and Canvas graphing library.'
+            'page_description'  => 'Flotr 2 HTML5 and Canvas graphing library demos and examples page.'
         ));
     }
 }
