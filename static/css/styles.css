@@ -197,10 +197,19 @@ fieldset {
 /**
  * For Products
  */
-.project-summary {
-    padding-left: 20px;
-    margin: 0px 0px 32px 16px;
+.projects .project {
+    overflow: hidden;
+    margin: 0px 0px 40px 16px;
+}
+.projects .project .title {
+    font-size: 18px;
+    font-weight: bold;
+}
+.projects .project .description {
+    display: block;
     background: url('../images/leftshadow.gif') repeat-y;
+    padding-left: 20px;
+    margin-top: 12px;
 }
 .projects .icon img {
     border: 1px solid #dddddd;
@@ -208,7 +217,6 @@ fieldset {
 .projects .icon {
     float: right;
     width : 200px;
-    margin-top : -28px;
     text-align : center;
 }
 /**
