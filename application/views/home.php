@@ -24,6 +24,3 @@ and development services, as well as maintain several projects.
 	</div>
 	<div class="footer"></div>
 </div>
-
-    </div>
-</div>
