@@ -31,7 +31,6 @@ $().ready(function () {
         top : top,
         height : page.height() - 22 - top
       });
-      console.log(top);
       Examples.options.thumbPadding = top + 22
     }
   }
