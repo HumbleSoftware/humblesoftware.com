@@ -21,7 +21,7 @@
                 <a href="<?php echo base_url(); ?>movemytaxes/"><img alt="Project: Move My Taxes" src="<?php static_image(); ?>products/movemytaxes-icon.jpg" /></a>
             </span>
             <span class="description">
-                Move My Taxes was created for the <a href="http://www.datavizchallenge.org" alt="DataVizChallenge">
+                Move My Taxes was created for the <a href="http://www.datavizchallenge.org">
                 Data Viz Challenge</a>.
             </span>
 		</div>
