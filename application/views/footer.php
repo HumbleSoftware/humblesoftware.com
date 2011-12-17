@@ -7,7 +7,7 @@
             
         </span>
         <span class="validation">
-            <a href="<?php echo base_url(); ?>home">home</a> | <a href="<?php echo base_url(); ?>terms">terms</a> | <a href="http://validator.w3.org/check?uri=referer">valid xhtml</a>
+            <a href="<?php echo base_url(); ?>home">home</a> | <a href="<?php echo base_url(); ?>terms">terms</a> | <a href="http://validator.w3.org/check?uri=referer">valid html5</a>
         </span>
          - 
         <span class="copyright">

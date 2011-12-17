@@ -1,3 +1,3 @@
 <div id="header-container"><div id="header">
-  <a href="<?php base_url(); ?>helloreddit/home" >HelloReddit</a>
+  <a href="<?php base_url(); ?>home" >HelloReddit</a>
 </div></div>

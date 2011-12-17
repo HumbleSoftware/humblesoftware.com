@@ -166,28 +166,29 @@ fieldset {
 .home #homeSummary {
     margin-top: 32px;
 }
-.home #homeProjects {
-}
-.home .title, .description {
-    display: block;
-}
-.home .projectItem {
-    width : 376px;
+.home .project {
+    width : 360px;
     float : left;
-    margin-left: 24px;
+    margin: 0px 20px 28px 20px;
+    position: relative;
+    overflow: hidden;
 }
-.home .projectItem .icon {
-    float: left;
-    margin: 4px 12px 4px 0px;
+.home .project .title {
+    position: absolute;
+    left: 0px;
+    top: 0px;
 }
-.home .projectItem .icon img {
+.home .project .icon {
+    margin-left: 8px;
+    float: right;
+}
+.home .project .icon img {
     border: 1px solid #dddddd;
 }
-.home .projectItem .description {
+.home .project .description {
+    display: block;
+    margin-top: 32px;
     font-size: 14px;
-}
-.home .projectItem .title {
-    margin-bottom: 8px;
 }
 .home .footer {
     clear: both;
@@ -196,10 +197,19 @@ fieldset {
 /**
  * For Products
  */
-.project-summary {
-    padding-left: 20px;
-    margin: 0px 0px 32px 16px;
+.projects .project {
+    overflow: hidden;
+    margin: 0px 0px 40px 16px;
+}
+.projects .project .title {
+    font-size: 18px;
+    font-weight: bold;
+}
+.projects .project .description {
+    display: block;
     background: url('../images/leftshadow.gif') repeat-y;
+    padding-left: 20px;
+    margin-top: 12px;
 }
 .projects .icon img {
     border: 1px solid #dddddd;
@@ -207,7 +217,6 @@ fieldset {
 .projects .icon {
     float: right;
     width : 200px;
-    margin-top : -28px;
     text-align : center;
 }
 /**

@@ -1,3 +1,5 @@
+<?php $this->load->view('projects/list.php'); ?>
+<?php /*
 <h2 class="project-title"><a href="<?php echo base_url(); ?>finance/index">HumbleFinance</a></h2>
 
 <div class="project-summary">
@@ -62,3 +64,5 @@
 	</p>
 </div>
 
+*/
+?>
