@@ -8,9 +8,9 @@ and development services, as well as maintain several projects.
 <div id="homeServices">
     <h3>Our expertise include:</h3>
     <ul>
-        <li>JavaScript/HTML5 Application Development</li>
-        <li>Dynamic Data Visualization in Canvas and SVG</li>
-        <li>Search/Information Retrieval Backends</li>
+        <li>JavaScript/HTML5 application development</li>
+        <li>Dynamic data visualization in Canvas and SVG</li>
+        <li>Search/information retrieval backends</li>
     </ul>
 </div>
 
