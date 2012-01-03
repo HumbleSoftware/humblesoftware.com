@@ -1,2 +1,3 @@
 application/config/config.php
 www_dev/movemytaxes
+*.swp
