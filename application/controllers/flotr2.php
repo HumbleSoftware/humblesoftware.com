@@ -14,18 +14,6 @@ class Flotr2 extends CI_Controller {
             'static'
         ));
 
-    }
-    public function index()
-    {
-        $this->load->view('template', array(
-            'includes'          => $this->includes,
-            'title'             => 'flotr2',
-            'page'              => 'flotr2/index',
-            'page_description'  => 'Flotr 2 HTML5 and Canvas graphing library home page.'
-        ));
-    }
-    public function examples()
-    {
         $this->includes->css('flotr.css');
         $this->includes->js(array(
             'flotr2/flotr2.min.js',
@@ -36,11 +24,18 @@ class Flotr2 extends CI_Controller {
             'flotr2/driver.js'
         ));
 
-        $this->load->view('template', array(
+        $this->data = array(
             'includes'          => $this->includes,
-            'title'             => 'flotr2 - examples',
-            'page'              => 'flotr2/examples',
-            'page_description'  => 'Flotr 2 HTML5 and Canvas graphing library demos and examples page.'
-        ));
+            'template_header'   => 'flotr2/header',
+            'template_links'    => 'flotr2/links'
+        );
+    }
+    public function index()
+    {
+        $this->load->view('template', array_merge($this->data, array(
+            'title'             => 'flotr2',
+            'page'              => 'flotr2/index',
+            'page_description'  => 'Flotr 2 HTML5 and Canvas graphing library home page.'
+        )));
     }
 }
