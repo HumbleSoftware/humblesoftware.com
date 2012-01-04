@@ -1,7 +1,4 @@
 <ul>
-  <li>
-    <a href="<?php echo base_url(); ?>"><span>humble software</span></a>
-  </li>
   <li<?php echo ($financePage == 'index' ? ' class="current-page"' : ''); ?>>
     <a href="<?php echo base_url(); ?>finance/index"><span>demo</span></a>
   </li>
@@ -13,6 +10,9 @@
   </li>
   <li<?php echo ($financePage == 'feedback' ? ' class="current-page"' : ''); ?>>
     <a href="<?php echo base_url(); ?>finance/feedback"><span>feedback</span></a>
+  </li>
+  <li>
+    <a href="<?php echo base_url(); ?>"><span>humble software</span></a>
   </li>
 </ul>
 
