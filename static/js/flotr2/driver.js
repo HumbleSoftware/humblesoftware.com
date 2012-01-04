@@ -17,7 +17,7 @@ $().ready(function () {
     .resize(handleResizeSize);
 
   function handleScrollSize () {
-    if (examples.hasClass('flotr-examples-large') || examples.hasClass('flotr-examples-medium')) {
+    if (examples.hasClass('flotr-examples-collapsed') && (examples.hasClass('flotr-examples-large') || examples.hasClass('flotr-examples-medium'))) {
       if (_.isNull(offset)) {
         offset = parseInt(thumbs.css('top'));
         if (_.isNaN(offset)) {
