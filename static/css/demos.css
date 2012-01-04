@@ -13,24 +13,6 @@
     -webkit-border-radius: 24px;
 	text-align: justify;
 }
-#subLinks {
-	width: 600px;
-	height: 20px;
-	margin: 32px auto;
-    text-align: center;
-}
-#sublinks ul {
-	display: inline;
-	margin: 0px auto;
-}
-#subLinks li {
-    width: 150px;
-	float: left;
-}
-#subLinks li.currentPage {
-	font-weight: bold;
-}
-
 #finance {
 	position: relative;
     margin: 40px 0px;
