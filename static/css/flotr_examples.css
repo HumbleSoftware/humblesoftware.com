@@ -1,0 +1,9 @@
+/* HSD */
+#content {
+  width: auto;
+}
+
+.flotr-examples-medium .flotr-examples-thumbs,
+.flotr-examples-large .flotr-examples-thumbs {
+    overflow-x: hidden;
+}
