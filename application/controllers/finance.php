@@ -28,38 +28,40 @@ class Finance extends CI_Controller {
             'finance/demo.js'
         ));
 
+        $this->data = array(
+            'includes'          => $this->includes,
+            'template_header'   => 'finance/header',
+            'template_links'    => 'finance/links'
+        );
     }
     public function index()
     {
-        $this->load->view('template', array(
-            'includes'          => $this->includes,
+        $this->load->view('template', array_merge($this->data, array(
             'title'             => 'humble finance - html5 visualization',
             'page'              => 'finance/index',
             'page_description'  => 'HumbleFinance is a HTML5 and Canvas finance visualization tool written in JavaScript.',
             'financePage'       => 'index'
-        ));
+        )));
     }
 
     public function documentation()
     {
-        $this->load->view('template', array(
-            'includes'          => $this->includes,
+        $this->load->view('template', array_merge($this->data, array(
             'title'             => 'humble finance - documentation',
             'page'              => 'finance/documentation',
             'page_description'  => 'Documentation for the HumbleFinance HTML5 finance visualization tool.',
             'financePage'       => 'documentation'
-        ));
+        )));
     }
 
     public function source()
     {
-        $this->load->view('template', array(
-            'includes'          => $this->includes,
+        $this->load->view('template', array_merge($this->data, array(
             'title'             => 'humble finance - source',
             'page'              => 'finance/source',
             'page_description'  => 'Source code for the HumbleFinance HTML5 finance visualization tool.',
             'financePage'       => 'source'
-        ));
+        )));
     }
 
     public function feedback()
@@ -68,22 +70,20 @@ class Finance extends CI_Controller {
 
         if ($this->feedback->validate()) {
             $this->feedback->send();
-            $this->load->view('template', array(
-                'includes'      => $this->includes,
-                'title'         => 'humble finance - feedback',
-                'page'          => 'finance/feedback_thankyou',
-                'name'          => $this->input->post('name'),
-                'financePage'   => 'feedback'
-            ));
+            $this->load->view('template', array_merge($this->data, array(
+                'title'             => 'humble finance - feedback',
+                'page'              => 'finance/feedback_thankyou',
+                'name'              => $this->input->post('name'),
+                'financePage'       => 'feedback',
+            )));
         } else {
-            $this->load->view('template', array(
-                'includes'      => $this->includes,
-                'title'         => 'humble finance - feedback',
-                'page'          => 'finance/feedback',
-                'financePage'   => 'feedback',
-                'recaptcha'     => $this->recaptcha->get_html(),
-                'subject'       => 'Humble Finance Feedback'
-            ));
+            $this->load->view('template', array_merge($this->data, array(
+                'title'             => 'humble finance - feedback',
+                'page'              => 'finance/feedback',
+                'financePage'       => 'feedback',
+                'recaptcha'         => $this->recaptcha->get_html(),
+                'subject'           => 'Humble Finance Feedback',
+            )));
         }
     }
 

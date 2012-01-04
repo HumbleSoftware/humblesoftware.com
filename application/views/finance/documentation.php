@@ -1,5 +1,3 @@
-<?php $this->load->view('finance/links.php'); ?>
-
 <h3>About</h3>
 <p>
 HumbleFinance is an HTML5 data visualization tool similar to the Flash tool on 

@@ -1,5 +1,3 @@
-<?php $this->load->view('finance/links.php'); ?>
-
 <p>
 HumbleFinance is an open source project distributed under the MIT License.  It is hosted on <a href="http://github.com/HumbleSoftware/HumbleVisualization" alt="GitHub">GitHub</a>.
 <a href="<?php echo base_url(); ?>contact?subject=HumbleFinance%20Feedback#Feedback">Feedback</a> is welcome!
