@@ -1,5 +1,3 @@
-<?php $this->load->view('finance/links.php'); ?>
-
 <p class="summary">
 HumbleFinance is an HTML5 data visualization tool written as a demonstration
 of interactive graphing in HTML5.  It is similar to the Flash tool on 
