@@ -14,7 +14,6 @@ class Flotr2 extends CI_Controller {
             'static'
         ));
 
-        $this->includes->css('flotr.css');
         $this->includes->js(array(
             'flotr2/flotr2.min.js',
             'flotr2/flotr2.examples.min.js',
@@ -32,10 +31,31 @@ class Flotr2 extends CI_Controller {
     }
     public function index()
     {
+        $this->includes->css('flotr.css');
         $this->load->view('template', array_merge($this->data, array(
             'title'             => 'flotr2',
             'page'              => 'flotr2/index',
             'page_description'  => 'Flotr 2 HTML5 and Canvas graphing library home page.'
         )));
+    }
+    public function feedback()
+    {
+        $this->load->library('feedback', array('label'=>'flotr2'));
+
+        if ($this->feedback->validate()) {
+            $this->feedback->send();
+            $this->load->view('template', array_merge($this->data, array(
+                'title'             => 'flotr2 - feedback',
+                'page'              => 'flotr2/feedback_thankyou',
+                'name'              => $this->input->post('name')
+            )));
+        } else {
+            $this->load->view('template', array_merge($this->data, array(
+                'title'             => 'flotr2 - feedback',
+                'page'              => 'flotr2/feedback',
+                'recaptcha'         => $this->recaptcha->get_html(),
+                'subject'           => 'Flotr2 Feedback'
+            )));
+        }
     }
 }
