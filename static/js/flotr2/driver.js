@@ -35,11 +35,16 @@ $().ready(function () {
     }
   }
 
+  thumbs.css({
+    height : 'auto'
+  });
+
   function handleResizeSize () {
-    if (examples.hasClass('flotr-examples-large') || examples.hasClass('flotr-examples-medium')) {
+    if (examples.hasClass('flotr-examples-collapsed') && (examples.hasClass('flotr-examples-large') || examples.hasClass('flotr-examples-medium'))) {
       handleScrollSize();
     } else {
       thumbs.css({
+        height : 'auto',
         top : 'auto'
       });
     }
