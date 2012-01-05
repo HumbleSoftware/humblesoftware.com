@@ -2,7 +2,7 @@
 body, html { height: 100%; }
 body {
     color: #333333;
-    font-family: verdana,sans-serif;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
     padding: 0px;
     margin: 0px;
 }
@@ -44,7 +44,9 @@ fieldset {
 }
 #header {
     background: url('../images/shadow.gif') repeat-x bottom;
-    font-size: 2em;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 #E0E0E0;
     padding: 24px 0px 52px 0px;
     text-align: center;
 }
