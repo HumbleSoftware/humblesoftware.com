@@ -39,6 +39,14 @@ class Flotr2 extends CI_Controller {
             'page_description'  => 'Flotr 2 HTML5 and Canvas graphing library home page.'
         )));
     }
+    public function documentation()
+    {
+        $this->load->view('template', array_merge($this->data, array(
+            'title'             => 'flotr2',
+            'page'              => 'flotr2/documentation',
+            'page_description'  => 'Flotr 2 usage and documentation.'
+        )));
+    }
     public function feedback()
     {
         $this->load->library('feedback', array('label'=>'flotr2'));
