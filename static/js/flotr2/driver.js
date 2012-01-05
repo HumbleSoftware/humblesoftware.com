@@ -35,9 +35,7 @@ $().ready(function () {
     }
   }
 
-  thumbs.css({
-    height : 'auto'
-  });
+  handleResizeSize();
 
   function handleResizeSize () {
     if (examples.hasClass('flotr-examples-collapsed') && (examples.hasClass('flotr-examples-large') || examples.hasClass('flotr-examples-medium'))) {
