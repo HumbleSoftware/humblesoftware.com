@@ -157,16 +157,13 @@ fieldset {
     top: 42%;
     width: 100%;
 }
+
 /**
  * For home screen
  */
 .home p.summary {
     text-indent: 2em;
-    padding: 12px 48px 24px 48px;
     font-size: 17px;
-}
-.home #homeSummary {
-    margin-top: 32px;
 }
 .home .project {
     width : 360px;
