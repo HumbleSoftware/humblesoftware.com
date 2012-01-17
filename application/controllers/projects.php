@@ -5,6 +5,10 @@ class Projects extends CI_Controller {
     {
         parent::__construct();
 
+        $this->load->library(array(
+            'includes'
+        ));
+
         $this->load->helper(array(
             'url',
             'static'
@@ -13,7 +17,13 @@ class Projects extends CI_Controller {
     }
 	public function index()
 	{
+        $this->includes->js(array(
+            'projects.js',
+            'flotr2/flotr2.min.js'
+        ));
+
         $this->load->view('template', array(
+            'includes' => $this->includes,
             'title' => 'humble software development - projects',
             'page' => 'projects'
         ));
