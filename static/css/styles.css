@@ -166,9 +166,9 @@ fieldset {
     font-size: 17px;
 }
 .home .project {
-    width : 360px;
-    float : left;
-    margin: 0px 20px 28px 20px;
+    width: 360px;
+    float : right;
+    margin: 0px 6px 28px 20px;
     position: relative;
     overflow: hidden;
 }
@@ -192,9 +192,15 @@ fieldset {
 .home .footer {
     clear: both;
 }
+.home .projects-list {
+  background: url('../images/leftshadow.gif') repeat-y;
+  overflow: hidden;
+  background-position : center 0px;
+}
+
 
 /**
- * For Products
+ * For Projects
  */
 .projects .project {
     overflow: hidden;
@@ -218,6 +224,52 @@ fieldset {
     width : 200px;
     text-align : center;
 }
+a.project-flotr-demo-link {
+  text-decoration: none;
+}
+
+/* Featured Project */
+
+.project.wide .description {
+  background: none;
+  padding-left: 0px;
+}
+.project.wide li {
+  margin-left: 40px;
+  list-style: circle;
+}
+.project.wide .features {
+  float: left;
+}
+.project-flotr-demo {
+  cursor: pointer !important;
+}
+.projects .project-flotr-demo {
+  width: 480px;
+  height: 320px;
+  float: right;
+  margin-right: 20px;
+}
+.home .project-flotr-demo {
+  width: 328px;
+  height: 246px;
+  margin: 14px auto 2px;
+}
+.home .project.wide .title {
+  font-weight: bold;
+}
+.home .project.wide {
+  padding-bottom: 12px;
+  float: left;
+}
+.home .project.wide li {
+  font-size: 14px;
+}
+.project.wide .flotr-mouse-value {
+  font-size: 14px;
+}
+
+
 /**
  * Contact
  */

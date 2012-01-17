@@ -1,3 +1,26 @@
+		<div class="project wide">
+			<span class="title">
+				New: <a href="<?php echo base_url(); ?>flotr2/index">Flotr2</a>
+			</span>
+			<span class="description">
+                A modern graphing library for Canvas written in JavaScript.
+			</span>
+            <a class="project-flotr-demo-link" title="flotr examples" href="<?php echo base_url(); ?>flotr2/index">
+                <div class="project-flotr-demo"></div>
+            </a>
+            <div class="features">
+                <p>Features:</p>
+                <ul>
+                    <li>mobile support</li>
+                    <li>framework independent</li>
+                    <li>performance</li>
+                    <li>lines, bars, bubbles and more</li>
+                    <li>extensible plugin framework</li>
+                    <li>FF, Chrome, IE6+</li>
+                </ul>
+            </div>
+		</div>
+
 		<div class="project">
 			<span class="title">
 				<a href="<?php echo base_url(); ?>finance/index">HumbleFinance</a>
