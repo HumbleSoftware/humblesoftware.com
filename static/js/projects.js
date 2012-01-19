@@ -1,7 +1,72 @@
 $(function () {
   var
-    container = $('.project-flotr-demo')[0];
+    a = $('.project-flotr-demo.a'),
+    b = $('.project-flotr-demo.b'),
+    link = $('.project-flotr-demo-link'),
+    href = link.attr('href'),
+    examples = [
+      'basic',
+      'basic-bars',
+      'basic-bars-horizontal',
+      'basic-bar-stacked',
+      'basic-axis',
+      'basic-pie',
+      'basic-candle',
+      'basic-bubble',
+      'basic-radar',
+      'color-gradients',
+      'negative-values'
+    ],
+    fadeTime = 300,
+    interval = 3000,
+    index = 1;
 
+  b.css({
+    'visibility' : 'hidden',
+    'opacity' : 0
+  });
+
+  execute(examples[0], a[0]);
+  execute(examples[1], b[0]);
+  setLink(examples[0]);
+
+  setInterval(function () {
+    a.fadeOut(fadeTime, function () {
+      b.css({
+        'display' : 'none',
+        'opacity' : 1,
+        'visibility' : 'visible'
+      });
+      setLink(examples[index]);
+      b.fadeIn(fadeTime, function () {
+        var
+          swap = b;
+        index++;
+        if (index >= examples.length) index = 0;
+        b = a;
+        a = swap;
+        b.css({
+          'visibility' : 'hidden',
+          'display' : 'block',
+          'opacity' : 0
+        });
+        execute(examples[index], b[0]);
+      });
+    });
+  }, interval);
+
+  function execute(example, container) {
+    example = Flotr.ExampleList.examples[example];
+    example.callback.apply(
+      null, [container].concat(example.args) || [container]
+    );
+  }
+
+  function setLink (key) {
+    link.attr('href', href + '#!' + key);
+  }
+
+  /*
   if (container) {
     var
       d1 = [],
@@ -68,5 +133,5 @@ $(function () {
         verticalLines : false
       }
     });
-  }
+  }*/
 });

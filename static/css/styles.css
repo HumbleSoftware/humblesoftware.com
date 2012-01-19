@@ -244,16 +244,28 @@ a.project-flotr-demo-link {
 .project-flotr-demo {
   cursor: pointer !important;
 }
+.projects .project.wide {
+  position: relative;
+  height: 400px;
+}
 .projects .project-flotr-demo {
   width: 480px;
   height: 320px;
-  float: right;
-  margin-right: 20px;
+  position: absolute !important;
+  right: 0px;
+  margin: 20px 24px 0px 0px;
 }
 .home .project-flotr-demo {
   width: 328px;
   height: 246px;
-  margin: 14px auto 2px;
+  position: absolute !important;
+  left: 50%;
+  margin: 14px 0px 2px -164px;
+}
+.home .project-flotr-demo-link {
+  display: block;
+  margin: 14px 0px;
+  height: 246px;
 }
 .home .project.wide .title {
   font-weight: bold;

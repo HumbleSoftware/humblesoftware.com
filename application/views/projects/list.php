@@ -6,7 +6,8 @@
                 A modern graphing library for Canvas written in JavaScript.
 			</span>
             <a class="project-flotr-demo-link" title="flotr examples" href="<?php echo base_url(); ?>flotr2/index">
-                <div class="project-flotr-demo"></div>
+                <div class="project-flotr-demo a"></div>
+                <div class="project-flotr-demo b"></div>
             </a>
             <div class="features">
                 <p>Features:</p>
