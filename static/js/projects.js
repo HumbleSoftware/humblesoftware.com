@@ -46,7 +46,6 @@ $(function () {
       timeout = setTimeout(intervalCallback, interval - 2 * fadeTime);
   });
 
-
   function swapGraphs () {
     a.fadeOut(fadeTime, function () {
       b.css({
@@ -77,6 +76,7 @@ $(function () {
     example.callback.apply(
       null, [container].concat(example.args) || [container]
     );
+    $(container).attr('title', 'Example: ' + example.name);
   }
 
   function setLink (key) {
