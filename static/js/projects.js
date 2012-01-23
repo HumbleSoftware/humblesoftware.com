@@ -18,9 +18,11 @@ $(function () {
       'negative-values'
     ],
     fadeTime = 300,
-    interval = 3000,
-    index = 1;
+    interval = 3400,
+    index = 1,
+    timeout;
 
+  // Init
   b.css({
     'visibility' : 'hidden',
     'opacity' : 0
@@ -30,7 +32,22 @@ $(function () {
   execute(examples[1], b[0]);
   setLink(examples[0]);
 
-  setInterval(function () {
+  // Rotation
+  function intervalCallback () {
+    swapGraphs();
+    timeout = setTimeout(intervalCallback, interval);
+  }
+  timeout = setTimeout(intervalCallback, interval - 2 * fadeTime);
+
+  // Hover pause rotation
+  link.hover(function () {
+      clearTimeout(timeout);
+    }, function () {
+      timeout = setTimeout(intervalCallback, interval - 2 * fadeTime);
+  });
+
+
+  function swapGraphs () {
     a.fadeOut(fadeTime, function () {
       b.css({
         'display' : 'none',
@@ -53,7 +70,7 @@ $(function () {
         execute(examples[index], b[0]);
       });
     });
-  }, interval);
+  }
 
   function execute(example, container) {
     example = Flotr.ExampleList.examples[example];
