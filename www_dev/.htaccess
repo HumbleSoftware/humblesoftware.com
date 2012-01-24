@@ -2,6 +2,9 @@
     RewriteEngine on
     RewriteRule sitemap.xml static/files/sitemap.xml
     RewriteRule sitemap.html static/files/sitemap.html
+    # Flotr Images:
+    RewriteRule flotr2/images/(.*) static/images/$1
+    # CI:
     RewriteCond $1 !^(movemytaxes|static|index\.php)
     RewriteRule ^(.*)$ index.php/$1
 </IfModule>
