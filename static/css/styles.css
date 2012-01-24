@@ -273,6 +273,7 @@ a.project-flotr-demo-link {
 .home .project.wide {
   padding-bottom: 12px;
   float: left;
+  overflow: visible;
 }
 .home .project.wide li {
   font-size: 14px;
