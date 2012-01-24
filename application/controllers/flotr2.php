@@ -17,11 +17,8 @@ class Flotr2 extends CI_Controller {
         $this->includes->css('flotr.css');
         $this->includes->js(array(
             'flotr2/flotr2.min.js',
-            'flotr2/flotr2.examples.min.js',
             'flotr2/flotr2.examples.types.js',
-            'flotr2/beautify.js',
-            'flotr2/randomseed.js',
-            'flotr2/driver.js'
+            'flotr2/beautify.js'
         ));
 
         $this->data = array(
@@ -32,6 +29,11 @@ class Flotr2 extends CI_Controller {
     }
     public function index()
     {
+        $this->includes->js(array(
+            'flotr2/flotr2.examples.min.js',
+            'flotr2/randomseed.js',
+            'flotr2/driver.js'
+        ));
         $this->includes->css('flotr_examples.css');
         $this->load->view('template', array_merge($this->data, array(
             'title'             => 'flotr2',
