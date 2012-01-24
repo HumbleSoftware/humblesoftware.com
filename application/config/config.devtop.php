@@ -19,7 +19,7 @@ $config['admin_email'] = 'carl@humblesoftware.com';
 |	http://example.com/
 |
 */
-$config['base_url']	= "http://devtop/hsd/";
+$config['base_url']	= "/hsd/";
 
 /*
 |--------------------------------------------------------------------------
