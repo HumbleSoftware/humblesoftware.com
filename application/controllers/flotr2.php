@@ -69,4 +69,7 @@ class Flotr2 extends CI_Controller {
             )));
         }
     }
+    public function example () {
+        $this->load->view('flotr2/example');
+    }
 }
