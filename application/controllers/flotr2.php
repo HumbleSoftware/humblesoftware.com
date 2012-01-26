@@ -43,6 +43,17 @@ class Flotr2 extends CI_Controller {
     }
     public function documentation()
     {
+        $this->includes->css(array(
+            '../lib/codemirror/lib/codemirror.css'
+        ));
+        $this->includes->js(array(
+            '../lib/codemirror/lib/codemirror.js',
+            '../lib/codemirror/mode/javascript/javascript.js',
+            '../lib/codemirror/mode/htmlmixed/htmlmixed.js',
+            '../lib/codemirror/mode/css/css.js',
+            '../lib/codemirror/mode/xml/xml.js',
+            'flotr2/documentation.js'
+        ));
         $this->load->view('template', array_merge($this->data, array(
             'title'             => 'flotr2',
             'page'              => 'flotr2/documentation',
