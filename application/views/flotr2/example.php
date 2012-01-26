@@ -6,9 +6,9 @@
         padding: 0px;
       }
       #container {
-        width : 640px;
-        height: 400px;
-        margin: 0px auto;
+        width : 600px;
+        height: 384px;
+        margin: 8px auto;
       }
     </style>
   </head>
@@ -33,7 +33,7 @@
         graph = Flotr.draw(container, [ d1, d2 ], {
           xaxis: {
             minorTickFreq: 4
-          }, 
+          },
           grid: {
             minorVerticalLines: true
           }
