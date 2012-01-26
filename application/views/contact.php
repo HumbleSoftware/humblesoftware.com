@@ -1,4 +1,4 @@
-<h3>Contact:</h3>
+<h2>Contact:</h2>
 
 <span class="label">Email</span><span id="contactEmail">carl [at] this domain name . com</span>
 

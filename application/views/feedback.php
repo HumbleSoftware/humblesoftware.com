@@ -1,5 +1,5 @@
 <div class="feedback">
-  <h3><a name="Feedback"></a>Feedback:</h3>
+  <h2><a name="Feedback"></a>Feedback:</h2>
 
   <?php echo form_open(base_url().$page); ?>
     <div class="errors"><?php echo validation_errors(); ?></div>
