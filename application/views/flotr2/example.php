@@ -14,7 +14,7 @@
   </head>
   <body>
     <div id="container">
-    <script type="text/javascript" src="<?php static_js(); ?>flotr2/flotr2.min.js"></script>
+    <script type="text/javascript" src="<?php static_lib(); ?>flotr2/flotr2.min.js"></script>
     <script type="text/javascript">
       (function () {
 
