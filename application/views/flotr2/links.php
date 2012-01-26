@@ -5,11 +5,11 @@
   <li<?php echo ($page == 'flotr2/documentation' ? ' class="current-page"' : ''); ?>>
     <a href="<?php echo base_url(); ?>flotr2/documentation"><span>documentation</span></a>
   </li>
-  <li<?php echo ($page == 'flotr2/source' ? ' class="current-page"' : ''); ?>>
-    <a href="http://www.github.com/HumbleSoftware/Flotr2"><span>source</span></a>
-  </li>
   <li<?php echo ($page == 'flotr2/feedback' ? ' class="current-page"' : ''); ?>>
     <a href="<?php echo base_url(); ?>flotr2/feedback"><span>feedback</span></a>
+  </li>
+  <li<?php echo ($page == 'flotr2/source' ? ' class="current-page"' : ''); ?>>
+    <a href="http://www.github.com/HumbleSoftware/Flotr2"><span>source</span></a>
   </li>
   <li>
     <a href="<?php echo base_url(); ?>"><span>humble software</span></a>
