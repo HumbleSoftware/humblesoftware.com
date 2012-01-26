@@ -1,10 +1,11 @@
 /* HSD */
 #content {
   width: auto;
+  position: relative;
 }
 
 .flotr-examples-reset {
-    margin-top: 160px;
+    margin-top: 22px;
 }
 
 .flotr-examples-medium .flotr-examples-thumbs,
