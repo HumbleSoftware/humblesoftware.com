@@ -1,7 +1,9 @@
 $(function () {
+  var
+    Editor = Flotr.Examples.Editor;
 
   $.get('example', function (response) {
-    editor($('.editor.basic'), {
+    new Editor($('.editor.basic'), {
       example : response,
       type : 'html'
     });
