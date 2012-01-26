@@ -19,8 +19,8 @@ class Home extends CI_Controller {
 	{
         $this->includes->js(array(
             'projects.js',
-            'flotr2/flotr2.min.js',
-            'flotr2/flotr2.examples.types.js'
+            '../lib/flotr2/flotr2.min.js',
+            '../lib/flotr2/flotr2.examples.types.js'
         ));
 
         $this->load->view('template', array(

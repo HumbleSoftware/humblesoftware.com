@@ -4,7 +4,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="<?php static_lib(); ?>google-code-prettify/prettify.js"></script>
 <!--[if lt IE 9]>
-<script src="<?php static_js(); ?>flotr2/flotr2.ie.min.js"></script>
+<script src="<?php static_lib(); ?>flotr2/flotr2.ie.min.js"></script>
 <![endif]-->
 <script src="<?php static_js(); ?>HSD.js"></script>
 <?php if (isset($includes)): foreach ($includes->getJS() as $script) { ?>

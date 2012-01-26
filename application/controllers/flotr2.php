@@ -16,9 +16,14 @@ class Flotr2 extends CI_Controller {
 
         $this->includes->css('flotr.css');
         $this->includes->js(array(
-            'flotr2/flotr2.min.js',
-            'flotr2/flotr2.examples.types.js',
-            'flotr2/beautify.js'
+            '../lib/codemirror/lib/codemirror.js',
+            '../lib/codemirror/mode/javascript/javascript.js',
+            '../lib/codemirror/mode/htmlmixed/htmlmixed.js',
+            '../lib/codemirror/mode/css/css.js',
+            '../lib/codemirror/mode/xml/xml.js',
+            '../lib/flotr2/flotr2.min.js',
+            '../lib/flotr2/flotr2.examples.types.js',
+            '../lib/flotr2/examples/lib/beautify.js'
         ));
 
         $this->data = array(
@@ -30,8 +35,8 @@ class Flotr2 extends CI_Controller {
     public function index()
     {
         $this->includes->js(array(
-            'flotr2/flotr2.examples.min.js',
-            'flotr2/randomseed.js',
+            '../lib/flotr2/flotr2.examples.min.js',
+            '../lib/flotr2/examples/lib/randomseed.js',
             'flotr2/driver.js'
         ));
         $this->includes->css('flotr_examples.css');
@@ -47,11 +52,7 @@ class Flotr2 extends CI_Controller {
             '../lib/codemirror/lib/codemirror.css'
         ));
         $this->includes->js(array(
-            '../lib/codemirror/lib/codemirror.js',
-            '../lib/codemirror/mode/javascript/javascript.js',
-            '../lib/codemirror/mode/htmlmixed/htmlmixed.js',
-            '../lib/codemirror/mode/css/css.js',
-            '../lib/codemirror/mode/xml/xml.js',
+            '../lib/flotr2/examples/js/Editor.js',
             'flotr2/documentation.js'
         ));
         $this->load->view('template', array_merge($this->data, array(
