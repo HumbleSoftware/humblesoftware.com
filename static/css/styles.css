@@ -87,7 +87,8 @@ fieldset {
 #content {
     clear: both;
     margin: 0px auto 22px;
-    padding: 40px 0px 32px 0px;
+    padding-bottom: 32px;
+    margin-top: 24px;
     width: 800px;
 }
 
