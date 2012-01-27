@@ -6,6 +6,7 @@
     <meta name="description" content="<?php echo isset($page_description) ? $page_description : 'Humble software development provides JavaScript, HTML5, Canvas and information search and retrieval software development.'; ?>" />
     <link rel="icon" type="image/gif" href="<?php static_image(); ?>favicon.gif" />
     <link rel="stylesheet" type="text/css" href="<?php static_css(); ?>styles.css" />
+    <link rel="stylesheet" type="text/css" href="<?php static_css(); ?>button.css" />
     <link rel="stylesheet" type="text/css" href="<?php static_lib(); ?>google-code-prettify/prettify.css" />
 <?php if (isset($includes)): foreach ($includes->getCSS() as $stylesheet) { ?>
     <link rel="stylesheet" type="text/css" href="<?php static_css(); echo $stylesheet; ?>" />
