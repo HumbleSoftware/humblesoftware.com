@@ -16,7 +16,8 @@ class Flotr2 extends CI_Controller {
 
         $this->includes->css(array(
             'flotr.css',
-            '../lib/codemirror/lib/codemirror.css'
+            '../lib/codemirror/lib/codemirror.css',
+            '../lib/flotr2/examples/editor.css'
         ));
         $this->includes->js(array(
             '../lib/codemirror/lib/codemirror.js',
@@ -43,9 +44,8 @@ class Flotr2 extends CI_Controller {
             'flotr2/driver.js'
         ));
         $this->includes->css(array(
-            'flotr_examples.css',
             '../lib/flotr2/examples/examples.css',
-            '../lib/flotr2/examples/editor.css'
+            'flotr_examples.css'
         ));
         $this->load->view('template', array_merge($this->data, array(
             'title'             => 'flotr2',
@@ -58,6 +58,9 @@ class Flotr2 extends CI_Controller {
         $this->includes->js(array(
             '../lib/flotr2/examples/js/Editor.js',
             'flotr2/documentation.js'
+        ));
+        $this->includes->css(array(
+            'flotr_documentation.css'
         ));
         $this->load->view('template', array_merge($this->data, array(
             'title'             => 'flotr2',

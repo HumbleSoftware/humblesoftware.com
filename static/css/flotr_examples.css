@@ -12,3 +12,7 @@
 .flotr-examples-large .flotr-examples-thumbs {
     overflow-x: hidden;
 }
+
+.editor .controls {
+  margin-top: -20px;
+}
