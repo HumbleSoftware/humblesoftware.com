@@ -14,30 +14,41 @@
   </head>
   <body>
     <div id="container">
-    <script type="text/javascript" src="<?php static_lib(); ?>flotr2/flotr2.min.js"></script>
+    <script type="text/javascript" src="<?php static_lib(); ?>flotr2/flotr2.js"></script>
     <script type="text/javascript">
       (function () {
 
         var
           container = document.getElementById('container'),
-          d1 = [[0, 3], [4, 8], [8, 5], [9, 13]], // First data series
-          d2 = [],                                // Second data series
-          i, graph;
+          start = (new Date).getTime(),
+          data, graph, offset, i;
 
-        // Generate first data set
-        for (i = 0; i < 14; i += 0.5) {
-          d2.push([i, Math.sin(i)]);
+        // Draw a sine curve at time t
+        function animate (t) {
+
+          data = [];
+          offset = 2 * Math.PI * (t - start) / 10000;
+
+          // Sample the sine function
+          for (i = 0; i < 4 * Math.PI; i += 0.2) {
+            data.push([i, Math.sin(i - offset)]);
+          }
+
+          // Draw Graph
+          graph = Flotr.draw(container, [ data ], {
+            yaxis : {
+              max : 2,
+              min : -2
+            }
+          });
+
+          // Animate
+          setTimeout(function () {
+            animate((new Date).getTime());
+          }, 50);
         }
 
-        // Draw Graph
-        graph = Flotr.draw(container, [ d1, d2 ], {
-          xaxis: {
-            minorTickFreq: 4
-          },
-          grid: {
-            minorVerticalLines: true
-          }
-        });
+        animate(offset);
       })();
     </script>
   </body>
