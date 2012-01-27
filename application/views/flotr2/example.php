@@ -14,6 +14,9 @@
   </head>
   <body>
     <div id="container">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="<?php static_lib(); ?>flotr2/flotr2.ie.min.js"></script>
+    <![endif]-->
     <script type="text/javascript" src="<?php static_lib(); ?>flotr2/flotr2.js"></script>
     <script type="text/javascript">
       (function () {
