@@ -15,7 +15,7 @@
   <body>
     <div id="container">
     <!--[if lt IE 9]>
-    <script type="text/javascript" src="<?php static_lib(); ?>flotr2/flotr2.ie.min.js"></script>
+    <script type="text/javascript" src="<?php static_lib(); ?>FlashCanvas/bin/flashcanvas.js"></script>
     <![endif]-->
     <script type="text/javascript" src="<?php static_lib(); ?>flotr2/flotr2.min.js"></script>
     <script type="text/javascript">
