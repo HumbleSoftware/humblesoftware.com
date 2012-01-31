@@ -14,7 +14,6 @@
                 <ul>
                     <li>mobile support</li>
                     <li>framework independent</li>
-                    <li>performance</li>
                     <li>lines, bars, bubbles and more</li>
                     <li>extensible plugin framework</li>
                     <li>FF, Chrome, IE6+</li>
