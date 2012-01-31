@@ -12,7 +12,8 @@
   <h2><a id="introduction">Introduction</a></h2>
   <p>
   Flotr2 is a library for drawing HTML5 charts and graphs.  It is a branch of 
-  <a title="flotr" href="http://code.google.com/p/flotr/">flotr</a>
+  <a title="flotr" href="http://code.google.com/p/flotr/">flotr</a> which removes
+  the Prototype dependency and includes many improvements.
   </p>
 
   <h3>Features:</h3>
