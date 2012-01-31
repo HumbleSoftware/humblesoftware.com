@@ -82,7 +82,7 @@
 </section>
 
 <section>
-  <h2><a name="configuration">Configuration</h2>
+  <h2><a id="configuration">Configuration</a></h2>
 
   <p>
   The following are the default configuration options for Flotr.  Additional
@@ -146,4 +146,4 @@
   Please submit issues and pull requests on github at <a title="Flotr2"
   href="http://github.com/HumbleSoftware/Flotr2">http://github.com/HumbleSoftware/Flotr2</a>.
   </p>
-<section>
+</section>
