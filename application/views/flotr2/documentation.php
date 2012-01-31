@@ -9,7 +9,7 @@
 </div>
 
 <section class="introduction">
-  <h2><a name="introduction">Introduction</a></h2>
+  <h2><a id="introduction">Introduction</a></h2>
   <p>
   Flotr2 is a library for drawing HTML5 charts and graphs.  It is a branch of 
   <a title="flotr" href="http://code.google.com/p/flotr/">flotr</a>
@@ -33,7 +33,7 @@
 </section>
 
 <section>
-  <h2><a name="usage">Usage</a></h2>
+  <h2><a id="usage">Usage</a></h2>
 
   <p>
   To use Flotr2, include the <code>flotr2.min.js</code> script in your page and
@@ -42,7 +42,10 @@
   method.
   </p>
 
-  <h3><a name="usage-example">Usage Example</a></h3>
+  <h3>
+    <a id="usage-example">Usage Example</a> (<a
+    href="<?php echo base_url(); ?>/flotr2/example">stand alone</a>)
+  </h3>
 
   <div class="editor usage"></div>
 
@@ -95,7 +98,7 @@
 </section>
 
 <section>
-  <h2><a name="development">Development</a></h2>
+  <h2><a id="development">Development</a></h2>
 
   <p>
   This project uses <a title="smoosh" href="https://github.com/fat/smoosh">
