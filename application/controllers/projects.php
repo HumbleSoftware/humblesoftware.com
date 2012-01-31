@@ -18,9 +18,9 @@ class Projects extends CI_Controller {
 	public function index()
 	{
         $this->includes->js(array(
-            'projects.js',
-            '../lib/flotr2/flotr2.min.js',
-            '../lib/flotr2/flotr2.examples.types.js'
+            'js/projects.js',
+            'lib/flotr2/flotr2.min.js',
+            'lib/flotr2/flotr2.examples.types.js'
         ));
 
         $this->load->view('template', array(

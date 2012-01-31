@@ -7,7 +7,7 @@
 <![endif]-->
 <script src="<?php static_js(); ?>HSD.js"></script>
 <?php if (isset($includes)): foreach ($includes->getJS() as $script) { ?>
-    <script src="<?php static_js(); echo $script; ?>"></script>
+    <script src="<?php echo base_url().'static/'.$script; ?>"></script>
 <?php } endif; ?>
 </body>
 </html>
