@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="<?php static_css(); echo $stylesheet; ?>" />
 <?php } endif; ?>
     <script type="text/javascript">
-
+      var HSD_BASE = '<?php echo base_url(); ?>';
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-15129441-1']);
       _gaq.push(['_trackPageview']);
