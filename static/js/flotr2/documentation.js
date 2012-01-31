@@ -20,30 +20,6 @@ $(function () {
     });
   });
 
-  var
-    doc = $(document),
-    nav = $('#documentation-nav'),
-    offset = nav.offset(),
-    animation;
-
-  /*
-  nav.css({
-    position : 'fixed'
-  });
-
-  doc.scroll(function (e) {
-
-    var
-      scrollTop = doc.scrollTop(),
-      bottom = Math.max(offset.top - scrollTop, 10);
-
-    nav
-      .stop()
-      .animate({
-        top : top
-      });
-  });
-
   /*
   editor($('.editor.basic'), {
     example : EXAMPLES.basic.callback.toString()
