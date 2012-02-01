@@ -51,7 +51,7 @@
           }, 50);
         }
 
-        animate(offset);
+        animate(start);
       })();
     </script>
   </body>
