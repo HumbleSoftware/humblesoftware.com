@@ -14,18 +14,18 @@ class Finance extends CI_Controller {
             'static'
         ));
 
-        $this->includes->css('finance.css');
+        $this->includes->css('css/finance.css');
         $this->includes->js(array(
-            'finance/prototype.min.js',
-            'finance/Finance.js',
-            'finance/flotr/excanvas.js',
-            'finance/flotr/base64.js',
-            'finance/flotr/canvas2image.js',
-            'finance/flotr/canvastext.js',
-            'finance/flotr/flotr.js',
-            'finance/HumbleFinance.js',
-            'finance/data.js',
-            'finance/demo.js'
+            'js/finance/prototype.min.js',
+            'js/finance/Finance.js',
+            'js/finance/flotr/excanvas.js',
+            'js/finance/flotr/base64.js',
+            'js/finance/flotr/canvas2image.js',
+            'js/finance/flotr/canvastext.js',
+            'js/finance/flotr/flotr.js',
+            'js/finance/HumbleFinance.js',
+            'js/finance/data.js',
+            'js/finance/demo.js'
         ));
 
         $this->data = array(
