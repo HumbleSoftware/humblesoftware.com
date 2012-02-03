@@ -50,7 +50,7 @@ class Flotr2 extends CI_Controller {
         $this->load->view('template', array_merge($this->data, array(
             'title'             => 'flotr2',
             'page'              => 'flotr2/index',
-            'page_description'  => 'Flotr 2 HTML5 and Canvas graphing library home page.'
+            'page_description'  => 'Flotr2 HTML5 and Canvas graphing library examples page.'
         )));
     }
     public function documentation()
@@ -65,7 +65,7 @@ class Flotr2 extends CI_Controller {
         $this->load->view('template', array_merge($this->data, array(
             'title'             => 'flotr2',
             'page'              => 'flotr2/documentation',
-            'page_description'  => 'Flotr 2 usage and documentation.'
+            'page_description'  => 'Flotr2 HTML5 Canvas graphing library for JavasScript usage and documentation.'
         )));
     }
     public function feedback()
