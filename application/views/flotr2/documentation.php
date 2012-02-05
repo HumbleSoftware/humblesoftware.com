@@ -5,6 +5,7 @@
     <li><a href="#usage">Usage</a></li>
     <li><a href="#configuration">Configuration</a></li>
     <li><a href="#development">Development</a></li>
+    <li><a href="#resources">Resources</a></li>
   </ul>
 </div>
 
@@ -144,10 +145,23 @@
   href="https://github.com/HumbleSoftware/Flotr2/tree/master/js/plugins"><code>
   js/plugins/</code></a>.
   </p>
+</section>
 
+<section>
+  <h2>Resources</h2>
+  <p>
+  <img src="http://groups.google.com/intl/en/images/logos/groups_logo_sm.gif" height=30 width=140 alt="Google Groups">
+  <br />
+  <a href="http://groups.google.com/group/flotr2">Flotr2 is on Google groups</a>
+  </p>
   <h3>Issues</h3>
   <p>
-  Please submit issues and pull requests on github at <a title="Flotr2"
+  Please submit issues and pull requests on github at <a title="Flotr2 issues"
+  href="http://github.com/HumbleSoftware/Flotr2/issues">http://github.com/HumbleSoftware/Flotr2/issues</a>.
+  </p>
+  <h3>Source</h3>
+  <p>
+  The source is available on github at <a title="Flotr2 source on github"
   href="http://github.com/HumbleSoftware/Flotr2">http://github.com/HumbleSoftware/Flotr2</a>.
   </p>
 </section>
