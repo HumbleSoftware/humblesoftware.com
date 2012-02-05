@@ -29,4 +29,12 @@ class Home extends CI_Controller {
             'page' => 'home'
         ));
 	}
+
+    public function terms()
+    {
+        $this->load->view('template', array(
+            'title' => 'humble software development - terms',
+            'page' => 'terms'
+        ));
+    }
 }
