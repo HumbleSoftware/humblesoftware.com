@@ -1,6 +1,7 @@
 @CHARSET "UTF-8";
 body, html { height: 100%; }
 body {
+    background: #fff;
     color: #333333;
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif;
     padding: 0px;
