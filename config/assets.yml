@@ -1,0 +1,5 @@
+embed_assets: on
+
+javascripts:
+  workspace:
+    - static/js/projects.js
