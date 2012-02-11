@@ -2,3 +2,4 @@ application/config/config.php
 www_dev/movemytaxes
 *.swp
 Session.vim
+Gemfile.lock
