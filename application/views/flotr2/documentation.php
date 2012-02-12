@@ -111,9 +111,7 @@
   Tests may be executed by <a title="jasmine headless webkit"
   href="http://johnbintz.github.com/jasmine-headless-webkit/">
   jasmine-headless-webkit</a> with <code>cd spec; jasmine-headless-webkit -j jasmine.yml -c</code>
-  or by a browser by navigating to <code>spec/SpecRunner.html</code>.  The test
-  may be viewed <a title="flotr2 test suite"
-  href="<?php static_lib(); ?>flotr2/spec/SpecRunner.html">here</a>.
+  or by a browser by navigating to <code>spec/SpecRunner.html</code>.
   </p>
 
   <h3>Directories</h3>
@@ -148,7 +146,7 @@
 </section>
 
 <section>
-  <h2>Resources</h2>
+  <h2><a id="resources">Resources</a></h2>
   <p>
   <img src="http://groups.google.com/intl/en/images/logos/groups_logo_sm.gif" height=30 width=140 alt="Google Groups">
   <br />
