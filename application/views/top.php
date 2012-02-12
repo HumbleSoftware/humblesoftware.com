@@ -12,4 +12,4 @@
 </head>
 
 <body>
-<div id="body-container" class="<?php echo $page; ?>">
+<div id="body-container" class="<?php echo str_replace('/', '-', $page); ?>">
