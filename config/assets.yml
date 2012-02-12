@@ -8,6 +8,9 @@ javascripts:
     - js/HSD.js
     - lib/flotr2/flotr2.min.js
 
+  js/hsd-ie8:
+    - lib/flotr2/flotr2.ie.min.js
+
   js/projects:
     - lib/flotr2/flotr2.examples.types.js
     - js/projects.js
