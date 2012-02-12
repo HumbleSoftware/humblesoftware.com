@@ -1,0 +1,218 @@
+.title {
+	text-align: center;
+}
+.subTitle {
+	font-size: 16px;
+}
+#finance {
+	position: relative;
+    margin: 40px 0px;
+    border: 1px solid #99CCFF;
+}
+
+#labels {
+	position: absolute;
+	width: 800px;
+    z-index: 10;
+}
+#financeTitle {
+    position: absolute;
+    top: -20px;
+}
+#summaryGraph .flotr-grid-label {
+    margin-top: -16px;
+    background: transparent;
+    text-align: left;
+}
+.documentation p {
+    font-size: 14px;
+    padding-left: 20px;
+    padding-right: 8px;
+}
+.documentation ol {
+    font-size: 14px;
+}
+.documentation h3 {
+    padding-top: 12px;
+}
+.documentation h4 {
+    padding-left: 20px;
+    font-size: 14px;
+}
+.documentation p code {
+    font-size: 12px;
+}
+.documentation .snippet {
+    margin-left: 20px;
+}
+label {
+	float: none;
+}
+input {
+	width: auto;
+}
+
+#trig {
+  margin: 20px;
+}
+.trig path,
+.trig circle,
+.trig line {
+  stroke: steelblue;
+  stroke-width: 2px;
+  fill: none;
+}
+
+.trig .axis {
+  stroke: #999;
+}
+
+.trig text {
+  fill: #444;
+  font-family: sans-serif;
+  font-size: 22;
+}
+
+.chart {
+  position: relative;
+  height: 524px;
+  padding-top: 54px;
+}
+
+.fortune p {
+  font-size: 14px;
+}
+
+.fortune h3 {
+  margin-bottom: 8px;
+}
+
+.fortune ul {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Controls */
+.controls {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 12px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.control, .controls .label {
+  float: left;
+  text-align: center;
+}
+.controls .label {
+  padding-top: 2px;
+}
+.control {
+  font-size: 14px;
+}
+.control.rank {
+  width: 52px;
+}
+.control.revenue {
+  width: 70px;
+}
+.control.profit {
+  width: 52px;
+}
+.control {
+  cursor: pointer;
+}
+.control.selected {
+  font-weight: bold;
+}
+
+/* Inflation */
+.inflation {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  font-size: 12px;
+  width: 200px;
+  text-align: right;
+  padding-right: 10px;
+}
+.inflation label {
+  display: inline-block;
+  width: auto;
+  padding-bottom: 2px;
+  cursor: pointer;
+}
+.inflation input {
+  position: relative;
+  bottom: -2px;
+}
+
+/* Company */
+.company {
+  font-size: 12px;
+  display: none;
+  color: #222;
+  position: absolute;
+  margin-top: 54px;
+}
+.company-arrow {
+  background: url(../images/demos/fortune-arrow.png) top center no-repeat;
+  position: absolute;
+  left: 50%;
+  margin-left: -6px;
+  width: 13px;
+  height: 7px;
+  top: 0px;
+}
+.company-content {
+  margin-top: 5px;
+  border: 2px solid #4863a0;
+  padding: 6px 6px 8px 6px;
+  background: #fff;
+  border-radius: 5px;
+}
+.company .name {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0px 40px 6px 0px;
+  white-space: nowrap;
+}
+.company .year {
+  position: absolute;
+  right: 6px;
+  top: 15px;
+}
+.company .year .label {
+  display: none;
+}
+.company .data {
+  white-space: nowrap;
+}
+.company .data div {
+  display: inline-block;
+}
+.company .label {
+  text-align: right;
+  margin-right: 8px;
+  width: 50%;
+}
+
+/* Labels */
+
+.labels {
+  position: absolute;
+  left: 0px;
+  top: 558px;
+  width: 840px;
+  margin-left: -20px;
+}
+.labels .label {
+  text-align: center;
+  width: 70px;
+  font-size: 12px;
+  float: left;
+}
