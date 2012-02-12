@@ -36,3 +36,9 @@ stylesheets:
     - css/demos.css
     - css/demos/trig-d3.css
     - css/demos/fortune.css
+
+  css/helloreddit:
+    - css/helloreddit.css
+
+  css/helloreddit-blackberry:
+    - css/helloreddit-blackberry.css
