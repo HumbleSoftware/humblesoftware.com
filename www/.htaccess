@@ -8,3 +8,7 @@
     RewriteCond $1 !^(movemytaxes|static|index\.php)
     RewriteRule ^(.*)$ index.php/$1
 </IfModule>
+<IfModule mod_expires.c>
+    ExpiresActive on
+    ExpiresDefault "access plus 1 week"
+</IfModule>
