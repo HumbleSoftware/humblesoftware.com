@@ -1,5 +1,20 @@
-embed_assets: on
+embed_assets: off
 
 javascripts:
-  workspace:
-    - static/js/projects.js
+  js/hsd:
+    - lib/google-code-prettify/prettify.js
+    - js/HSD.js
+    - static/lib/flotr2/flotr2.min.js
+  js/projects:
+    - static/lib/flotr2/flotr2.examples.types.js
+    - js/projects.js
+stylesheets:
+  css/hsd:
+    - css/styles.css
+    - css/button.css
+    - css/demos.css
+    - lib/google-code-prettify/prettify.css
+  css/demos-trig:
+    - css/demos/trig-d3.css
+  css/demos-fortune:
+    - css/demos/fortune.css
