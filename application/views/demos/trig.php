@@ -10,4 +10,4 @@
     <canvas id="sineCanvas"  style="width: 800px; height: 300px;"></canvas>
 </div>
 
-<?php $this->load->view('listing', array('name' => 'Trig.js', 'file' => '../static/js/demos/Trig.js')); ?>
+<?php $this->load->view('listing', array('name' => 'Trig.js', 'file' => '../js/demos/Trig.js')); ?>

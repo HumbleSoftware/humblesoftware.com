@@ -14,10 +14,11 @@ class Demos extends CI_Controller {
             'static'
         ));
 
+        $this->includes->css('css/demos.css');
+
     }
     public function index()
     {
-        $this->includes->css('css/demos.css');
         $this->load->view('template', array(
             'includes' => $this->includes,
             'title' => 'humble software development - javascript demos',
@@ -28,9 +29,7 @@ class Demos extends CI_Controller {
     }
     public function trig()
     {
-        $this->includes->css('css/demos.css');
-        $this->includes->js('js/demos/Trig.js');
-        $this->includes->js('js/demos/TrigDemo.js');
+        $this->includes->js('js/demos-trig.js');
 
         $this->load->view('template', array(
             'includes' => $this->includes,
@@ -42,10 +41,7 @@ class Demos extends CI_Controller {
     }
     public function trig_d3()
     {
-        $this->includes->css('css/demos.css');
-        $this->includes->css('css/demos/trig-d3.css');
-        $this->includes->js('js/d3.min.js');
-        $this->includes->js('js/demos/trig-d3.js');
+        $this->includes->js('js/demos-trig-d3.js');
 
         $this->load->view('template', array(
             'includes' => $this->includes,
@@ -57,11 +53,7 @@ class Demos extends CI_Controller {
     }
     public function fortune()
     {
-        $this->includes->css('css/demos.css');
-        $this->includes->css('css/demos/fortune.css');
-        $this->includes->js('js/d3.min.js');
-        $this->includes->js('js/demos/f500.min.js');
-        $this->includes->js('js/demos/fortune.js');
+        $this->includes->js('js/demos-fortune.js');
 
         $this->load->view('template', array(
             'includes' => $this->includes,

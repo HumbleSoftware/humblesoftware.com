@@ -1,20 +1,38 @@
 embed_assets: off
+compress_assets: off
 
 javascripts:
+
   js/hsd:
     - lib/google-code-prettify/prettify.js
     - js/HSD.js
     - static/lib/flotr2/flotr2.min.js
+
   js/projects:
     - static/lib/flotr2/flotr2.examples.types.js
     - js/projects.js
+
+  js/demos-trig:
+    - js/demos/Trig.js
+    - js/demos/TrigDemo.js
+
+  js/demos-trig-d3:
+    - js/d3.min.js
+    - js/demos/trig-d3.js
+
+  js/demos-fortune:
+    - js/d3.min.js
+    - js/demos/f500.min.js
+    - js/demos/fortune.js
+
 stylesheets:
+
   css/hsd:
     - css/styles.css
     - css/button.css
-    - css/demos.css
     - lib/google-code-prettify/prettify.css
-  css/demos-trig:
+
+  css/demos:
+    - css/demos.css
     - css/demos/trig-d3.css
-  css/demos-fortune:
     - css/demos/fortune.css
