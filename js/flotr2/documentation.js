@@ -12,18 +12,11 @@ $(function () {
       type : 'html'
     });
 
-    $.get(HSD_BASE + 'static/lib/flotr2/js/DefaultOptions.js', function (response) {
+    $.get(HSD_BASE + 'static/js/flotr2-DefaultOptions.js', function (response) {
       new Editor($('.editor.api'), {
         noRun : true,
         example : response
       });
     });
   });
-
-  /*
-  editor($('.editor.basic'), {
-    example : EXAMPLES.basic.callback.toString()
-  });
-  /**/
-
 });
