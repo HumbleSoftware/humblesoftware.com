@@ -6,10 +6,10 @@ javascripts:
   js/hsd:
     - lib/google-code-prettify/prettify.js
     - js/HSD.js
-    - static/lib/flotr2/flotr2.min.js
+    - lib/flotr2/flotr2.min.js
 
   js/projects:
-    - static/lib/flotr2/flotr2.examples.types.js
+    - lib/flotr2/flotr2.examples.types.js
     - js/projects.js
 
   js/demos-trig:
@@ -25,6 +25,20 @@ javascripts:
     - js/demos/f500.min.js
     - js/demos/fortune.js
 
+  js/hsd-flotr2:
+    - lib/codemirror/lib/codemirror.js
+    - lib/codemirror/mode/javascript/javascript.js
+    - lib/codemirror/mode/htmlmixed/htmlmixed.js
+    - lib/codemirror/mode/css/css.js
+    - lib/codemirror/mode/xml/xml.js
+    - lib/flotr2/examples/lib/beautify.js
+    - lib/flotr2/examples/lib/randomseed.js
+
+  js/hsd-flotr2-documentation:
+    - lib/flotr2/flotr2.examples.types.js
+    - lib/flotr2/examples/js/Editor.js
+    - js/flotr2/documentation.js
+
 stylesheets:
 
   css/hsd:
@@ -36,6 +50,14 @@ stylesheets:
     - css/demos.css
     - css/demos/trig-d3.css
     - css/demos/fortune.css
+
+  css/hsd-flotr2:
+    - lib/codemirror/lib/codemirror.css
+    - lib/flotr2/examples/editor.css
+    - lib/flotr2/examples/examples.css
+    - css/flotr.css
+    - css/flotr_examples.css
+    - css/flotr_documentation.css
 
   css/helloreddit:
     - css/helloreddit.css
