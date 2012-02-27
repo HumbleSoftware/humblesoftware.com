@@ -11,3 +11,7 @@
 .editor .controls {
   margin-top: -20px;
 }
+
+.flotr-examples input {
+  width: auto;
+}
