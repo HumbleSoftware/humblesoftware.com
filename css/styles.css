@@ -282,39 +282,6 @@ span.label {
 /**
  * Feedback
  */
-.feedbackPage .logout {
-    font-size: 12px;
-    float: right;
-}
-.feedbackPage .title {
-    margin: 0px 0px 24px 0px;
-}
-.feedbackItem {
-    font-size: 14px;
-    margin-bottom: 2px;
-    padding-bottom: 6px;
-    background: url('../images/shadow.gif') repeat-x bottom;
-}
-.feedbackItem div {
-    clear : both;
-}
-.feedbackItem .label {
-    font-size: 12px;
-    width: 120px; float: left;
-}
-.feedbackItem .date {
-    margin-bottom: -18px;
-    float: right;
-}
-.feedbackItem .date .label {
-    text-indent: -9000px;
-}
-.feedbackItem .feedback {
-    padding: 12px 0px 12px 120px;
-}
-.feedbackItem .feedback .label {
-    margin-left: -9000px;
-}
 #recaptcha_widget_div {
     margin-left: 90px;
 }
