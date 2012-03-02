@@ -25,4 +25,4 @@ Chrome, or Safari.
 <?php $this->load->view('finance/finance.weeks.php'); ?>
 
 <?php $this->load->view('listing', array('name' => 'HTML', 'file' => '../application/views/finance/finance.weeks.php')); ?>
-<?php $this->load->view('listing', array('name' => 'demo.js', 'file' => '../static/js/finance/demo.js')); ?>
+<?php $this->load->view('listing', array('name' => 'demo.js', 'file' => '../static/lib/finance/demo.js')); ?>
