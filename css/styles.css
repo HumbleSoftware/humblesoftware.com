@@ -278,10 +278,6 @@ span.label {
 .errors {
   color: #e00;
 }
-
-/**
- * Feedback
- */
 #recaptcha_widget_div {
     margin-left: 90px;
 }
