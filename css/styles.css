@@ -110,33 +110,6 @@ fieldset {
 }
 
 /**
- * Splash Screen
- */
-.splash #header-container {
-    display: none;
-}
-.splash #enter:hover {
-    text-shadow: 0em 0em 0.3em #666666;
-}
-.splash #footer-container {
-    background: none;
-    border: none;
-}
-.splash #footer {
-    position: absolute;
-    border: 0px;
-    bottom: 0px;
-    right: 0px;
-    background: none;
-}
-.splash #content {
-    position: absolute;
-    text-align: center;
-    top: 42%;
-    width: 100%;
-}
-
-/**
  * For home screen
  */
 .home p.summary {
