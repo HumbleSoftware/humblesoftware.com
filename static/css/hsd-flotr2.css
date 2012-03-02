@@ -458,7 +458,7 @@ body {
   background: #ccc;
 }
 
-.flotr2-index #content {
+#body-container.flotr2-index #content-container {
   width: auto;
   position: relative;
 }
@@ -541,4 +541,23 @@ body {
 #documentation-nav li {
   margin-left: 0px;
   list-style: none;
+}
+
+@media screen and (max-width: 800px) {
+  #documentation-nav {
+    padding: 0px;
+    position: static;
+    border: none;
+  }
+  #documentation-nav h2 {
+    display: block;
+  }
+  #content .introduction ul {
+    width: auto;
+    margin: 0px;
+  }
+  #content .introduction .features,
+  #content .introduction .types {
+    float: none;
+  }
 }
