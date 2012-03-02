@@ -79,7 +79,6 @@ fieldset {
 
 #content {
     margin: 0px 0px 22px 0px;
-    padding-bottom: 32px;
     margin-top: 24px;
 }
 
@@ -474,6 +473,15 @@ span.label {
 
 @media screen and (max-width: 800px) {
 
+    /* General */
+    input {
+        width: auto;
+    }
+    textarea {
+        width: 100%;
+    }
+
+
     /* Layout */
     #header-container,
     #links-container,
@@ -557,9 +565,4 @@ span.label {
         display: block;
         height: 240px;
     }
-
-
-
-
-
 }
