@@ -289,28 +289,6 @@ span.label {
     border: 1px solid #000 !important;
 }
 
-/**
- * Downloads
- */
-.downloadPage .logout {
-    font-size: 12px;
-    float: right;
-}
-.downloadPage .title {
-    margin: 0px 0px 24px 0px;
-}
-.fileItem {
-    font-size: 14px;
-    margin: 0px 24px;
-    padding: 6px;
-    /*background: url('../img/shadow.gif') repeat-x bottom;*/
-    border-bottom: 1px solid #999;
-}
-.fileItem .label {
-    font-size: 12px;
-    width: 120px; float: left;
-}
-
 /* Listing */
 .listing .toggle {
   font-weight: normal;
