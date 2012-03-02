@@ -278,63 +278,7 @@ span.label {
 .errors {
   color: #e00;
 }
-/**
- * Effects
- */
-.portfolio .humble-window-container {
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    text-align: center;
-    z-index: 100;
-}
 
-.portfolio .humble-window-decoration {
-    border: 8px solid white;
-    margin: 0 auto;
-    background: #ffffff;
-    width: 600px;
-    height: 480px;
-    text-align: left;
-    border: 1px solid #bbbbbb;
-    border-radius: 4px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    padding: 2px;
-}
- 
-.portfolio .humble-window-extra {
-    position: absolute;
-    background: #ffffff;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    z-index: 99;
-}
-.portfolio .humble-window-header {
-    padding: 2px 4px 0px 4px;
-}
-.portfolio .humble-window-controls {
-    float: right;
-    padding-left: 8px;
-    cursor: pointer;
-}
-
-.portfolio .humble-window-content {
-    background: url('../images/shadow.gif') repeat-x;
-    clear: both;
-}
-.portfolio .humble-window-footer {
-}
-.portfolio-item-page .image {
-    text-align: center;
-    padding: 20px 0px
-}
-.portfolio-item-page .image img {
-    border: 1px solid #eeeeee;
-    padding: 3px;
-}
 /**
  * Feedback
  */
