@@ -17,5 +17,5 @@
 </ul>
 
 <div id="github-ribbon">
-  <a href="http://github.com/HumbleSoftware/HumbleVisualization"><?php $this->load->view('github-ribbon'); ?></a>
+  <a href="http://github.com/HumbleSoftware/envisionjs"><?php $this->load->view('github-ribbon'); ?></a>
 </div>
