@@ -3,7 +3,7 @@
     <a href="<?php echo base_url(); ?>flotr2/index"><span>examples</span></a>
   </li>
   <li<?php echo ($page == 'flotr2/documentation' ? ' class="current-page"' : ''); ?>>
-    <a href="<?php echo base_url(); ?>flotr2/documentation"><span>documentation</span></a>
+    <a href="<?php echo base_url(); ?>flotr2/documentation"><span>docs</span></a>
   </li>
   <li<?php echo ($page == 'flotr2/feedback' ? ' class="current-page"' : ''); ?>>
     <a href="<?php echo base_url(); ?>flotr2/feedback"><span>feedback</span></a>

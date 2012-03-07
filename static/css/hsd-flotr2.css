@@ -458,8 +458,7 @@ body {
   background: #ccc;
 }
 
-/* HSD */
-#content {
+#body-container.flotr2-index #content-container {
   width: auto;
   position: relative;
 }
@@ -471,4 +470,94 @@ body {
 
 .editor .controls {
   margin-top: -20px;
+}
+
+.flotr-examples input {
+  width: auto;
+}
+
+.editor .controls {
+  margin-top: -20px;
+}
+
+#content p, #content ul, #content .editor{
+  margin: 14px 0px;
+}
+#content p, #content li, #content code {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+#content h2 {
+  border-bottom: 1px solid #ccc;
+}
+
+#content li {
+  margin-left: 40px;
+  list-style: circle;
+}
+
+#content code {
+  font-size: 13px;
+  white-space: nowrap;
+  padding: 1px;
+  border: 1px solid #DDD;
+  border-radius: 3px;
+  background: #fafafa;
+}
+
+#content section {
+  overflow: hidden;
+}
+
+#content .introduction h2 {
+  margin-top: 0px;
+}
+#content .introduction ul {
+  width: 400px;
+}
+#content .introduction .features {
+  float: left;
+}
+#content .introduction .types {
+  float: right;
+}
+
+/* Nav */
+#documentation-nav {
+  padding: 12px 16px 0px 16px;
+  z-index: 1000;
+  position: fixed;
+  right: 12px;
+  bottom: 28px;
+  border: 1px solid #eee;
+  background: #fff;
+  border-radius: 3px;
+}
+#documentation-nav h2 {
+  font-size: 18px;
+  display: inline;
+}
+#documentation-nav li {
+  margin-left: 0px;
+  list-style: none;
+}
+
+@media screen and (max-width: 800px) {
+  #documentation-nav {
+    padding: 0px;
+    position: static;
+    border: none;
+  }
+  #documentation-nav h2 {
+    display: block;
+  }
+  #content .introduction ul {
+    width: auto;
+    margin: 0px;
+  }
+  #content .introduction .features,
+  #content .introduction .types {
+    float: none;
+  }
 }

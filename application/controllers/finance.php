@@ -14,18 +14,17 @@ class Finance extends CI_Controller {
             'static'
         ));
 
-        $this->includes->css('css/finance.css');
+        $this->includes->css('lib/finance/finance.css');
         $this->includes->js(array(
-            'js/finance/prototype.min.js',
-            'js/finance/Finance.js',
-            'js/finance/flotr/excanvas.js',
-            'js/finance/flotr/base64.js',
-            'js/finance/flotr/canvas2image.js',
-            'js/finance/flotr/canvastext.js',
-            'js/finance/flotr/flotr.js',
-            'js/finance/HumbleFinance.js',
-            'js/finance/data.js',
-            'js/finance/demo.js'
+            'lib/finance/prototype.min.js',
+            'lib/finance/Finance.js',
+            'lib/finance/flotr/excanvas.js',
+            'lib/finance/flotr/base64.js',
+            'lib/finance/flotr/canvas2image.js',
+            'lib/finance/flotr/canvastext.js',
+            'lib/finance/flotr/flotr.js',
+            'lib/finance/HumbleFinance.js',
+            'lib/finance/data.js'
         ));
 
         $this->data = array(
@@ -36,6 +35,7 @@ class Finance extends CI_Controller {
     }
     public function index()
     {
+        $this->includes->js('lib/finance/demo.js');
         $this->load->view('template', array_merge($this->data, array(
             'title'             => 'humble finance - html5 visualization',
             'page'              => 'finance/index',

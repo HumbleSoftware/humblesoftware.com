@@ -1424,157 +1424,55 @@ function advanced_markers (container) {
 })();
 
 
-$(function () {
+
+(function(){var a=Flotr.EventAdapter,b=Flotr._,c="click",d="example",e="mouseenter",f="mouseleave",g=".",h="flotr-examples",i="flotr-examples-container",j="flotr-examples-reset",k="flotr-examples-thumbs",l="flotr-examples-thumb",m="flotr-examples-collapsed",n="flotr-examples-highlight",o="flotr-examples-large",p="flotr-examples-medium",q="flotr-examples-small",r="flotr-examples-mobile",s='<div class="'+l+'"></div>',t='<div class="'+h+'">'+'<div class="'+j+'">View All</div>'+'<div class="'+k+'"></div>'+'<div class="'+i+'"></div>'+"</div>";Examples=function(a){if(b.isUndefined(Flotr.ExampleList))throw"Flotr.ExampleList not defined.";this.options=a,this.list=Flotr.ExampleList,this.current=null,this.single=!1,this._initNodes(),this._example=new Flotr.Examples.Example({node:this._exampleNode}),this._initExamples()},Examples.prototype={examples:function(){function f(b){var c=$(b.currentTarget),e=c.data("example"),f=b.data.orientation;f^c.hasClass(n)&&(c.toggleClass(n).css(a),d._example.executeCallback(e,c))}var a={cursor:"pointer"},b=this._thumbsNode,c=this.list.get(),d=this,e=["basic","basic-axis","basic-bars","basic-bars-horizontal","basic-bar-stacked","basic-stacked-horizontal","basic-pie","basic-radar","basic-bubble","basic-candle","basic-legend","mouse-tracking","mouse-zoom","mouse-drag","basic-time","negative-values","click-example","download-image","download-data","advanced-titles","color-gradients","basic-timeline","advanced-markers"];(function h(){var a=e.shift(),f=c[a];if(f.type==="profile"||f.type==="test")return;var g=$(s);g.data("example",f),b.append(g),d._example.executeCallback(f,g),g.click(function(){d._loadExample(f)}),e.length&&setTimeout(h,20)})(),b.delegate(g+l,"mouseenter",{orientation:!0},f),b.delegate(g+l,"mouseleave",{orientation:!1},f)},_loadExample:function(a){a&&(window.location.hash="!"+(this.single?"single/":"")+a.key,u||(this._thumbsNode.css({position:"absolute",height:"0px",overflow:"hidden",width:"0px"}),this._resetNode.css({top:"16px"})),this._examplesNode.addClass(m),this._exampleNode.show(),this._example.setExample(a),this._resize(),$(document).scrollTop(0))},_reset:function(){window.location.hash="",u||this._thumbsNode.css({position:"",height:"",overflow:"",width:""}),this._examplesNode.removeClass(m),this._thumbsNode.height(""),this._exampleNode.hide()},_initNodes:function(){var a=$(this.options.node),b=this,c=$(t);b._resetNode=c.find(g+j),b._exampleNode=c.find(g+i),b._thumbsNode=c.find(g+k),b._examplesNode=c,b._resetNode.click(function(){b._reset()}),a.append(c),this._initResizer()},_initResizer:function(){function e(){var b=c.height()-(a.options.thumbPadding||0),e=c.width(),f;e>1760?(f=o,a._thumbsNode.height(b)):e>1140?(f=p,a._thumbsNode.height(b)):(f=q,a._thumbsNode.height("")),d!==f&&(d&&a._examplesNode.removeClass(d),a._examplesNode.addClass(f),d=f)}var a=this,b=a._examplesNode,c=$(window),d;$(window).resize(e),e(),this._resize=e},_initExamples:function(){var a=window.location.hash,b,c;a?(a=a.substring(2),c=a.split("/"),c.length==1?(b=this.list.get(a),this.examples()):c[0]=="single"&&(this.single=!0,b=this.list.get(c[1])),this._loadExample(b)):this.examples()}};var u=function(){var a=!!(navigator.userAgent.match(/Android/i)||navigator.userAgent.match(/webOS/i)||navigator.userAgent.match(/iPhone/i)||navigator.userAgent.match(/iPod/i)),b=!!$.browser.mozilla;return!a||b}();Flotr.Examples=Examples})(),function(){var a=Flotr._,b=".",c="flotr-example",d="flotr-example-label",e="flotr-example-title",f="flotr-example-description",g="flotr-example-editor",h="flotr-example-graph",i='<div class="'+c+'">'+'<div class="'+d+" "+e+'"></div>'+'<div class="'+f+'"></div>'+'<div class="'+g+'"></div>'+"</div>",j=function(a){this.options=a,this.example=null,this._initNodes()};j.prototype={setExample:function(a){var b=this.getSource(a),c=this._editorNode;this.example=a,Math.seedrandom(a.key),this._exampleNode.css({display:"block"}),this._titleNode.html(a.name||""),this._markupNode.html(a.description||""),this._editor?this._editor.setExample(b):this._editor=new Flotr.Examples.Editor(c,{example:b,teardown:function(){Flotr.EventAdapter.stopObserving($(c).find(".render")[0]),$(c).find("canvas").each(function(a,b){Flotr.EventAdapter.stopObserving(b)})}})},getSource:function(a){var b=a.callback.toString();return navigator.userAgent.search(/firefox/i)!==-1&&(b=js_beautify(b)),b},executeCallback:function(b,c){a.isElement(c)||(c=c[0]);var d=b.args?[c].concat(b.args):[c];return Math.seedrandom(b.key),b.callback.apply(this,d)},_initNodes:function(){var a=this.options.node,c=$(i);this._titleNode=c.find(b+e),this._markupNode=c.find(b+f),this._editorNode=c.find(b+g),this._exampleNode=c,a.append(c)}},Flotr.Examples.Example=j}(),function(){function Editor(a,b){function o(){i.hide(),f&&f.call(),m.render({example:d,render:h})}function p(a,b,c){var d=!1,e='<span class="error">Error: </span>',f,g;e+='<span class="message">'+a+"</span>",typeof c!="undefined"&&(e+='<span class="position">',e+='Line <span class="line">'+c+"</span>",console.log(b),b&&(e+=" of ",b==window.location?(e+='<span class="url">script</span>',!d):e+='<span class="url">'+b+"</span>"),e+=".</span>"),i.show(),i.html(e)}var c=b.type||"javascript",d=b.example||"",e=b.noRun||!1,f=b.teardown||!1,g=$(T_CONTROLS),h=$(T_RENDER),i=$(T_ERRORS),j=$(T_SOURCE),k=$(T_EDITOR),l="editor-render-"+COUNT,m,h,n;m=new TYPES[c]({onerror:p});if(!m)throw"Invalid type: API not found for type `"+c+"`.";h.attr("id",l),i.hide(),k.append(h).append(g).append(j).addClass(c).addClass(e?"no-run":""),a=$(a),a.append(k),j.append(i),d=m.example({example:d,render:h}),n=CodeMirror(j[0],{value:d,readOnly:e,lineNumbers:!0,mode:m.codeMirrorType}),e||(g.delegate(".run","click",function(){d=n.getValue(),o()}),o()),window.onerror=function(a,b,c){return p(a,b,c),console.log(a),ONERROR&&$.isFunction(ONERROR)?ONERROR(a,b,c):!1},COUNT++,this.setExample=function(a){d=m.example({example:a,render:h}),n.setValue(d),n.refresh(),o()}}var ONERROR=window.onerror,EXAMPLES=Flotr.ExampleList.examples,COUNT=0,TYPES={},T_CONTROLS='<div class="controls"><button class="run btn large primary">Run</button></div>',T_EDITOR='<div class="editor"></div>',T_SOURCE='<div class="source"></div>',T_ERRORS='<div class="errors"></div>',T_RENDER='<div class="render"></div>',T_IFRAME="<iframe></iframe>";TYPES.javascript=function(b){this.onerror=b.onerror},TYPES.javascript.prototype={codeMirrorType:"javascript",example:function(a){var b=a.example,c=a.render,d=$(c).attr("id");return"("+b+')(document.getElementById("'+d+'"));'},render:function(o){eval(o.example)}},TYPES.html=function(b){this.onerror=b.onerror},TYPES.html.prototype={codeMirrorType:"htmlmixed",example:function(a){return $.trim(a.example)},render:function(a){var b=a.example,c=a.render,d=$(T_IFRAME),e=this,f,g;c.html(d),f=d[0].contentWindow,g=f.document,g.open(),f.onerror=d.onerror=function(){e.onerror.apply(null,arguments)},g.write(b),g.close()}},typeof Flotr.Examples=="undefined"&&(Flotr.Examples={}),Flotr.Examples.Editor=Editor}(),function(){var a=Flotr.DOM,b=Flotr.EventAdapter,c=Flotr._,d="click",e="example-profile",f="examples",g=function(a){if(c.isUndefined(Flotr.ExampleList))throw"Flotr.ExampleList not defined.";this.editMode="off",this.list=Flotr.ExampleList,this.current=null,this.single=!1,this.init()};g.prototype=c.extend({},Flotr.Examples.prototype,{examples:function(){var e=document.getElementById(f),g=a.node("<ul></ul>"),h;c.each(this.list.getType("profile"),function(e){h=a.node("<li>"+e.name+"</li>"),a.insert(g,h),b.observe(h,d,c.bind(function(){this.example(e)},this))},this),a.insert(e,g)},example:function(a){this._renderSource(a),this.profileStart(a),setTimeout(c.bind(function(){this._renderGraph(a),this.profileEnd()},this),50)},profileStart:function(a){var b=document.getElementById(e);this._startTime=new Date,b.innerHTML='<div>Profile started for "'+a.name+'"...</div>'},profileEnd:function(a){var b=document.getElementById(e);profileTime=new Date-this._startTime,this._startTime=null,b.innerHTML+="<div>Profile complete: "+profileTime+"ms<div>"}}),Flotr.Profile=g}()
+$().ready(function () {
+
+  Examples = new Flotr.Examples({
+    node : document.getElementById('examples'),
+    thumbPadding : 150
+  });
+
   var
-    a = $('.project-flotr-demo.a'),
-    b = $('.project-flotr-demo.b'),
-    link = $('.project-flotr-demo-link'),
-    href = link.attr('href'),
-    examples = [
-      'basic',
-      'basic-bars',
-      'basic-bars-horizontal',
-      'basic-bar-stacked',
-      'basic-axis',
-      'basic-pie',
-      'basic-candle',
-      'basic-bubble',
-      'basic-radar',
-      'color-gradients',
-      'negative-values'
-    ],
-    fadeTime = 300,
-    interval = 3400,
-    index = 1,
-    timeout;
+    examples  = $('#examples').find('.flotr-examples'),
+    thumbs    = examples.find('.flotr-examples-thumbs'),
+    offset    = 128,
+    page      = $(window);
 
-  // Init
-  b.css({
-    'visibility' : 'hidden',
-    'opacity' : 0
-  });
+  $(document)
+    .scroll(handleScrollSize);
+  page
+    .resize(handleResizeSize);
 
-  execute(examples[0], a[0]);
-  execute(examples[1], b[0]);
-  setLink(examples[0]);
-
-  // Rotation
-  function intervalCallback () {
-    swapGraphs();
-    timeout = setTimeout(intervalCallback, interval);
-  }
-  timeout = setTimeout(intervalCallback, interval - 2 * fadeTime);
-
-  // Hover pause rotation
-  link.hover(function () {
-      clearTimeout(timeout);
-    }, function () {
-      timeout = setTimeout(intervalCallback, interval - 2 * fadeTime);
-  });
-
-  function swapGraphs () {
-    a.fadeOut(fadeTime, function () {
-      b.css({
-        'display' : 'none',
-        'opacity' : 1,
-        'visibility' : 'visible'
-      });
-      setLink(examples[index]);
-      b.fadeIn(fadeTime, function () {
-        var
-          swap = b;
-        index++;
-        if (index >= examples.length) index = 0;
-        b = a;
-        a = swap;
-        b.css({
-          'visibility' : 'hidden',
-          'display' : 'block',
-          'opacity' : 0
-        });
-        execute(examples[index], b[0]);
-      });
-    });
-  }
-
-  function execute(example, container) {
-    example = Flotr.ExampleList.examples[example];
-    example.callback.apply(
-      null, [container].concat(example.args) || [container]
-    );
-    $(container).attr('title', 'Example: ' + example.name);
-  }
-
-  function setLink (key) {
-    link.attr('href', href + '#!' + key);
-  }
-
-  /*
-  if (container) {
-    var
-      d1 = [],
-      d2 = [],
-      d3 = [],
-      d4 = [],
-      data,
-      graph, i, r, x = 0;
-
-    // Data Generation
-    for (i = 0; i <= 15; i += 0.5) {
-      d1.push([i, i / 2]);
-      d2.push([i, i + Math.sin(i+Math.PI)]);
-      d3.push([i, 15-Math.cos(i)]);
-    }
-
-    for (i = 0; i <= 10; i += 2) {
-      r = 22 - 2 * i;
-      d4.push([x, 6 + x / 1.3, r]);
-      x += Math.sqrt(r) / 1.8;
-    }
-
-    data = [
-      { bars : { show : true, barWidth : .4 }, shadow : false, data : d1, label :'x / 2' },
-      { lines : { show : true }, data : d2, label :'x + sin(x+π)' },
-      { points : { show : true }, data : d3, label :'15 - cos(x)' },
-      { bubbles : { show : true }, data : d4 }
-    ];
-
-    // Draw graph
-    graph = Flotr.draw(container, data, {
-      title : 'Flotr 2',
-      legend : {
-        position : 'se',            // Position the legend 'south-east'.
-        labelFormatter : function (label) {
-          return 'f(x) = ' + label;
-        },
-        backgroundColor : '#D2E8FF' // A light blue background color.
-      },
-      mouse : {
-        track : true,
-        trackY : false,
-        position : 'ne',
-        trackDecimals : 4,
-        trackFormatter : function (o) {
-          var
-            x = Number(o.x),
-            y = Number(o.y),
-            f = o.series.label;
-          if (f) {
-            f.replace(/x/g, x);
-            return f + ' = ' + y;
-          } else {
-            return '(' + x + ', ' + y + ')';
-          }
+  function handleScrollSize () {
+    if (examples.hasClass('flotr-examples-collapsed') && (examples.hasClass('flotr-examples-large') || examples.hasClass('flotr-examples-medium'))) {
+      if (_.isNull(offset)) {
+        offset = parseInt(thumbs.css('top'));
+        if (_.isNaN(offset)) {
+          offset = 0;
         }
-      },
-      HtmlText : true,
-      xaxis : {
-        min : 0,
-        max : 15
-      },
-      grid : {
-        verticalLines : false
       }
-    });
-  }*/
+      var
+        scrollTop = $(document).scrollTop(),
+        top = Math.max(0, offset - scrollTop);
+      thumbs.css({
+        top : top,
+        height : page.height() - 22 - top
+      });
+      Examples.options.thumbPadding = top + 22
+    }
+  }
+
+  handleResizeSize();
+
+  function handleResizeSize () {
+    if (examples.hasClass('flotr-examples-collapsed') && (examples.hasClass('flotr-examples-large') || examples.hasClass('flotr-examples-medium'))) {
+      handleScrollSize();
+    } else {
+      thumbs.css({
+        height : 'auto',
+        top : 'auto'
+      });
+    }
+  }
 });

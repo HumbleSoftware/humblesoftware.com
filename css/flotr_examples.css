@@ -1,5 +1,4 @@
-/* HSD */
-#content {
+#body-container.flotr2-index #content-container {
   width: auto;
   position: relative;
 }
@@ -11,4 +10,8 @@
 
 .editor .controls {
   margin-top: -20px;
+}
+
+.flotr-examples input {
+  width: auto;
 }

@@ -1424,157 +1424,254 @@ function advanced_markers (container) {
 })();
 
 
-$(function () {
+(function () {
+
   var
-    a = $('.project-flotr-demo.a'),
-    b = $('.project-flotr-demo.b'),
-    link = $('.project-flotr-demo-link'),
-    href = link.attr('href'),
-    examples = [
-      'basic',
-      'basic-bars',
-      'basic-bars-horizontal',
-      'basic-bar-stacked',
-      'basic-axis',
-      'basic-pie',
-      'basic-candle',
-      'basic-bubble',
-      'basic-radar',
-      'color-gradients',
-      'negative-values'
-    ],
-    fadeTime = 300,
-    interval = 3400,
-    index = 1,
-    timeout;
+    ONERROR   = window.onerror,
+    EXAMPLES  = Flotr.ExampleList.examples,
+    COUNT     = 0,
+    TYPES     = {},
 
-  // Init
-  b.css({
-    'visibility' : 'hidden',
-    'opacity' : 0
-  });
+    T_CONTROLS =
+      '<div class="controls">' +
+        '<button class="run btn large primary">Run</button>' +
+      '</div>',
+    T_EDITOR = '<div class="editor"></div>',
+    T_SOURCE = '<div class="source"></div>',
+    T_ERRORS = '<div class="errors"></div>',
+    T_RENDER = '<div class="render"></div>',
+    T_IFRAME = '<iframe></iframe>';
 
-  execute(examples[0], a[0]);
-  execute(examples[1], b[0]);
-  setLink(examples[0]);
 
-  // Rotation
-  function intervalCallback () {
-    swapGraphs();
-    timeout = setTimeout(intervalCallback, interval);
-  }
-  timeout = setTimeout(intervalCallback, interval - 2 * fadeTime);
+  // Javascript type:
+  TYPES.javascript = function Javascript (o) {
+    this.onerror = o.onerror;
+  };
+  TYPES.javascript.prototype = {
+    codeMirrorType : 'javascript',
+    example : function (o) {
 
-  // Hover pause rotation
-  link.hover(function () {
-      clearTimeout(timeout);
-    }, function () {
-      timeout = setTimeout(intervalCallback, interval - 2 * fadeTime);
-  });
+      var
+        example = o.example,
+        render = o.render,
+        renderId = $(render).attr('id');
 
-  function swapGraphs () {
-    a.fadeOut(fadeTime, function () {
-      b.css({
-        'display' : 'none',
-        'opacity' : 1,
-        'visibility' : 'visible'
-      });
-      setLink(examples[index]);
-      b.fadeIn(fadeTime, function () {
-        var
-          swap = b;
-        index++;
-        if (index >= examples.length) index = 0;
-        b = a;
-        a = swap;
-        b.css({
-          'visibility' : 'hidden',
-          'display' : 'block',
-          'opacity' : 0
-        });
-        execute(examples[index], b[0]);
-      });
-    });
-  }
+      return '(' + example + ')(document.getElementById("' + renderId + '"));';
+    },
+    render : function (o) {
+      eval(o.example);
+    }
+  };
 
-  function execute(example, container) {
-    example = Flotr.ExampleList.examples[example];
-    example.callback.apply(
-      null, [container].concat(example.args) || [container]
-    );
-    $(container).attr('title', 'Example: ' + example.name);
-  }
+  // HTML Type:
+  TYPES.html = function Html (o) {
+    this.onerror = o.onerror;
+  };
+  TYPES.html.prototype = {
+    codeMirrorType : 'htmlmixed',
+    example : function (o) {
+      return $.trim(o.example);
+    },
+    render : function (o) {
 
-  function setLink (key) {
-    link.attr('href', href + '#!' + key);
-  }
+      var
+        example = o.example,
+        render = o.render,
+        iframe = $(T_IFRAME),
+        that = this,
+        win, doc;
 
-  /*
-  if (container) {
+      render.html(iframe);
+
+      win = iframe[0].contentWindow;
+
+      doc = win.document;
+      doc.open();
+
+      // Error
+      win.onerror = iframe.onerror = function () {
+        that.onerror.apply(null, arguments);
+      }
+
+      doc.write(example);
+      doc.close();
+    }
+  };
+
+  // Editor
+  function Editor (container, o) {
+
     var
-      d1 = [],
-      d2 = [],
-      d3 = [],
-      d4 = [],
-      data,
-      graph, i, r, x = 0;
+      type      = o.type || 'javascript',
+      example   = o.example || '',
+      noRun     = o.noRun || false,
+      teardown  = o.teardown || false,
+      controls  = $(T_CONTROLS),
+      render    = $(T_RENDER),
+      errors    = $(T_ERRORS),
+      source    = $(T_SOURCE),
+      node      = $(T_EDITOR),
+      renderId  = 'editor-render-' + COUNT,
+      api,
+      render,
+      codeMirror;
 
-    // Data Generation
-    for (i = 0; i <= 15; i += 0.5) {
-      d1.push([i, i / 2]);
-      d2.push([i, i + Math.sin(i+Math.PI)]);
-      d3.push([i, 15-Math.cos(i)]);
+    api = new TYPES[type]({
+      onerror : onerror
+    });
+    if (!api) throw 'Invalid type: API not found for type `' + type + '`.';
+
+    render
+      .attr('id', renderId);
+
+    errors
+      .hide();
+
+    node
+      .append(render)
+      .append(controls)
+      .append(source)
+      .addClass(type)
+      .addClass(noRun ? 'no-run' : '');
+
+    container = $(container);
+    container
+      .append(node);
+
+    source
+      .append(errors)
+
+    example = api.example({
+      example : example,
+      render : render
+    });
+
+    codeMirror = CodeMirror(source[0], {
+      value : example,
+      readOnly : noRun,
+      lineNumbers : true,
+      mode : api.codeMirrorType
+    });
+
+    if (!noRun) {
+      controls.delegate('.run', 'click', function () {
+        example = codeMirror.getValue();
+        execute();
+      });
+
+      execute();
     }
 
-    for (i = 0; i <= 10; i += 2) {
-      r = 22 - 2 * i;
-      d4.push([x, 6 + x / 1.3, r]);
-      x += Math.sqrt(r) / 1.8;
+    // Error handling:
+    window.onerror = function (message, url, line) {
+
+      onerror(message, url, line);
+      console.log(message);
+
+      if (ONERROR && $.isFunction(ONERROR)) {
+        return ONERROR(message, url, line);
+      } else {
+        return false;
+      }
     }
 
-    data = [
-      { bars : { show : true, barWidth : .4 }, shadow : false, data : d1, label :'x / 2' },
-      { lines : { show : true }, data : d2, label :'x + sin(x+π)' },
-      { points : { show : true }, data : d3, label :'15 - cos(x)' },
-      { bubbles : { show : true }, data : d4 }
-    ];
+    // Helpers
 
-    // Draw graph
-    graph = Flotr.draw(container, data, {
-      title : 'Flotr 2',
-      legend : {
-        position : 'se',            // Position the legend 'south-east'.
-        labelFormatter : function (label) {
-          return 'f(x) = ' + label;
-        },
-        backgroundColor : '#D2E8FF' // A light blue background color.
-      },
-      mouse : {
-        track : true,
-        trackY : false,
-        position : 'ne',
-        trackDecimals : 4,
-        trackFormatter : function (o) {
-          var
-            x = Number(o.x),
-            y = Number(o.y),
-            f = o.series.label;
-          if (f) {
-            f.replace(/x/g, x);
-            return f + ' = ' + y;
+    function execute () {
+      errors.hide();
+      if (teardown) {
+        teardown.call();
+      }
+      api.render({
+        example : example,
+        render : render
+      });
+    }
+
+    function onerror (message, url, line) {
+      // @TODO Find some js error normalizing lib
+
+      var
+        doThatSexyThang = false,
+        html = '<span class="error">Error: </span>',
+        error, stack;
+
+      /*
+      // Native error type handling:
+      if (typeof (message) !== 'string') {
+        error = message;
+        message = error.message;
+        stack = error.stack;
+
+        //if (stack) {
+          console.log(stack);
+        //}
+
+        //console.log(message);
+
+      }
+
+      */
+
+      html += '<span class="message">' + message + '</span>';
+      if (typeof (line) !== "undefined") {
+        html += '<span class="position">';
+        html += 'Line <span class="line">' + line + '</span>';
+        console.log(url);
+        if (url) {
+          html += ' of ';
+          if (url == window.location) {
+            html += '<span class="url">script</span>';
+            if (doThatSexyThang) {
+              //codeMirror.setMarker(line, '&#8226;');
+            }
           } else {
-            return '(' + x + ', ' + y + ')';
+            html += '<span class="url">' + url + '</span>';
           }
         }
-      },
-      HtmlText : true,
-      xaxis : {
-        min : 0,
-        max : 15
-      },
-      grid : {
-        verticalLines : false
+        html += '.</span>';
       }
+
+      errors.show();
+      errors.html(html);
+    }
+
+    COUNT++;
+
+    this.setExample = function (source) {
+      example = api.example({
+        example : source,
+        render : render
+      });
+      codeMirror.setValue(example);
+      codeMirror.refresh();
+      execute();
+    }
+  }
+
+  if (typeof Flotr.Examples === 'undefined') Flotr.Examples = {};
+  Flotr.Examples.Editor = Editor;
+})();
+
+$(function () {
+  var
+    Editor = Flotr.Examples.Editor;
+
+  $.get('example', function (response) {
+    var
+      usageExample = $('.editor.usage');
+
+    new Editor($('.editor.usage'), {
+      noRun : ($.browser.msie && $.browser.msie < 9 ? true : false),
+      example : response,
+      type : 'html'
     });
-  }*/
+
+    $.get(HSD_BASE + 'static/js/flotr2-DefaultOptions.js', function (response) {
+      new Editor($('.editor.api'), {
+        noRun : true,
+        example : response
+      });
+    });
+  });
 });

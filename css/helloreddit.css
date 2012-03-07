@@ -150,7 +150,7 @@ table {
     list-style: none;
 }
 .features .summary {
-    background: url(../images/helloreddit/plus.gif) no-repeat 0px 4px;
+    background: url('../images/helloreddit/plus.gif') no-repeat 0px 4px;
     cursor: pointer;
     padding: 0px 0px 4px 16px;
     text-decoration: underline;

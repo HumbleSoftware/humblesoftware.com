@@ -14,21 +14,8 @@ class Flotr2 extends CI_Controller {
             'static'
         ));
 
-        $this->includes->css(array(
-            'css/flotr.css',
-            'lib/codemirror/lib/codemirror.css',
-            'lib/flotr2/examples/editor.css'
-        ));
-        $this->includes->js(array(
-            'lib/codemirror/lib/codemirror.js',
-            'lib/codemirror/mode/javascript/javascript.js',
-            'lib/codemirror/mode/htmlmixed/htmlmixed.js',
-            'lib/codemirror/mode/css/css.js',
-            'lib/codemirror/mode/xml/xml.js',
-            'lib/flotr2/flotr2.min.js',
-            'lib/flotr2/flotr2.examples.types.js',
-            'lib/flotr2/examples/lib/beautify.js'
-        ));
+        $this->includes->css('css/hsd-flotr2.css');
+        $this->includes->js('js/hsd-flotr2.js');
 
         $this->data = array(
             'includes'          => $this->includes,
@@ -38,15 +25,8 @@ class Flotr2 extends CI_Controller {
     }
     public function index()
     {
-        $this->includes->js(array(
-            'lib/flotr2/flotr2.examples.min.js',
-            'lib/flotr2/examples/lib/randomseed.js',
-            'js/flotr2/driver.js'
-        ));
-        $this->includes->css(array(
-            'lib/flotr2/examples/examples.css',
-            'css/flotr_examples.css'
-        ));
+        $this->includes->js('js/hsd-flotr2-examples.js');
+
         $this->load->view('template', array_merge($this->data, array(
             'title'             => 'flotr2',
             'page'              => 'flotr2/index',
@@ -55,13 +35,7 @@ class Flotr2 extends CI_Controller {
     }
     public function documentation()
     {
-        $this->includes->js(array(
-            'lib/flotr2/examples/js/Editor.js',
-            'js/flotr2/documentation.js'
-        ));
-        $this->includes->css(array(
-            'css/flotr_documentation.css'
-        ));
+        $this->includes->js('js/hsd-flotr2-documentation.js');
         $this->load->view('template', array_merge($this->data, array(
             'title'             => 'flotr2',
             'page'              => 'flotr2/documentation',
