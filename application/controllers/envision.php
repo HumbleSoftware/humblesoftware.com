@@ -15,6 +15,8 @@ class Envision extends CI_Controller {
             'static'
         ));
 
+        $this->includes->css('css/hsd-envision.css');
+
         $this->data = array(
             'includes'          => $this->includes,
             'template_header'   => 'envision/header',
