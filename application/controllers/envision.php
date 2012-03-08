@@ -38,5 +38,22 @@ class Envision extends CI_Controller {
     }
     public function feedback()
     {
+        $this->load->library('feedback', array('label' => 'envision'));
+
+        if ($this->feedback->validate()) {
+            $this->feedback->send();
+            $this->load->view('template', array_merge($this->data, array(
+                'title'             => 'envision - feedback',
+                'page'              => 'thankyou',
+                'name'              => $this->input->post('name')
+            )));
+        } else {
+            $this->load->view('template', array_merge($this->data, array(
+                'title'             => 'envision - feedback',
+                'page'              => 'feedback',
+                'recaptcha'         => $this->recaptcha->get_html(),
+                'subject'           => 'Envision.JS Feedback'
+            )));
+        }
     }
 }
