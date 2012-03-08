@@ -43,6 +43,12 @@ javascripts:
     - lib/flotr2/examples/js/Editor.js
     - js/flotr2/documentation.js
 
+  js/hsd-envision:
+    - lib/envision/envision.js
+
+  js/envision/finance-demo-data:
+    - lib/envision/demos/data/data.js
+
 stylesheets:
 
   css/hsd:

@@ -11,3 +11,6 @@ javascripts:
 
   js/flotr2-DefaultOptions:
     - lib/flotr2/js/DefaultOptions.js
+
+  js/envision/finance-demo:
+    - js/envision/demos/finance.js
