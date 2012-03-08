@@ -16,6 +16,11 @@ class Envision extends CI_Controller {
         ));
 
         $this->includes->css('css/hsd-envision.css');
+        $this->includes->css('css/hsd-flotr2.css');
+        $this->includes->js('js/hsd-flotr2.js');
+        $this->includes->js('js/hsd-envision.js');
+        $this->includes->js('js/envision/finance-demo-data.js');
+        $this->includes->js('js/envision/finance-demo.js');
 
         $this->data = array(
             'includes'          => $this->includes,
@@ -26,6 +31,8 @@ class Envision extends CI_Controller {
 
     public function index()
     {
+        $this->includes->css('css/hsd-envision.css');
+
         $this->load->view('template', array_merge($this->data, array(
             'title'             => 'envision - demos',
             'page'              => 'envision/index',
