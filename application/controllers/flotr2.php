@@ -37,7 +37,7 @@ class Flotr2 extends CI_Controller {
     {
         $this->includes->js('js/hsd-flotr2-documentation.js');
         $this->load->view('template', array_merge($this->data, array(
-            'title'             => 'flotr2',
+            'title'             => 'flotr2 - documentation',
             'page'              => 'flotr2/documentation',
             'page_description'  => 'Flotr2 HTML5 Canvas graphing library for JavasScript usage and documentation.'
         )));
