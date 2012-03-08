@@ -1,6 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Envision extends CI_Controller {
+
     public function __construct()
     {
         parent::__construct();
@@ -20,6 +21,7 @@ class Envision extends CI_Controller {
             'template_links'    => 'envision/links'
         );
     }
+
     public function index()
     {
         $this->load->view('template', array_merge($this->data, array(
@@ -28,6 +30,7 @@ class Envision extends CI_Controller {
             'page_description'  => 'Envision.JS interactive HTML5 canvas and svg visualization library supporting HTML5 finance visualization.'
         )));
     }
+
     public function documentation()
     {
         $this->load->view('template', array_merge($this->data, array(
@@ -36,6 +39,7 @@ class Envision extends CI_Controller {
             'page_description'  => 'Documentation for Envision.JS, interactive HTML5 visualization library.'
         )));
     }
+
     public function feedback()
     {
         $this->load->library('feedback', array('label' => 'envision'));
