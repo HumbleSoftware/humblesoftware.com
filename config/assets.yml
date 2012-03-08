@@ -61,7 +61,10 @@ stylesheets:
     - lib/flotr2/examples/examples.css
     - css/flotr.css
     - css/flotr_examples.css
-    - css/flotr_documentation.css
+    - css/documentation.css
+
+  css/hsd-envision:
+    - css/documentation.css
 
   css/helloreddit:
     - css/helloreddit.css
