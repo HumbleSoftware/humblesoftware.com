@@ -22,9 +22,19 @@ class Envision extends CI_Controller {
     }
     public function index()
     {
+        $this->load->view('template', array_merge($this->data, array(
+            'title'             => 'envision - demos',
+            'page'              => 'envision/index',
+            'page_description'  => 'Envision.JS interactive HTML5 canvas and svg visualization library supporting HTML5 finance visualization.'
+        )));
     }
     public function documentation()
     {
+        $this->load->view('template', array_merge($this->data, array(
+            'title'             => 'envision - documentation',
+            'page'              => 'envision/documentation',
+            'page_description'  => 'Documentation for Envision.JS, interactive HTML5 visualization library.'
+        )));
     }
     public function feedback()
     {
