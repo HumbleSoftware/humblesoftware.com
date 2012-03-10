@@ -1,5 +1,5 @@
 embed_assets: off
-compress_assets: on
+compress_assets: off
 
 javascripts:
 
@@ -44,7 +44,9 @@ javascripts:
     - js/flotr2/documentation.js
 
   js/hsd-envision:
+    - lib/flotr2/examples/js/Editor.js
     - lib/envision/envision.js
+    - lib/envision/envision-templates.js
 
   js/envision/finance-demo-data:
     - lib/envision/demos/data/data.js
@@ -70,7 +72,12 @@ stylesheets:
     - css/documentation.css
 
   css/hsd-envision:
+    - lib/flotr2/examples/editor.css
+    - lib/codemirror/lib/codemirror.css
+    - lib/envision/envision.css
+    - lib/envision/envision-templates.css
     - css/documentation.css
+    - css/envision/editor.css
 
   css/helloreddit:
     - css/helloreddit.css
