@@ -1,20 +1,27 @@
 $(function () {
+  $('#demos').mousedown(function (e) {
+    if ($(e.target).closest('.image').length) {
+      $('body').addClass('no-select');
+    } else {
+      console.log('removing');
+      $('body').removeClass('no-select');
+    }
+  }).mouseup(function (e) {
+    $('body').removeClass('no-select');
+  });
 
   var
     Editor = Flotr.Examples.Editor,
     container = document.getElementById('demo'),
     editor;
 
-  editor = new Editor(container, {
-    example : example
-  });
-
-/*
-  example(container);
-  for (var i = 1; i < 4; i++) {
-    example(document.getElementById('finance-demo' + i));
+  if (container) {
+    editor = new Editor(container, {
+      example : example
+    });
+  } else {
+    example(document.getElementById('finance-demo'));
   }
-*/
 
   function example (container) {
 

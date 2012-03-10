@@ -1,0 +1,58 @@
+/* General */
+#demos {
+  padding: 20px 100px 0px 100px;
+}
+#demos .demo {
+  margin: 0px auto 40px auto;
+  position: relative;
+}
+#demos .demo h2 {
+}
+#demos .demo p {
+  margin-right: 240px;
+}
+#demos .demo .image {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+#demos .demo .link {
+  font-size: 14px;
+}
+body.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+/* Finance Template */
+#demos .envision-finance {
+  width: 200px;
+}
+#demos .envision-finance-price .envision-child {
+  height: 40px;
+}
+#demos .envision-finance-volume .envision-child {
+  height: 20px;
+}
+#demos .envision-finance-summary .envision-child {
+  height: 20px;
+}
+#demos .envision-finance .flotr-mouse-value,
+#demos .envision-finance .flotr-grid-label {
+  display: none;
+}
+#demos .envision-finance .flotr-grid-label.first,
+#demos .envision-finance .flotr-grid-label.last {
+  display: block;
+}
+#demos .envision-finance-price .flotr-grid-label.first {
+  margin-top: -14px;
+}
+#demos .envision-finance-price .flotr-grid-label.last {
+  margin-top: -8px;
+}

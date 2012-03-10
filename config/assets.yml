@@ -37,7 +37,6 @@ javascripts:
     - lib/codemirror/mode/xml/xml.js
     - lib/flotr2/examples/lib/beautify.js
     - lib/flotr2/examples/lib/randomseed.js
-
   js/hsd-flotr2-documentation:
     - lib/flotr2/flotr2.examples.types.js
     - lib/flotr2/examples/js/Editor.js
@@ -47,9 +46,21 @@ javascripts:
     - lib/flotr2/examples/js/Editor.js
     - lib/envision/envision.js
     - lib/envision/envision-templates.js
-
-  js/envision/finance-demo-data:
+  js/hsd-envision-demos:
+    - js/envision/demos/finance.js
     - lib/envision/demos/data/data.js
+    - js/envision/demos/ajax.js
+
+  js/envision/finance-demo:
+    - js/envision/demos/finance.js
+    - lib/envision/demos/data/data.js
+
+  js/envision/ajax-demo:
+    - js/envision/demos/ajax.js
+  js/envision/ajax-demo-initial-data:
+    - lib/envision/demos/data/initial.json
+  js/envision/ajax-demo-dynamic-data:
+    - lib/envision/demos/data/ajax.json
 
 stylesheets:
 
@@ -78,6 +89,7 @@ stylesheets:
     - lib/envision/envision-templates.css
     - css/documentation.css
     - css/envision/editor.css
+    - css/envision/demos.css
 
   css/helloreddit:
     - css/helloreddit.css
