@@ -1428,7 +1428,6 @@ function advanced_markers (container) {
 
   var
     ONERROR   = window.onerror,
-    EXAMPLES  = Flotr.ExampleList.examples,
     COUNT     = 0,
     TYPES     = {},
 
