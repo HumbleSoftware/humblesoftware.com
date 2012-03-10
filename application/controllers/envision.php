@@ -16,7 +16,7 @@ class Envision extends CI_Controller {
         ));
 
         $this->includes->css('css/hsd-envision.css');
-        $this->includes->css('css/hsd-flotr2.css');
+        //$this->includes->css('css/hsd-flotr2.css');
         $this->includes->js('js/hsd-flotr2.js');
         $this->includes->js('js/hsd-envision.js');
         $this->includes->js('js/envision/finance-demo-data.js');
@@ -36,6 +36,24 @@ class Envision extends CI_Controller {
         $this->load->view('template', array_merge($this->data, array(
             'title'             => 'envision - demos',
             'page'              => 'envision/index',
+            'page_description'  => 'Envision.JS interactive HTML5 canvas and svg visualization library supporting HTML5 finance visualization.'
+        )));
+    }
+
+    public function demos($demo)
+    {
+        $demos = array(
+            'finance',
+            'ajax'
+        );
+
+        if (!in_array($demo, $demos)) {
+            show_404();
+        }
+
+        $this->load->view('template', array_merge($this->data, array(
+            'title'             => 'envision - demos',
+            'page'              => 'envision/demos/'.$demo,
             'page_description'  => 'Envision.JS interactive HTML5 canvas and svg visualization library supporting HTML5 finance visualization.'
         )));
     }
@@ -69,4 +87,5 @@ class Envision extends CI_Controller {
             )));
         }
     }
+
 }
