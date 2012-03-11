@@ -17,7 +17,8 @@
   right: 4px;
 }
 #demos .demo .link {
-  font-size: 14px;
+  float: right;
+  padding-right: 8px;
 }
 body.no-select {
   -webkit-touch-callout: none;
@@ -41,6 +42,7 @@ body.no-select {
 }
 #demos .envision-finance-summary .envision-child {
   height: 20px;
+  cursor: all-scroll !important;
 }
 #demos .envision-finance .flotr-mouse-value,
 #demos .envision-finance .flotr-grid-label {
