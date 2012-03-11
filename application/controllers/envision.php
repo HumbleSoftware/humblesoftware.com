@@ -19,7 +19,6 @@ class Envision extends CI_Controller {
         //$this->includes->css('css/hsd-flotr2.css');
         $this->includes->js('js/hsd-flotr2.js');
         $this->includes->js('js/hsd-envision.js');
-        $this->includes->js('js/hsd-envision-demos.js');
 
         $this->data = array(
             'includes'          => $this->includes,
@@ -31,6 +30,7 @@ class Envision extends CI_Controller {
     public function index()
     {
         $this->includes->css('css/hsd-envision.css');
+        $this->includes->js('js/hsd-envision-demos.js');
 
         $this->load->view('template', array_merge($this->data, array(
             'title'             => 'envision - demos',
