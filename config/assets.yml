@@ -47,16 +47,11 @@ javascripts:
     - lib/envision/envision.js
     - lib/envision/envision-templates.js
   js/hsd-envision-demos:
+    - js/envision/demos/timeseries.js
     - js/envision/demos/finance.js
     - lib/envision/demos/data/data.js
     - js/envision/demos/ajax.js
 
-  js/envision/finance-demo:
-    - js/envision/demos/finance.js
-    - lib/envision/demos/data/data.js
-
-  js/envision/ajax-demo:
-    - js/envision/demos/ajax.js
   js/envision/ajax-demo-initial-data:
     - lib/envision/demos/data/initial.json
   js/envision/ajax-demo-dynamic-data:

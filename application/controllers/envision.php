@@ -42,6 +42,7 @@ class Envision extends CI_Controller {
     public function demos($demo)
     {
         $demos = array(
+            'timeseries',
             'finance',
             'ajax'
         );

@@ -2,6 +2,23 @@
 
 <div class="demo">
 
+  <h3><a href="<?php base_url() ?>demos/timeseries" title="HTML5 time series chart">Time Series:</a></h3>
+
+  <p>
+    HTML5 time series chart.  This uses the TimeSeries template.  Templates provide
+    pre-built interactive visualizations matching common use-cases.  The TimeSeries 
+    comes with zoom support.
+    <span class="link">
+      (<a href="<?php base_url() ?>demos/timeseries" title="HTML5 time series chart">click to edit</a>)
+    </span>
+  </p>
+
+  <div class="image" id="timeseries-demo"></div>
+
+</div>
+
+<div class="demo">
+
   <h3><a href="<?php base_url() ?>demos/finance" title="HTML5 Finance Chart">Finance:</a></h3>
 
   <p>

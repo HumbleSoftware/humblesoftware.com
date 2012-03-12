@@ -1,6 +1,7 @@
 /* General */
 #demos {
-  padding: 20px 100px 0px 100px;
+  margin-top: 28px;
+  padding: 0px 100px;
 }
 #demos .demo {
   margin: 0px auto 40px auto;
@@ -30,10 +31,21 @@ body.no-select {
   user-select: none;
 }
 
-/* Finance Template */
-#demos .envision-finance {
+/* Envision General */
+#demos .envision-visualization {
   width: 200px;
 }
+
+/* TimeSeries Template */
+#demos .envision-timeseries-detail .envision-component {
+  height: 64px;
+}
+#demos .envision-timeseries-summary .envision-component {
+  height: 30px;
+  cursor: all-scroll !important;
+}
+
+/* Finance Template */
 #demos .envision-finance-price .envision-component {
   height: 40px;
 }
