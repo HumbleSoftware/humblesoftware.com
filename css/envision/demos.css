@@ -33,13 +33,13 @@ body.no-select {
 #demos .envision-finance {
   width: 200px;
 }
-#demos .envision-finance-price .envision-child {
+#demos .envision-finance-price .envision-component {
   height: 40px;
 }
-#demos .envision-finance-volume .envision-child {
+#demos .envision-finance-volume .envision-component {
   height: 20px;
 }
-#demos .envision-finance-summary .envision-child {
+#demos .envision-finance-summary .envision-component {
   height: 20px;
 }
 #demos .envision-finance .flotr-mouse-value,
@@ -54,5 +54,5 @@ body.no-select {
   margin-top: -14px;
 }
 #demos .envision-finance-price .flotr-grid-label.last {
-  margin-top: -8px;
+  margin-top: -1px;
 }
