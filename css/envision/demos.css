@@ -70,3 +70,37 @@ body.no-select {
 #demos .envision-finance-price .flotr-grid-label.last {
   margin-top: -1px;
 }
+
+@media screen and (max-width: 800px) {
+
+  #demos {
+    padding: 0px 8px;
+  }
+
+  #demos .demo .image {
+    position: static;
+  }
+
+  #demos .demo .link {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+
+  #demos .envision-visualization {
+    margin: 0px auto;
+  }
+
+  #demos .demo p {
+    margin-right: 0px;
+  }
+
+  #finance-demo {
+    margin-bottom: 20px;
+  }
+
+  #ajax-demo {
+    margin-bottom: 48px;
+  }
+
+}
