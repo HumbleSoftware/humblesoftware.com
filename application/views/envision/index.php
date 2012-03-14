@@ -51,4 +51,19 @@
 
 </div>
 
+<div class="demo">
+
+  <h3><a href="<?php base_url() ?>demos/ajax" title="Custom Example">Custom - Sync Two Charts:</a></h3>
+
+  <div class="image" id="custom-demo"></div>
+
+  <p>
+    For developers.
+    <span class="link">
+      (<a href="<?php base_url() ?>demos/ajax" title="Custom Example - Sync Two Charts">click to edit</a>)
+    </span>
+  </p>
+
+</div>
+
 </div>

@@ -16,6 +16,10 @@ javascripts:
     - js/envision/demos.js
     - js/envision/demos/ajax.js
 
+  js/envision/ajax-custom:
+    - js/envision/demos.js
+    - js/envision/demos/custom.js
+
   js/hsd-flotr2-examples:
     - lib/flotr2/flotr2.examples.types.js
     - lib/flotr2/flotr2.examples.min.js

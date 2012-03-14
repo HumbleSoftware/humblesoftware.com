@@ -44,7 +44,8 @@ class Envision extends CI_Controller {
         $demos = array(
             'timeseries',
             'finance',
-            'ajax'
+            'ajax',
+            'custom',
         );
 
         if (!in_array($demo, $demos)) {
