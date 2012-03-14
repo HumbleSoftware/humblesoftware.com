@@ -1,27 +1,6 @@
 $(function () {
-  $('#demos').mousedown(function (e) {
-    if ($(e.target).closest('.image').length) {
-      $('body').addClass('no-select');
-    } else {
-      console.log('removing');
-      $('body').removeClass('no-select');
-    }
-  }).mouseup(function (e) {
-    $('body').removeClass('no-select');
-  });
 
-  var
-    Editor = Flotr.Examples.Editor,
-    container = document.getElementById('demo'),
-    editor;
-
-  if (container) {
-    editor = new Editor(container, {
-      example : example
-    });
-  } else {
-    example(document.getElementById('finance-demo'));
-  }
+  HSD.envisionExample('finance-demo', example);
 
   function example (container) {
 

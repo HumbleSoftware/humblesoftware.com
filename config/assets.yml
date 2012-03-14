@@ -47,6 +47,7 @@ javascripts:
     - lib/envision/envision.js
     - lib/envision/envision-templates.js
   js/hsd-envision-demos:
+    - js/envision/demos.js
     - js/envision/demos/timeseries.js
     - js/envision/demos/finance.js
     - lib/envision/demos/data/data.js

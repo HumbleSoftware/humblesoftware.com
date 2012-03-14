@@ -1,17 +1,6 @@
 $(function () {
 
-  var
-    Editor = Flotr.Examples.Editor,
-    container = document.getElementById('demo'),
-    editor;
-
-  if (container) {
-    editor = new Editor(container, {
-      example : example
-    });
-  } else {
-    example(document.getElementById('ajax-demo'));
-  }
+  HSD.envisionExample('ajax-demo', example);
 
   function example (container) {
 

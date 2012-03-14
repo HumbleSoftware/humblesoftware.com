@@ -3,14 +3,17 @@ compress_assets: off
 javascripts:
 
   js/envision/timeseries-demo:
+    - js/envision/demos.js
     - js/envision/demos/timeseries.js
     - lib/envision/demos/data/data.js
 
   js/envision/finance-demo:
-    - js/envision/demos/finance.js
+    - js/envision/demos.js
     - lib/envision/demos/data/data.js
+    - js/envision/demos/finance.js
 
   js/envision/ajax-demo:
+    - js/envision/demos.js
     - js/envision/demos/ajax.js
 
   js/hsd-flotr2-examples:
@@ -23,6 +26,3 @@ javascripts:
 
   js/flotr2-DefaultOptions:
     - lib/flotr2/js/DefaultOptions.js
-
-  js/envision/finance-demo:
-    - js/envision/demos/finance.js

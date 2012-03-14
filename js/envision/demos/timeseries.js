@@ -1,17 +1,6 @@
 $(function () {
 
-  var
-    Editor = Flotr.Examples.Editor,
-    container = document.getElementById('demo'),
-    editor;
-
-  if (container) {
-    editor = new Editor(container, {
-      example : example
-    });
-  } else {
-    example(document.getElementById('timeseries-demo'));
-  }
+  HSD.envisionExample('timeseries-demo', example);
 
   function example (container) {
 
