@@ -47,10 +47,10 @@ body.no-select {
 
 /* Finance Template */
 #demos .envision-finance-price .envision-component {
-  height: 40px;
+  height: 48px;
 }
 #demos .envision-finance-volume .envision-component {
-  height: 20px;
+  height: 25px;
 }
 #demos .envision-finance-summary .envision-component {
   height: 20px;
