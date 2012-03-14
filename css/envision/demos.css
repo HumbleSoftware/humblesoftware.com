@@ -71,6 +71,14 @@ body.no-select {
   margin-top: -1px;
 }
 
+/* Ajax Demo */
+#demos #ajax-demo .envision-finance-summary .flotr-grid-label {
+  white-space: nowrap;
+}
+#demos #ajax-demo .envision-finance-summary .flotr-grid-label.last {
+  margin-left: -50px;
+}
+
 @media screen and (max-width: 800px) {
 
   #demos {
@@ -95,12 +103,8 @@ body.no-select {
     margin-right: 0px;
   }
 
-  #finance-demo {
-    margin-bottom: 20px;
-  }
-
-  #ajax-demo {
-    margin-bottom: 48px;
+  #demos .envision-finance {
+    margin-bottom: 26px;
   }
 
 }
