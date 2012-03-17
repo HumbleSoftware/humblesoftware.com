@@ -7,7 +7,6 @@
       }
       #container {
         width : 600px;
-        height: 384px;
         margin: 8px auto;
       }
     </style>
@@ -28,26 +27,35 @@
         var
           container = document.getElementById('container'),
           x = [],
-          y1 = [], // First series
-          y2 = [], // Second series
-          data = [[x, y1],[x, y2]],
-          options, i;
+          y1 = [],
+          y2 = [],
+          data, options, i;
 
-        // Sample the sine function
+        // Data Format:
+        data = [
+          [x, y1], // First Series
+          [x, y2]  // Second Series
+        ];
+
+        // Sample the sine function for data
         for (i = 0; i < 4 * Math.PI; i += 0.05) {
           x.push(i);
           y1.push(Math.sin(i));
           y2.push(Math.sin(i + Math.PI));
         }
 
+        // TimeSeries Template Options
         options = {
+          // Container to render inside of
           container : container,
+          // Data for detail (top chart) and summary (bottom chart)
           data : {
             detail : data,
             summary : data
           }
         };
 
+        // Create the TimeSeries
         new envision.templates.TimeSeries(options);
 
       })();
