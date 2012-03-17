@@ -5,7 +5,6 @@ $(function () {
     if ($(e.target).closest('.image').length) {
       $('body').addClass('no-select');
     } else {
-      console.log('removing');
       $('body').removeClass('no-select');
     }
   }).mouseup(function (e) {
@@ -29,7 +28,8 @@ $(function () {
         }
       });
     } else {
-      example(document.getElementById(id));
+      container = document.getElementById(id);
+      if (container) example(container);
     }
   }
 
