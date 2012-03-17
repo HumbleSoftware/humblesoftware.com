@@ -17,13 +17,15 @@
   </p>
 
   <h3>Features:</h3>
-    <ul class="features">
-      <li>supported on all major browsers</li>
-      <li>mobile touch support</li>
-      <li>small footprint, no dependencies</li>
-      <li>templates for common use-cases</li>
-      <li>adapted to <a href="<?php echo base_url();?>flotr2" title="Flotr2">Flotr2</a>, adaptable to others</li>
-    </ul>
+  <ul class="features">
+    <li>Supports major browsers</li>
+    <li>Touch support</li>
+    <li>Small footprint</li>
+    <li>No dependencies</li>
+    <li>Templates for common use-cases</li>
+    <li>Adapted to <a href="<?php echo base_url();?>flotr2" title="Flotr2">Flotr2</a></li>
+    <li>Adaptable to others</li>
+  </ul>
 </section>
 
 <section class="usage">
@@ -31,15 +33,29 @@
   <h2><a id="usage">Usage</a></h2>
 
   <p>
-    To use Envision.js, include <code>envision.min.js</code> in your page.  There are two was to show a 
-    a visualization: either with a pre-made template, or to create a visualization by hand.
+    To use Envision.js, include <code>envision.min.js</code> and <code>envision.min.css</code> in your page.
+    To display a visualization, either use a <a href="#templates" title="Usage of Envision.js Templates">Template</a>
+    or create a custom visualization with the Envision.js API.
   </p>
   
-  <h3>Templates</h3>
+  <h3><a id="templates">Templates</a></h3>
 
   <p>
-    This section details the Envision.js templates and their usage.
+    Templates are easy to use pre-made visualizations for common use-cases.  Current templates include:
   </p>
+
+  <ul>
+    <li><a href="<? echo base_url(); ?>envision/demos/timeseries" title="TimeSeries Template Demo">TimeSeries</a> - a summary and a detail chart sharing an axis</li>
+    <li><a href="<? echo base_url(); ?>envision/demos/finance" title="HTML5 Finance Chart Template Demo">Finance</a> - a 3 charts visualization similar to Google Finance</li>
+  </ul>
+
+  <p>
+    To use a template, also include <code>envision-templates.min.js</code> and <code>envision-templates.min.js</code> in your page.
+    Templates are kept in the <code>envision.templates</code> namespace.
+  </p>
+
+  <h4>Template Example:</h4>
+  <div id="usage-template"></div>
 
   <h3>Customized</h3>
 

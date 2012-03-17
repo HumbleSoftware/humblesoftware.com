@@ -78,6 +78,7 @@ class Envision extends CI_Controller {
 
     public function documentation()
     {
+        $this->includes->js('js/hsd-envision-documentation.js');
         $this->load->view('template', array_merge($this->data, array(
             'title'             => 'envision - documentation',
             'page'              => 'envision/documentation',

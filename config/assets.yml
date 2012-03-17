@@ -57,6 +57,8 @@ javascripts:
   js/hsd-envision-demo:
     - js/envision/demos.js
     - lib/envision/demos/data/data.js
+  js/hsd-envision-documentation:
+    - js/envision/documentation.js
 
   js/envision/ajax-demo-initial-data:
     - lib/envision/demos/data/initial.json
@@ -91,6 +93,7 @@ stylesheets:
     - css/documentation.css
     - css/envision/editor.css
     - css/envision/demos.css
+    - css/envision/documentation.css
 
   css/helloreddit:
     - css/helloreddit.css
