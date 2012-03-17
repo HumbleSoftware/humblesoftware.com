@@ -42,7 +42,7 @@ body.no-select {
 }
 #demos .envision-timeseries-summary .envision-component {
   height: 30px;
-  cursor: all-scroll !important;
+  cursor: all-scroll;
 }
 
 /* Finance Template */
@@ -54,7 +54,7 @@ body.no-select {
 }
 #demos .envision-finance-summary .envision-component {
   height: 20px;
-  cursor: all-scroll !important;
+  cursor: all-scroll;
 }
 #demos .envision-finance .flotr-mouse-value,
 #demos .envision-finance .flotr-grid-label {
@@ -81,7 +81,7 @@ body.no-select {
 
 /* Fractal Demo */
 #demos #fractal-demo .fractal .envision-component {
-  cursor: all-scroll !important;
+  cursor: all-scroll;
   height: 148px;
 }
 #demo .fractal,
@@ -99,7 +99,7 @@ body.no-select {
   width: 400px;
 }
 #demo .fractal .envision-component {
-  cursor: all-scroll !important;
+  cursor: all-scroll;
   height: 300px;
 }
 
