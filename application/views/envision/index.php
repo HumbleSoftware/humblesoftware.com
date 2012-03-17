@@ -2,7 +2,7 @@
 
 <div class="demo">
 
-  <h3><a href="<?php base_url() ?>demos/timeseries" title="HTML5 time series chart">Time Series:</a></h3>
+  <h3><a href="<?php echo base_url() ?>envision/demos/timeseries" title="HTML5 time series chart">Time Series:</a></h3>
 
   <div class="image" id="timeseries-demo"></div>
 
@@ -11,7 +11,7 @@
     pre-built interactive visualizations matching common use-cases.  The TimeSeries 
     comes with zoom support.
     <span class="link">
-      (<a href="<?php base_url() ?>demos/timeseries" title="HTML5 time series chart">click to edit</a>)
+      (<a href="<?php echo base_url() ?>envision/demos/timeseries" title="HTML5 time series chart">click to edit</a>)
     </span>
   </p>
 
@@ -19,7 +19,7 @@
 
 <div class="demo">
 
-  <h3><a href="<?php base_url() ?>demos/finance" title="HTML5 Finance Chart">Finance:</a></h3>
+  <h3><a href="<?php echo base_url() ?>envision/demos/finance" title="HTML5 Finance Chart">Finance:</a></h3>
 
   <div class="image" id="finance-demo"></div>
 
@@ -28,7 +28,7 @@
     namespace.  It specifies an initial selection and custom formatters for the x-axis
     and mouse tracking.
     <span class="link">
-      (<a href="<?php base_url() ?>demos/finance" title="HTML5 Finance Chart">click to edit</a>)
+      (<a href="<?php echo base_url() ?>envision/demos/finance" title="HTML5 Finance Chart">click to edit</a>)
     </span>
   </p>
 
@@ -36,7 +36,7 @@
 
 <div class="demo">
 
-  <h3><a href="<?php base_url() ?>demos/ajax" title="Dynamic HTML5 Finance Chart with Ajax">Ajax:</a></h3>
+  <h3><a href="<?php echo base_url() ?>envision/demos/ajax" title="Dynamic HTML5 Finance Chart with Ajax">Ajax:</a></h3>
 
   <div class="image" id="ajax-demo"></div>
 
@@ -45,7 +45,7 @@
     but uses the selection interaction to be responsible for the data.  In this case the
     selection range simply triggers an Ajax fetch, but this could be arbitrarily complex.
     <span class="link">
-      (<a href="<?php base_url() ?>demos/ajax" title="Dynamic HTML5 Finance Chart with Ajax">click to edit</a>)
+      (<a href="<?php echo base_url() ?>envision/demos/ajax" title="Dynamic HTML5 Finance Chart with Ajax">click to edit</a>)
     </span>
   </p>
 
@@ -53,7 +53,7 @@
 
 <div class="demo">
 
-  <h3><a href="<?php echo base_url(); ?>envision/demos/fractal" title="Custom Example - Fractal">Custom - Fractal:</a></h3>
+  <h3><a href="<?php echo base_url(); ?>envision/envision/demos/fractal" title="Custom Example - Fractal">Custom - Fractal:</a></h3>
 
   <div class="image" id="fractal-demo"></div>
 
@@ -63,7 +63,7 @@
     Interaction for zooming.  The fractal itself is rendered using a custom
     flotr chart type.
     <span class="link">
-      (<a href="<?php base_url() ?>demos/fractal" title="Custom Example - Fractal">click to edit</a>)
+      (<a href="<?php echo base_url() ?>envision/demos/fractal" title="Custom Example - Fractal">click to edit</a>)
     </span>
   </p>
 
