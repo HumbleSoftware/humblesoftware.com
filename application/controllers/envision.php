@@ -62,6 +62,20 @@ class Envision extends CI_Controller {
         )));
     }
 
+    public function example ($demo) {
+
+        $demos = array(
+            'template'
+        );
+
+        if (!in_array($demo, $demos)) {
+            show_404();
+            return;
+        }
+
+        $this->load->view('envision/standalone/'.$demo);
+    }
+
     public function documentation()
     {
         $this->load->view('template', array_merge($this->data, array(
