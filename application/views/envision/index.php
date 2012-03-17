@@ -53,14 +53,17 @@
 
 <div class="demo">
 
-  <h3><a href="<?php base_url() ?>demos/ajax" title="Custom Example">Custom - Sync Two Charts:</a></h3>
+  <h3><a href="<?php echo base_url(); ?>envision/demos/fractal" title="Custom Example - Fractal">Custom - Fractal:</a></h3>
 
-  <div class="image" id="custom-demo"></div>
+  <div class="image" id="fractal-demo"></div>
 
   <p>
-    For developers.
+    A custom built visualization which draws a fractal.  Instead of a template, this
+    uses the envision API and includes a Visualization, a Component, and an
+    Interaction for zooming.  The fractal itself is rendered using a custom
+    flotr chart type.
     <span class="link">
-      (<a href="<?php base_url() ?>demos/ajax" title="Custom Example - Sync Two Charts">click to edit</a>)
+      (<a href="<?php base_url() ?>demos/fractal" title="Custom Example - Fractal">click to edit</a>)
     </span>
   </p>
 

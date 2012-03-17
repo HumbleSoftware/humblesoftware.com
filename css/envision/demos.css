@@ -79,6 +79,20 @@ body.no-select {
   margin-left: -50px;
 }
 
+/* Fractal Demo */
+#demos #fractal-demo .fractal .envision-component {
+  height: 148px;
+}
+#demos #fractal-demo .fractal.envision-component-container {
+  position: relative;
+  border: 1px solid #b6d9ff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+#demos #fractal-demo .fractal .envision-component canvas {
+  border-radius: 5px;
+}
+
 @media screen and (max-width: 800px) {
 
   #demos {

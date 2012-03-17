@@ -51,6 +51,7 @@ javascripts:
     - js/envision/demos/timeseries.js
     - js/envision/demos/finance.js
     - js/envision/demos/custom.js
+    - js/envision/demos/fractal.js
     - lib/envision/demos/data/data.js
     - js/envision/demos/ajax.js
 
