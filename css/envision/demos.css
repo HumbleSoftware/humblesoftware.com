@@ -83,11 +83,24 @@ body.no-select {
 #demos #fractal-demo .fractal .envision-component {
   height: 148px;
 }
-#demos #fractal-demo .fractal.envision-component-container {
+#demo .fractal,
+#demos #fractal-demo .fractal {
   position: relative;
   border: 1px solid #b6d9ff;
   border-radius: 5px;
-  overflow: hidden;
+}
+#demo .fractal canvas,
+#demos #fractal-demo .fractal canvas {
+  border-radius: 5px;
+}
+
+/* Individual demo page */
+#demo .fractal {
+  margin: 0px auto;
+  width: 400px;
+}
+#demo .fractal .envision-component {
+  height: 300px;
 }
 #demos #fractal-demo .fractal .envision-component canvas {
   border-radius: 5px;
