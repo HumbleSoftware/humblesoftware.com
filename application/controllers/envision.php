@@ -53,6 +53,7 @@ class Envision extends CI_Controller {
             return;
         }
 
+        $this->includes->js('js/hsd-envision-demo.js');
         $this->includes->js('js/envision/'.$demo.'-demo.js');
         $this->load->view('template', array_merge($this->data, array(
             'title'             => 'envision - demos',

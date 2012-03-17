@@ -53,7 +53,7 @@
 
 <div class="demo">
 
-  <h3><a href="<?php echo base_url(); ?>envision/envision/demos/fractal" title="Custom Example - Fractal">Custom - Fractal:</a></h3>
+  <h3><a href="<?php echo base_url(); ?>envision/demos/fractal" title="Custom Example - Fractal">Custom - Fractal:</a></h3>
 
   <div class="image" id="fractal-demo"></div>
 

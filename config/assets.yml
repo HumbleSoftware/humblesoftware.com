@@ -54,6 +54,9 @@ javascripts:
     - js/envision/demos/fractal.js
     - lib/envision/demos/data/data.js
     - js/envision/demos/ajax.js
+  js/hsd-envision-demo:
+    - js/envision/demos.js
+    - lib/envision/demos/data/data.js
 
   js/envision/ajax-demo-initial-data:
     - lib/envision/demos/data/initial.json

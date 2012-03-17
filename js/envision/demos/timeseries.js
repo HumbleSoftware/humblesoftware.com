@@ -1,32 +1,21 @@
-$(function () {
+function timeseries_demo (container) {
 
-  HSD.envisionExample('timeseries-demo', example);
-
-  function example (container) {
-
-    var
-      V = envision,
-      options, vis;
-
-    options = {
-      container : container,
+  var options = {
+    container : container,
+    data : {
+      detail : financeData.price,
+      summary : financeData.price
+    },
+    // An initial selection
+    selection : {
       data : {
-        detail : financeData.price,
-        summary : financeData.price
-      },
-      // An initial selection
-      selection : {
-        data : {
-          x : {
-            min : 100,
-            max : 200
-          }
+        x : {
+          min : 100,
+          max : 200
         }
       }
-    };
+    }
+  };
 
-    vis = new envision.templates.TimeSeries(options);
-
-  }
-});
-
+  new envision.templates.TimeSeries(options);
+}
