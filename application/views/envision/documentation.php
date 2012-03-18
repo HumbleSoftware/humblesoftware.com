@@ -3,7 +3,18 @@
   <ul class="nav">
     <li><a href="#introduction">Introduction</a></li>
     <li><a href="#usage">Usage</a></li>
+    <li>
+      <ul>
+        <li><a href="#templates">Templates</a></li>
+        <li><a href="#custom">Custom</a></li>
+        <li><a href="#data-format">Data Format</a></li>
+      </ul>
+    </li>
     <li><a href="#development">Development</a></li>
+      <ul>
+        <li><a href="#api">API</a></li>
+        <li><a href="#adapters">Adapters</a></li>
+      </ul>
     <li><a href="#resources">Resources</a></li>
   </ul>
 </div>
@@ -54,14 +65,91 @@
     Templates are kept in the <code>envision.templates</code> namespace.
   </p>
 
-  <h4>Template Example:</h4>
+  <h4>Template Example (<a href="<? echo base_url(); ?>envision/example/template" title="Standalone template example">view standalone</a>)</h4>
   <div id="usage-template"></div>
 
-  <h3>Customized</h3>
+  <h3><a id="custom">Custom</a></h3>
 
   <p>
     This section is for people with a working knowledge of javascript, allowing the creation of 
     custom visualizations using the Envision.js <a href="#development" title="see the development section for more">APIs</a>.
+  </p>
+
+  <h3><a id="data-format">Data Format</a></h3>
+
+  <p>
+    The most basic data is a single series. This is an array of axes, each axis an array of points:
+  </p>
+
+<code class="block">var data = [
+  // X Axis:
+  [
+    1,  // x0
+    2,  // x1
+    4.5 // x2
+  ],
+  // Y Axis:
+  [
+    1,  // y0
+    2,  // y1
+    3   // y2
+  ]
+];
+</code>
+
+  <p>
+    Multiple series are represented by an array of series:
+  </p>
+
+<code class="block">var data = [
+  // First series:
+  [
+    [1, 2, 4.5], // X Axis
+    [1, 2, 3]    // Y Axis
+  ],
+  // Second Series:
+  [
+    [1, 3, 4], // X Axis
+    [2, 4, 1]    // Y Axis
+  ]
+];
+</code>
+
+  <p>
+    Per-series flotr configuration can be given as an object with a data member.
+  </p>
+
+<code class="block">var data = [
+  // Points series:
+  {
+    points : { show : true },
+    data : [
+      [0,1,2,3,4,5,6,7,8,9,10],
+      [0,1,2,1,0,1,2,1,0,1,2]
+    ]
+  }
+];
+</code>
+
+  <h4>Why this format?</h4>
+  <p>
+    Flotr (and many graphing libraries) use data that looks different.  Usually, data is an array of points
+    where each point is an array: <code>(x, y) => [x, y]</code>  The data format in Envision has a couple
+    advantages:
+  </p>
+
+  <ul>
+    <li>Compactness: the data is smaller to store, transfer and parse.</li>
+    <li>Memory: when animating or interacting with charts, data is created and destroyed in real time.
+    Using just a couple arrays has a much smaller footprint than using an array for each point.
+    <li>Processing: it is possible to use native array functions on individual axes</li>
+    </li>
+  </ul>
+
+  <p>
+    It is still possible to use a library's original data format.  Simply add <code>skipPreprocess : true</code> 
+    in a components configuration to pass the data directly to the adapter.  An example of this can be seen in
+    the <a href="<?php echo base_url(); ?>envision/demos/ajax" title = "Ajax Demo with native Flotr data.">Ajax Demo</a>.
   </p>
 
 </section>
@@ -74,9 +162,9 @@
     This section is for developers who wish to contribute to the project or create custom visualizations.
   </p>
 
-  <h3>API</h3>
+  <h3><a id="api">API</a></h3>
 
-  <h3>Adapters</h3>
+  <h3><a id="adapters">Adapters</a></h3>
 
 <section>
 
