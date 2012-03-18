@@ -19,10 +19,46 @@ $(function () {
       $('body').removeClass('no-select');
     });
 
-    timeseries_demo(document.getElementById('timeseries-demo'));
+    var timeseriesContainer = document.getElementById('timeseries-demo');
+    var timeseries = timeseries_demo(timeseriesContainer);
+    // Do some fancy animation
+    var offset = 0;
+    var cancel = false;
+    function animate () {
+
+      var n = Math.cos(offset);
+
+      timeseries.summary.trigger('select', {
+        data : {
+          x : {
+            min : 100,
+            max : 300 - n * 100
+          }
+        }
+      });
+
+      offset += .1;
+
+      if (offset < 2 * Math.PI && !cancel) {
+        setTimeout(animate, 30);
+      }
+    }
+    if ('ontouchstart' in timeseriesContainer) {
+      $(timeseriesContainer).bind('touchstart', function () {
+        cancel = true;
+      });
+    } else {
+      $(timeseriesContainer).mouseover(function () {
+        cancel = true;
+      });
+    }
+
     finance_demo(document.getElementById('finance-demo'));
     ajax_demo(document.getElementById('ajax-demo'));
     fractal_demo(document.getElementById('fractal-demo'));
+
+    // Kickoff animate
+    setTimeout(animate, 750);
 
   } else if (demoDiv) {
 
