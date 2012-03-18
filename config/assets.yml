@@ -43,6 +43,13 @@ javascripts:
     - js/flotr2/documentation.js
 
   js/hsd-envision:
+    - lib/codemirror/lib/codemirror.js
+    - lib/codemirror/mode/javascript/javascript.js
+    - lib/codemirror/mode/htmlmixed/htmlmixed.js
+    - lib/codemirror/mode/css/css.js
+    - lib/codemirror/mode/xml/xml.js
+    - lib/flotr2/examples/lib/beautify.js
+    - lib/flotr2/examples/lib/randomseed.js
     - lib/flotr2/examples/js/Editor.js
     - lib/envision/envision.js
     - lib/envision/envision-templates.js

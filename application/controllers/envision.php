@@ -16,8 +16,6 @@ class Envision extends CI_Controller {
         ));
 
         $this->includes->css('css/hsd-envision.css');
-        //$this->includes->css('css/hsd-flotr2.css');
-        $this->includes->js('js/hsd-flotr2.js');
         $this->includes->js('js/hsd-envision.js');
 
         $this->data = array(
