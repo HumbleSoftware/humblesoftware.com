@@ -17,5 +17,5 @@ function timeseries_demo (container) {
     }
   };
 
-  new envision.templates.TimeSeries(options);
+  return new envision.templates.TimeSeries(options);
 }
