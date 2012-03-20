@@ -28,16 +28,13 @@ javascripts:
   js/flotr2-DefaultOptions:
     - lib/flotr2/js/DefaultOptions.js
 
+  js/envision:
+    - lib/envision/envision.js
+
   js/envision.min:
     - lib/envision/envision.min.js
-
-  js/envision-templates.min:
-    - lib/envision/envision-templates.min.js
 
 stylesheets:
 
   css/envision.min:
     - lib/envision/envision.min.css
-
-  css/envision-templates.min:
-    - lib/envision/envision-templates.min.css

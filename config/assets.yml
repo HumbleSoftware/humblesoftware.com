@@ -51,8 +51,8 @@ javascripts:
     - lib/flotr2/examples/lib/beautify.js
     - lib/flotr2/examples/lib/randomseed.js
     - lib/flotr2/examples/js/Editor.js
-    - lib/envision/envision.js
-    - lib/envision/envision-templates.js
+    - lib/envision/lib/bonzo/bonzo.min.js
+    - lib/envision/build/envision.js
   js/hsd-envision-demos:
     - js/envision/demos.js
     - js/envision/demos/timeseries.js
@@ -97,7 +97,6 @@ stylesheets:
     - lib/flotr2/examples/editor.css
     - lib/codemirror/lib/codemirror.css
     - lib/envision/envision.css
-    - lib/envision/envision-templates.css
     - css/documentation.css
     - css/envision/editor.css
     - css/envision/demos.css

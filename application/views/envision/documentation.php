@@ -23,19 +23,20 @@
   <h2><a id="introduction">Introduction</a></h2>
   <p>
     Envision.js is a library for creating fast, dynamic and interactive visualizations.  The library
-    is born out of <a href="<?php echo base_url();?>finance/index" title="HumbleFinance, a library for
+    is rewrite of <a href="<?php echo base_url();?>finance/index" title="HumbleFinance, a library for
     html5 canvas finance visualization.">HumbleFinance</a>, a library for HTML5 canvas finance visualization.
   </p>
 
   <h3>Features:</h3>
   <ul class="features">
-    <li>Supports major browsers</li>
-    <li>Touch support</li>
-    <li>Small footprint</li>
-    <li>No dependencies</li>
-    <li>Templates for common use-cases</li>
+    <li>Modern Browsers, IE 6+</li>
+    <li>Touch / Mobile Support</li>
+    <li>HTML5 Finance Chart</li>
+    <li>HTML5 Time Series Chart</li>
+    <li>API for Custom Visualizations</li>
+    <li>Framework Agnostic</li>
     <li>Adapted to <a href="<?php echo base_url();?>flotr2" title="Flotr2">Flotr2</a></li>
-    <li>Adaptable to others</li>
+    <li>Adaptable to Others</li>
   </ul>
 </section>
 
@@ -56,8 +57,8 @@
   </p>
 
   <ul>
-    <li><a href="<? echo base_url(); ?>envision/demos/timeseries" title="TimeSeries Template Demo">TimeSeries</a> - a summary and a detail chart sharing an axis</li>
-    <li><a href="<? echo base_url(); ?>envision/demos/finance" title="HTML5 Finance Chart Template Demo">Finance</a> - a 3 charts visualization similar to Google Finance</li>
+    <li><a href="<? echo base_url(); ?>envision/demos/finance" title="HTML5 Finance Chart Template Demo">Finance</a> - An HTML5 finance chart.</li>
+    <li><a href="<? echo base_url(); ?>envision/demos/timeseries" title="TimeSeries Template Demo">TimeSeries</a> - A summary chart and a detail chart sharing an axis.</li>
   </ul>
 
   <p>
@@ -73,6 +74,7 @@
   <p>
     This section is for people with a working knowledge of javascript, allowing the creation of 
     custom visualizations using the Envision.js <a href="#development" title="see the development section for more">APIs</a>.
+    The existing templates are a good reference.
   </p>
 
   <h4>Custom Example (<a href="<? echo base_url(); ?>envision/example/custom" title="Standalone custom example">view standalone</a>)</h4>

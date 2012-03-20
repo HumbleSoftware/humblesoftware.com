@@ -20,7 +20,6 @@
       }
     </style>
     <link rel="stylesheet" type="text/css" href="<?php static_css(); ?>envision.min.css" />
-    <link rel="stylesheet" type="text/css" href="<?php static_css(); ?>envision-templates.min.css" />
   </head>
   <body>
     <div id="container"></div>
@@ -28,9 +27,7 @@
     <!--[if IE]>
     <script type="text/javascript" src="<?php static_lib(); ?>FlashCanvas/bin/flashcanvas.js"></script>
     <![endif]-->
-    <script type="text/javascript" src="<?php static_js(); ?>flotr2.min.js"></script>
     <script type="text/javascript" src="<?php static_js(); ?>envision.min.js"></script>
-    <script type="text/javascript" src="<?php static_js(); ?>envision-templates.min.js"></script>
     <script type="text/javascript">
       (function () {
 
@@ -42,7 +39,7 @@
           data, i,
           detail, detailOptions,
           summary, summaryOptions,
-          vis, selection,
+          vis, selection;
 
         // Data Format:
         data = [
