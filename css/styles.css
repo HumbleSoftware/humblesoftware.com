@@ -67,6 +67,7 @@ fieldset {
     display: inline-block;
     padding: 4px 9px 5px 9px;
     margin: 0px 4px;
+    *display: inline;
 }
 #links li.current-page {
     background: #3a3a3a;
