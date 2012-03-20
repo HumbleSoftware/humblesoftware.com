@@ -9,16 +9,14 @@ $(function () {
       container = $('#envision-demo'),
       vis = finance_demo(container),
       duration = 4000,
-      start = (new Date()).getTime(),
-      end = start + duration,
-      offset = 0,
-      cancel = false;
+      cancel = false,
+      start, end;
 
     function animate () {
 
-      //var n = Math.cos(offset);
-      offset = (new Date()).getTime() - start;
-      var n = Math.cos(2 * Math.PI * offset / (2 * duration))
+      var
+        offset = (new Date()).getTime() - start,
+        n = Math.cos(2 * Math.PI * offset / (2 * duration));
 
       vis.summary.trigger('select', {
         data : {
@@ -31,12 +29,14 @@ $(function () {
 
       offset += .1;
 
-      if (offset < duration) {//2 * Math.PI && !cancel) {
+      if (offset < duration) {
         setTimeout(animate, 40);
       }
     }
 
     setTimeout(function () {
+      start = (new Date()).getTime();
+      end = start + duration;
       animate();
     }, 1000);
   }();

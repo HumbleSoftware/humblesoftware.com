@@ -228,7 +228,7 @@ a.project-flotr-demo-link {
 .projects .project-flotr-demo {
   width: 480px;
   height: 320px;
-  position: absolute !important;
+  position: absolute;
   right: 0px;
   margin: 20px 24px 0px 0px;
 }
@@ -240,7 +240,7 @@ a.project-flotr-demo-link {
 .home .project-flotr-demo {
   width: 328px;
   height: 224px;
-  position: absolute !important;
+  position: absolute;
   left: 50%;
   margin: 14px 0px 2px -164px;
 }
@@ -409,11 +409,24 @@ span.label {
         -webkit-border-radius: 12px;
     }
 
+    #envision-demo {
+        padding: 0px 30px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
     /* Homepage */
     .home .project {
         float: none;
         margin: 10px 0px 20px 0px;
         width: auto;
+    }
+    .project.feature .title {
+        text-align: center;
+    }
+    .project.feature .title span {
+        display: block;
+        float: none;
     }
     .home .project.wide {
         float: none;
@@ -433,6 +446,11 @@ span.label {
         height: 224px;
         left: 0px;
         margin: 14px 0px 2px 0px;
+        padding: 0px 20px;
+    }
+    .home .project-flotr-demo > div {
+      width: 80%;
+      height: 224px;
     }
     .home .project.wide .title {
         position: static;
@@ -442,10 +460,20 @@ span.label {
     .projects .project {
         margin: 10px 0px 20px 0px;
     }
+    #flotr-demo {
+        padding: 0px 40px;
+    }
+    .projects .project-flotr-demo-link {
+    }
     .projects .project-flotr-demo {
+        left: 0px;
         width: 100%;
         height: 224px;
         margin: 16px 0px 0px 0px;
+        padding: 0px 20px;
+    }
+    .projects .project-flotr-demo > div {
+      height: 224px;
     }
     .projects .project.wide {
         height: auto;
