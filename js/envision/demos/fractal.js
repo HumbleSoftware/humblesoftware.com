@@ -88,7 +88,7 @@ function fractal_demo (container) {
     fractalOptions = {
       name : 'fractal',
       data : [[-2, 1.2], [1, -1.2]],
-      flotr : {
+      config : {
         fractal : {
           show : true
         },
