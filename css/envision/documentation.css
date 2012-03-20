@@ -5,3 +5,20 @@
   margin: 0px;
   height: 340px;
 }
+
+/* API */
+#content section.api h4 code {
+  margin-left: 5px;
+  font-size: 16px;
+}
+#content section.api h4 {
+  margin-bottom: 0px;
+}
+section.api .class-description {
+  margin: 2px 0px 0px 6px;
+  padding: 1px 0px 0px 12px;
+  border-left: 1px solid #ddd;
+}
+section.api .class-description li code {
+  margin-right: 5px;
+}

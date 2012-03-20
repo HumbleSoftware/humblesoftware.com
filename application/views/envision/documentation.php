@@ -164,6 +164,8 @@
 
   <h3><a id="api">API</a></h3>
 
+  <section class="api"><? $this->load->view('envision/api.php'); ?></section>
+
   <h3><a id="adapters">Adapters</a></h3>
 
 <section>
