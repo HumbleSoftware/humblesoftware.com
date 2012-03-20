@@ -8,8 +8,7 @@ envision or for the adapter itself, in which case skipPreprocess will
 also need to be submitted.</span></li><li class="param"><code>skipPreprocess</code><span>Skip data preprocessing.  This is useful
 when using the native data format for an adapter.</span></li><li class="param"><code>adapter</code><span>An adapter object.</span></li><li class="param"><code>adapterConstructor</code><span>An adapter constructor to be
 instantiated by the component.</span></li><li class="param"><code>adapterCallback</code><span>An callback invoked by the component
-returning an adapter.</span></li><li class="param"><code>adapterOptions</code><span>Options passed to the adapter constructor
-or function.</span></li></ul></div><h5>Methods:</h5>
+returning an adapter.</span></li><li class="param"><code>config</code><span>Configuration for the adapter.</span></li></ul></div><h5>Methods:</h5>
 <div class="class-method"><code><span class="name">render</span>([element])</code><p class="description"><p>Render the component.</p><p>If no element is submitted, the component will
 render in the element configured in the constructor.</p></p></div>
 <div class="class-method"><code><span class="name">draw</span>([data],&nbsp;[options])</code><p class="description"><p>Draw the component.</p></p></div>
