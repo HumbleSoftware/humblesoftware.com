@@ -12,6 +12,15 @@ $(function () {
       cancel = false,
       start, end;
 
+    if ('ontouchstart' in container) {
+      $(container).find('.envision-finance-summary').bind('touchstart', function () {
+        cancel = true;
+      });
+    } else {
+      $(container).find('.envision-finance-summary').mouseover(function () {
+        cancel = true;
+      });
+    }
     function animate () {
 
       var
@@ -29,7 +38,7 @@ $(function () {
 
       offset += .1;
 
-      if (offset < duration) {
+      if (offset < duration && !cancel) {
         setTimeout(animate, 40);
       }
     }
