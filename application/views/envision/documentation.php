@@ -61,11 +61,6 @@
     <li><a href="<? echo base_url(); ?>envision/demos/timeseries" title="TimeSeries Template Demo">TimeSeries</a> - A summary chart and a detail chart sharing an axis.</li>
   </ul>
 
-  <p>
-    To use a template, also include <code>envision-templates.min.js</code> and <code>envision-templates.min.js</code> in your page.
-    Templates are kept in the <code>envision.templates</code> namespace.
-  </p>
-
   <h4>Template Example (<a href="<? echo base_url(); ?>envision/example/template" title="Standalone template example">view standalone</a>)</h4>
   <div id="usage-template"></div>
 
