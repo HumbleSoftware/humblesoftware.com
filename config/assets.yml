@@ -106,18 +106,17 @@ javascripts:
     - *envision-deps
     - *envision
     - lib/flotr2/examples/js/Editor.js
+    - lib/envision/demos/data/data.js
   js/hsd-envision-demos:
     - js/envision/demos.js
     - js/envision/demos/timeseries.js
     - js/envision/demos/finance.js
     - js/envision/demos/custom.js
     - js/envision/demos/fractal.js
-    - lib/envision/demos/data/data.js
     - js/envision/demos/ajax.js
   js/hsd-envision-demo:
     - lib/flotr2/js/plugins/handles.js
     - js/envision/demos.js
-    - lib/envision/demos/data/data.js
   js/hsd-envision-documentation:
     - js/envision/documentation.js
 
