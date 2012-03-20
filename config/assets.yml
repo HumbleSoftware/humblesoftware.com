@@ -62,6 +62,7 @@ javascripts:
     - lib/envision/demos/data/data.js
     - js/envision/demos/ajax.js
   js/hsd-envision-demo:
+    - lib/flotr2/js/plugins/handles.js
     - js/envision/demos.js
     - lib/envision/demos/data/data.js
   js/hsd-envision-documentation:
