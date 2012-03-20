@@ -37,14 +37,14 @@ function ajax_demo (container) {
       // Skip preprocessing to use flotr-formatted data.
       defaults : {
         volume : {
-          skipPreprocess : true,
+          skipPreprocess : true
         },
         price : {
-          skipPreprocess : true,
+          skipPreprocess : true
         },
         summary : {
           skipPreprocess : true,
-          flotr : {
+          config : {
             xaxis : {
               // Set x ticks manually with defaults override:
               ticks : currentData.summaryTicks
