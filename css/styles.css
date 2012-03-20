@@ -209,6 +209,10 @@ a.project-flotr-demo-link {
   right: 0px;
   margin: 20px 24px 0px 0px;
 }
+.projects .project-flotr-demo > div {
+  position: absolute !important;
+  height: 320px;
+}
 .home .project-flotr-demo {
   width: 328px;
   height: 224px;
@@ -216,13 +220,15 @@ a.project-flotr-demo-link {
   left: 50%;
   margin: 14px 0px 2px -164px;
 }
+.home .project-flotr-demo > div {
+  position: absolute !important;
+  width: 328px;
+  height: 224px;
+}
 .home .project-flotr-demo-link {
   display: block;
   margin: 14px 0px;
   height: 224px;
-}
-.home .project.wide .title {
-  font-weight: bold;
 }
 .home .project.wide {
   padding-bottom: 12px;

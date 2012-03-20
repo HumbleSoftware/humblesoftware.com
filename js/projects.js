@@ -8,7 +8,8 @@ $(function () {
       'basic',
       'basic-bars',
       'basic-bars-horizontal',
-      'basic-bar-stacked',
+      'basic-bar-stacked'
+      /*
       'basic-axis',
       'basic-pie',
       'basic-candle',
@@ -16,7 +17,9 @@ $(function () {
       'basic-radar',
       'color-gradients',
       'negative-values'
+      */
     ],
+    store = {},
     fadeTime = 300,
     interval = 3400,
     index = 1,
@@ -71,11 +74,40 @@ $(function () {
     });
   }
 
-  function execute(example, container) {
-    example = Flotr.ExampleList.examples[example];
-    example.callback.apply(
-      null, [container].concat(example.args) || [container]
-    );
+  var
+    flashCanvas = !('getContext' in (document.createElement('canvas')));
+  function execute(key, container) {
+    var
+      example = Flotr.ExampleList.examples[key];
+    if (flashCanvas) {
+      // Do the thing
+      if (container.firstChild) {
+        div = container.firstChild;
+      } else {
+        div = container.createElement('div');
+        container.appendChild('div');
+      }
+      example.callback.apply(
+        null, [div].concat(example.args) || [div]
+      );
+      
+    } else {
+      // Use store
+      if (store[key]) {
+        container.removeChild(container.firstChild);
+        container.appendChild(store[key]);
+      } else {
+        if (container.firstChild) {
+          container.removeChild(container.firstChild);
+        }
+        var div = document.createElement('div');
+        container.appendChild(div);
+        example.callback.apply(
+          null, [div].concat(example.args) || [div]
+        );
+        store[key] = div;
+      }
+    }
     $(container).attr('title', 'Example: ' + example.name);
   }
 
