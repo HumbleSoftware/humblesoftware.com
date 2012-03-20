@@ -75,6 +75,10 @@
     custom visualizations using the Envision.js <a href="#development" title="see the development section for more">APIs</a>.
   </p>
 
+  <h4>Custom Example (<a href="<? echo base_url(); ?>envision/example/custom" title="Standalone custom example">view standalone</a>)</h4>
+
+  <div id="usage-custom"></div>
+
   <h3><a id="data-format">Data Format</a></h3>
 
   <p>

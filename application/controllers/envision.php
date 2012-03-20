@@ -63,7 +63,8 @@ class Envision extends CI_Controller {
     public function example ($demo) {
 
         $demos = array(
-            'template'
+            'template',
+            'custom'
         );
 
         if (!in_array($demo, $demos)) {
