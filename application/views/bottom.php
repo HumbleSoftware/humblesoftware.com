@@ -16,8 +16,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 */?>
 <script src="<?php static_js(); ?>hsd.js"></script>
-<!--[if lt IE 9]>
-<script src="<?php static_js(); ?>hsd-ie8.js"></script>
+<!--[if IE]>
+<script src="<?php static_lib(); ?>FlashCanvas/bin/flashcanvas.js"></script>
 <![endif]-->
 <?php if (isset($includes)): foreach ($includes->getJS() as $script) { ?>
     <script src="<?php echo base_url().'static/'.$script; ?>"></script>
