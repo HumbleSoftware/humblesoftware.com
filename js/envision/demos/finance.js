@@ -33,5 +33,5 @@ function finance_demo (container) {
     }
   };
 
-  new envision.templates.Finance(options);
+  return new envision.templates.Finance(options);
 }

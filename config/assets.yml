@@ -13,6 +13,13 @@ javascripts:
     - lib/flotr2/flotr2.ie.min.js
 
   js/projects:
+    # envision
+    - lib/envision/lib/bonzo/bonzo.min.js
+    - lib/envision/build/envision.js
+    # finance demo
+    - lib/envision/demos/data/data.js
+    - js/envision/demos/finance.js
+    # flotr
     - lib/flotr2/flotr2.examples.types.js
     - js/projects.js
 
@@ -79,6 +86,9 @@ stylesheets:
     - css/styles.css
     - css/button.css
     - lib/google-code-prettify/prettify.css
+
+  css/projects:
+    - lib/envision/envision.css
 
   css/demos:
     - css/demos.css

@@ -1,6 +1,18 @@
+<div class="project feature">
+    <span class="title">
+        New: <a href="<?php echo base_url(); ?>envision/">Envision.js</a> <span>Dynamic Interactive HTML5 Visualizations</span>
+    </span>
+    <div id="envision-demo"></div>
+    <span class="description">
+        Envision.js is a library for building fast, dynamic, interactive HTML5 visualizations.
+    </span>
+</div>
+
+<h3>Projects:</h3>
+
 <div class="project wide">
     <span class="title">
-        New: <a href="<?php echo base_url(); ?>flotr2/index">Flotr2</a>
+        <a href="<?php echo base_url(); ?>flotr2/index">Flotr2</a>
     </span>
     <span class="description">
         A modern graphing library for Canvas written in JavaScript.

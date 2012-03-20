@@ -183,7 +183,30 @@ a.project-flotr-demo-link {
 }
 
 /* Featured Project */
-
+.project.feature {
+    width: auto;
+    float: none;
+    margin-bottom: 32px;
+}
+.project.feature .title {
+    position: static;
+    font-weight: bold;
+}
+.project.feature .title a {
+}
+.project.feature .title span {
+    font-weight: normal;
+    float: right;
+}
+.project.feature .description {
+    margin-top: 8px;
+}
+#envision-demo {
+    height: 379px;
+}
+#envision-demo .envision-finance {
+    margin: 14px auto 0px auto;
+}
 .project.wide .description {
     border: none;
     padding-left: 0px;
@@ -211,6 +234,7 @@ a.project-flotr-demo-link {
 }
 .projects .project-flotr-demo > div {
   position: absolute !important;
+  width: 480px;
   height: 320px;
 }
 .home .project-flotr-demo {
