@@ -62,7 +62,7 @@
           name : 'detail',
           data : data,
           height : 150,
-          flotr : {
+          config : {
             yaxis : {
               min : -1.1,
               max : 1.1
@@ -75,7 +75,7 @@
           name : 'summary',
           data : data,
           height : 150,
-          flotr : {
+          config : {
             yaxis : {
               min : -1.1,
               max : 1.1
