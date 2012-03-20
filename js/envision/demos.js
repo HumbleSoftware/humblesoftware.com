@@ -44,11 +44,11 @@ $(function () {
       }
     }
     if ('ontouchstart' in timeseriesContainer) {
-      $(timeseriesContainer).bind('touchstart', function () {
+      $(timeseriesContainer).find('.envision-timeseries-summary').bind('touchstart', function () {
         cancel = true;
       });
     } else {
-      $(timeseriesContainer).mouseover(function () {
+      $(timeseriesContainer).find('.envision-timeseries-summary').mouseover(function () {
         cancel = true;
       });
     }
