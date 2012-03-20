@@ -82,7 +82,11 @@ $(function () {
       swapGraphs();
       timeout = setTimeout(intervalCallback, interval);
     }
-    timeout = setTimeout(intervalCallback, interval - 2 * fadeTime);
+
+    // Start after 5 seconds
+    setTimeout (function () {
+      timeout = setTimeout(intervalCallback, interval - 2 * fadeTime);
+    }, 5000);
 
     // Hover pause rotation
     link.hover(function () {
