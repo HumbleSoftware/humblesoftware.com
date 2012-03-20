@@ -27,7 +27,6 @@ class Envision extends CI_Controller {
 
     public function index()
     {
-        $this->includes->css('css/hsd-envision.css');
         $this->includes->js('js/hsd-envision-demos.js');
 
         $this->load->view('template', array_merge($this->data, array(
