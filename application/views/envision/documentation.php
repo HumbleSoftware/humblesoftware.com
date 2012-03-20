@@ -169,6 +169,14 @@
 
   <h3><a id="adapters">Adapters</a></h3>
 
+  <p>
+    Envision is written to a particular interface.  Other graphing libraries can be adapted to it 
+    or written specifically for it.  For now, the best references are the code itself.  The Flotr2
+    adapter is in <code>js/adapters/flotr/</code> and a sample concrete object is in 
+    <code>js/components/</code>
+  </p>
+    
+
 <section>
 
 <section class="resources">
