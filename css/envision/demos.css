@@ -105,6 +105,34 @@ body.no-select {
 
 @media screen and (max-width: 800px) {
 
+  #demo .editor .render {
+    margin: 0px 30px 8px 30px;
+  }
+
+  #demo .render .envision-timeseries {
+    height: 190px;
+  }
+
+  #demo .render .envision-timeseries-detail .envision-component {
+    height: 120px;
+  }
+  #demo .render .envision-timeseries-summary .envision-component {
+    height: 56px;
+  }
+
+  #demo .render .envision-finance {
+    height: 226px;
+  }
+  #demo .render .envision-finance-price .envision-component {
+    height: 120px;
+  }
+  #demo .render .envision-finance-volume .envision-component {
+    height: 40px;
+  }
+  #demo .render .envision-finance-summary .envision-component {
+    height: 40px;
+  }
+
   #demos {
     padding: 0px 8px;
   }
