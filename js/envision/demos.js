@@ -62,6 +62,14 @@ $(function () {
 
   } else if (demoDiv) {
 
+    // No Select
+    $(demoDiv).mousedown(function (e) {
+      $('body').addClass('no-select');
+    })
+    $(document).mouseup(function (e) {
+      $('body').removeClass('no-select');
+    });
+
     // Single Demo with Editor:
     var
       href = window.location.href,
