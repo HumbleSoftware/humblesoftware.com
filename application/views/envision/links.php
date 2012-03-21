@@ -9,7 +9,7 @@
     <a href="<?php echo base_url(); ?>envision/feedback"><span>feedback</span></a>
   </li>
   <li<?php echo ($page == 'envision/source' ? ' class="current-page"' : ''); ?>>
-    <a href="http://www.github.com/HumbleSoftware/Flotr2"><span>source</span></a>
+    <a href="http://www.github.com/HumbleSoftware/envisionjs"><span>source</span></a>
   </li>
   <li>
     <a href="<?php echo base_url(); ?>"><span>humble software</span></a>
