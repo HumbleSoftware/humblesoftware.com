@@ -11,10 +11,12 @@
       </ul>
     </li>
     <li><a href="#development">Development</a></li>
+    <li>
       <ul>
         <li><a href="#api">API</a></li>
         <li><a href="#adapters">Adapters</a></li>
       </ul>
+    </li>
     <li><a href="#resources">Resources</a></li>
   </ul>
 </div>
@@ -147,9 +149,8 @@
   <ul>
     <li>Compactness: the data is smaller to store, transfer and parse.</li>
     <li>Memory: when animating or interacting with charts, data is created and destroyed in real time.
-    Using just a couple arrays has a much smaller footprint than using an array for each point.
+    Using just a couple arrays has a much smaller footprint than using an array for each point.</li>
     <li>Processing: it is possible to use native array functions on individual axes</li>
-    </li>
   </ul>
 
   <p>
@@ -181,8 +182,7 @@
     <code>js/components/</code>
   </p>
     
-
-<section>
+</section>
 
 <section class="resources">
   <h2><a id="resources">Resources</a></h2>
