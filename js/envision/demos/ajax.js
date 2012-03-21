@@ -20,7 +20,7 @@ function ajax_demo (container) {
           index = o.index,
           value;
 
-        value = currentData.data[index].date + ': $' + currentData.price[1][index] + ", Vol: " + currentData.volume[1][index];
+        value = currentData.data[index].date + ': $' + currentData.price[index][1] + ", Vol: " + currentData.volume[index][1];
 
         return value;
       },
@@ -54,6 +54,19 @@ function ajax_demo (container) {
       }
     };
 
+    // Set the selection callback:
+    //
+    // This callback is applied after a selection action but
+    // before the components are updated.  This lets a developer
+    // control the components configuration or data based upon
+    // the area selected.
+    //
+    // The only argument of the callback is the result of the
+    // action — in this case a selection area in this case.
+    // Desiging to the interface of the Component allows the
+    // data handling to be entirely separate and arbitarily 
+    // complex.
+    //
     options.selectionCallback = (function () {
 
       var data = {
@@ -61,6 +74,7 @@ function ajax_demo (container) {
         fetched : null
       };
 
+      // Helper for fetching high resolution data
       function fetchData (o) {
         $.getJSON(HSD_BASE + 'static/js/envision/ajax-demo-dynamic-data.js', function (fetchedData) {
           data.fetched = fetchedData;
@@ -72,22 +86,32 @@ function ajax_demo (container) {
           }, this);
         });
       }
-      return function (o) {
+
+      // Selection callback:
+      return function (selection) {
 
         if (finance) {
           var
-            x = o.data.x;
+            x = selection.data.x;
 
           if (x.max !== null && Math.abs(x.max - x.min) < 250) {
             if (data.fetched) {
+
+              // Use high resolution data, if available
               finance.price.options.data = data.fetched.price;
               finance.volume.options.data = data.fetched.volume;
+              currentData = data.fetched;
             } else {
-              fetchData(o);
+
+              // Fetch high resolution data
+              fetchData(selection);
             }
           } else {
+
+            // Use low resolution data
             finance.price.options.data = data.initial.price;
             finance.volume.options.data = data.initial.volume;
+            currentData = data.initial;
           }
         }
       }

@@ -75,6 +75,9 @@ body.no-select {
 #demos .envision-finance-price .flotr-grid-label.last {
   margin-top: -1px;
 }
+#demo .render .envision-finance {
+  height: 367px;
+}
 
 /* Ajax Demo */
 #demos #ajax-demo .envision-finance-summary .flotr-grid-label {

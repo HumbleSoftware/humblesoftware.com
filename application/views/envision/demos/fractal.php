@@ -3,6 +3,3 @@
 <p>Fractal Demo</p>
 
 <div id="demo"></div>
-
-<p>Explanation</p>
-
