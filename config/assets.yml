@@ -120,11 +120,6 @@ javascripts:
   js/hsd-envision-documentation:
     - js/envision/documentation.js
 
-  js/envision/ajax-demo-initial-data:
-    - lib/envision/demos/data/initial.json
-  js/envision/ajax-demo-dynamic-data:
-    - lib/envision/demos/data/ajax.json
-
 stylesheets:
 
   css/hsd:

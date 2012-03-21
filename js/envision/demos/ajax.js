@@ -1,7 +1,7 @@
 function ajax_demo (container) {
 
   // Get initial data
-  $.getJSON(HSD_BASE + 'static/js/envision/ajax-demo-initial-data.js', function (initialData) {
+  $.getJSON(HSD_BASE + 'static/json/envision/ajax-demo-initial-data.json', function (initialData) {
 
     var
       currentData = initialData,
@@ -76,7 +76,7 @@ function ajax_demo (container) {
 
       // Helper for fetching high resolution data
       function fetchData (o) {
-        $.getJSON(HSD_BASE + 'static/js/envision/ajax-demo-dynamic-data.js', function (fetchedData) {
+        $.getJSON(HSD_BASE + 'static/json/envision/ajax-demo-dynamic-data.json', function (fetchedData) {
           data.fetched = fetchedData;
           currentData = fetchedData;
           finance.price.options.data = data.fetched.price;
