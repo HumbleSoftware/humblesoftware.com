@@ -1,6 +1,6 @@
 <div id="footer-container">
     <div id="footer">
-        <span class="footer-text">we let our work do the talking.</span>
+        <span class="footer-text">developers of fine software.</span>
         <span class="footer-links">
             <ul>
                 <li>
