@@ -46,7 +46,7 @@
 
   <h3>
     <a id="usage-example">Usage Example</a> (<a
-    href="<?php echo base_url(); ?>/flotr2/example">stand alone</a>)
+    href="<?php echo base_url(); ?>flotr2/example">stand alone</a>)
   </h3>
 
   <div class="editor usage"></div>

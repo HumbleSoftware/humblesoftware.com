@@ -1,0 +1,170 @@
+/* General */
+#demos {
+  margin-top: 28px;
+  padding: 0px 100px;
+}
+#demos .stub {
+  font-size: 16px;
+  text-shadow: 1px 1px 0 #E0E0E0;
+  padding-bottom: 8px;
+}
+#demos .demo {
+  margin: 0px auto 40px auto;
+  position: relative;
+}
+#demos .demo h2 {
+}
+#demos .demo p {
+  margin-right: 240px;
+}
+#demos .demo .image {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+#demos .demo .link {
+  float: right;
+  padding-right: 8px;
+}
+body.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+/* Envision General */
+#demos .envision-visualization {
+  width: 200px;
+}
+
+/* TimeSeries Template */
+#demos .envision-timeseries-detail .envision-component {
+  height: 64px;
+}
+#demos .envision-timeseries-summary .envision-component {
+  height: 30px;
+  cursor: all-scroll;
+}
+
+/* Finance Template */
+#demos .envision-finance-price .envision-component {
+  height: 48px;
+}
+#demos .envision-finance-volume .envision-component {
+  height: 25px;
+}
+#demos .envision-finance-summary .envision-component {
+  height: 20px;
+  cursor: all-scroll;
+}
+#demos .envision-finance .flotr-mouse-value,
+#demos .envision-finance .flotr-grid-label {
+  display: none;
+}
+#demos .envision-finance .flotr-grid-label.first,
+#demos .envision-finance .flotr-grid-label.last {
+  display: block;
+}
+#demos .envision-finance-price .flotr-grid-label.first {
+  margin-top: -14px;
+}
+#demos .envision-finance-price .flotr-grid-label.last {
+  margin-top: -1px;
+}
+#demo .render .envision-finance {
+  height: 367px;
+}
+
+/* Ajax Demo */
+#demos #ajax-demo .envision-finance-summary .flotr-grid-label {
+  white-space: nowrap;
+}
+#demos #ajax-demo .envision-finance-summary .flotr-grid-label.last {
+  margin-left: -50px;
+}
+
+/* Fractal Demo */
+#demos #fractal-demo .fractal .envision-component {
+  cursor: all-scroll;
+  height: 148px;
+}
+#demo .fractal,
+#demos #fractal-demo .fractal {
+  position: relative;
+  border: 1px solid #b6d9ff;
+  border-radius: 5px;
+}
+#demo .fractal canvas,
+#demos #fractal-demo .fractal canvas {
+  border-radius: 5px;
+}
+#demo .fractal {
+  margin: 0px auto;
+  width: 400px;
+}
+#demo .fractal .envision-component {
+  cursor: all-scroll;
+  height: 300px;
+}
+
+@media screen and (max-width: 800px) {
+
+  #demo .editor .render {
+    margin: 0px 30px 8px 30px;
+  }
+
+  #demo .render .envision-timeseries {
+    height: 190px;
+  }
+
+  #demo .render .envision-timeseries-detail .envision-component {
+    height: 120px;
+  }
+  #demo .render .envision-timeseries-summary .envision-component {
+    height: 56px;
+  }
+
+  #demo .render .envision-finance {
+    height: 226px;
+  }
+  #demo .render .envision-finance-price .envision-component {
+    height: 120px;
+  }
+  #demo .render .envision-finance-volume .envision-component {
+    height: 40px;
+  }
+  #demo .render .envision-finance-summary .envision-component {
+    height: 40px;
+  }
+
+  #demos {
+    padding: 0px 8px;
+  }
+
+  #demos .demo .image {
+    position: static;
+  }
+
+  #demos .demo .link {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+
+  #demos .envision-visualization {
+    margin: 0px auto;
+  }
+
+  #demos .demo p {
+    margin-right: 0px;
+  }
+
+  #demos .envision-finance {
+    margin-bottom: 26px;
+  }
+
+}

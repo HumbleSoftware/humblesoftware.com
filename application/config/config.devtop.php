@@ -7,6 +7,7 @@ $config['static_lib'] = '/hsd/static/lib/';
 
 $config['admin_email'] = 'carl@humblesoftware.com';
 
+$config['buster'] = "/hsd/";
 
 /*
 |--------------------------------------------------------------------------

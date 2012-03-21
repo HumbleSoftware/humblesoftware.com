@@ -3,5 +3,3 @@ www_dev/movemytaxes
 *.swp
 Session.vim
 Gemfile.lock
-static/css/*.gz
-static/js/*.gz

@@ -10,8 +10,6 @@ dynamic data visualization, and search/information retrieval.
 <div>
 	<div class="home-projects">
 
-		<h3>Projects:</h3>
-
         <div class="projects-list">
         <?php $this->load->view('projects/list.php'); ?>
         </div>

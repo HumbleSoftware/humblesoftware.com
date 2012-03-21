@@ -67,6 +67,7 @@ fieldset {
     display: inline-block;
     padding: 4px 9px 5px 9px;
     margin: 0px 4px;
+    *display: inline;
 }
 #links li.current-page {
     background: #3a3a3a;
@@ -182,7 +183,30 @@ a.project-flotr-demo-link {
 }
 
 /* Featured Project */
-
+.project.feature {
+    width: auto;
+    float: none;
+    margin-bottom: 32px;
+}
+.project.feature .title {
+    position: static;
+    font-weight: bold;
+}
+.project.feature .title a {
+}
+.project.feature .title span {
+    font-weight: normal;
+    float: right;
+}
+.project.feature .description {
+    margin-top: 8px;
+}
+#envision-demo {
+    height: 379px;
+}
+#envision-demo .envision-finance {
+    margin: 14px auto 0px auto;
+}
 .project.wide .description {
     border: none;
     padding-left: 0px;
@@ -204,24 +228,31 @@ a.project-flotr-demo-link {
 .projects .project-flotr-demo {
   width: 480px;
   height: 320px;
-  position: absolute !important;
+  position: absolute;
   right: 0px;
   margin: 20px 24px 0px 0px;
+}
+.projects .project-flotr-demo > div {
+  position: absolute !important;
+  width: 480px;
+  height: 320px;
 }
 .home .project-flotr-demo {
   width: 328px;
   height: 224px;
-  position: absolute !important;
+  position: absolute;
   left: 50%;
   margin: 14px 0px 2px -164px;
+}
+.home .project-flotr-demo > div {
+  position: absolute !important;
+  width: 328px;
+  height: 224px;
 }
 .home .project-flotr-demo-link {
   display: block;
   margin: 14px 0px;
   height: 224px;
-}
-.home .project.wide .title {
-  font-weight: bold;
 }
 .home .project.wide {
   padding-bottom: 12px;
@@ -378,11 +409,24 @@ span.label {
         -webkit-border-radius: 12px;
     }
 
+    #envision-demo {
+        padding: 0px 30px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
     /* Homepage */
     .home .project {
         float: none;
         margin: 10px 0px 20px 0px;
         width: auto;
+    }
+    .project.feature .title {
+        text-align: center;
+    }
+    .project.feature .title span {
+        display: block;
+        float: none;
     }
     .home .project.wide {
         float: none;
@@ -402,6 +446,11 @@ span.label {
         height: 224px;
         left: 0px;
         margin: 14px 0px 2px 0px;
+        padding: 0px 20px;
+    }
+    .home .project-flotr-demo > div {
+      width: 80%;
+      height: 224px;
     }
     .home .project.wide .title {
         position: static;
@@ -411,10 +460,20 @@ span.label {
     .projects .project {
         margin: 10px 0px 20px 0px;
     }
+    #flotr-demo {
+        padding: 0px 40px;
+    }
+    .projects .project-flotr-demo-link {
+    }
     .projects .project-flotr-demo {
+        left: 0px;
         width: 100%;
         height: 224px;
         margin: 16px 0px 0px 0px;
+        padding: 0px 20px;
+    }
+    .projects .project-flotr-demo > div {
+      height: 224px;
     }
     .projects .project.wide {
         height: auto;

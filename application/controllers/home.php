@@ -17,6 +17,9 @@ class Home extends CI_Controller {
     }
 	public function index()
 	{
+        $this->includes->css(array(
+            'css/projects.css'
+        ));
         $this->includes->js(array(
             'js/projects.js',
         ));
