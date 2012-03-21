@@ -6,7 +6,7 @@
     <li>
       <ul>
         <li><a href="#templates">Templates</a></li>
-        <li><a href="#custom">Custom</a></li>
+        <li><a href="#custom">Customization</a></li>
         <li><a href="#data-format">Data Format</a></li>
       </ul>
     </li>
@@ -64,12 +64,17 @@
   <h4>Template Example (<a href="<? echo base_url(); ?>envision/example/template" title="Standalone template example">view standalone</a>)</h4>
   <div id="usage-template"></div>
 
-  <h3><a id="custom">Custom</a></h3>
+  <h3><a id="custom">Customization</a></h3>
 
   <p>
     This section is for people with a working knowledge of javascript, allowing the creation of 
     custom visualizations using the Envision.js <a href="#development" title="see the development section for more">APIs</a>.
     The existing templates are a good reference.
+  </p>
+
+  <p>
+    Further customization is possible using the Component config option.  These are options passed
+    to the underlying adapter/API (<a href="<?php echo base_url();?>flotr2" title="Flotr2">Flotr2</a> by default).
   </p>
 
   <h4>Custom Example (<a href="<? echo base_url(); ?>envision/example/custom" title="Standalone custom example">view standalone</a>)</h4>
