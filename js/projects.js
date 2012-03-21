@@ -137,8 +137,8 @@ $(function () {
         if (container.firstChild) {
           div = container.firstChild;
         } else {
-          div = container.createElement('div');
-          container.appendChild('div');
+          div = document.createElement('div');
+          container.appendChild(div);
         }
         example.callback.apply(
           null, [div].concat(example.args) || [div]
