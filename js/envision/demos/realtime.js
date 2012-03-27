@@ -25,6 +25,13 @@ function realtime_demo (container) {
     data : {
       detail : data,
       summary : data
+    },
+    defaults : {
+      summary : {
+        config : {
+          handles : { show : false }
+        }
+      }
     }
   }
 
@@ -61,7 +68,7 @@ function realtime_demo (container) {
 
       var
         time = (new Date()).getTime(),
-        tick = time - start,
+        tick = Math.min(time - start, length),
         offset = (Math.sin(Math.PI * (tick) / length - Math.PI / 2) + 1) / 2;
 
       // Draw the summary first

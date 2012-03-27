@@ -47,7 +47,6 @@ body.no-select {
 }
 #demos .envision-timeseries-summary .envision-component {
   height: 30px;
-  cursor: all-scroll;
 }
 
 /* Finance Template */
@@ -59,7 +58,6 @@ body.no-select {
 }
 #demos .envision-finance-summary .envision-component {
   height: 20px;
-  cursor: all-scroll;
 }
 #demos .envision-finance .flotr-mouse-value,
 #demos .envision-finance .flotr-grid-label {
@@ -77,6 +75,11 @@ body.no-select {
 }
 #demo .render .envision-finance {
   height: 367px;
+}
+
+/* Realtime Demo */
+#demo.realtime .envision-timeseries-summary .envision-component {
+  cursor : default;
 }
 
 /* Ajax Demo */

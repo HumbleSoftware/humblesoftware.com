@@ -60,6 +60,7 @@ $(function () {
     fractal_demo(document.getElementById('fractal-demo'));
 
     // Kickoff animate
+    console.log($.ua);
     setTimeout(animate, 750);
 
   } else if (demoDiv) {
@@ -76,6 +77,8 @@ $(function () {
     var
       href = window.location.href,
       key = (href.split('/')).pop();
+
+    $(demoDiv).addClass(key);
 
     if (key) {
       $.get(HSD_BASE + 'static/js/envision/'+key+'-demo.js', function (example) {
