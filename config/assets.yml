@@ -1,5 +1,5 @@
 embed_assets: off
-compress_assets: on
+compress_assets: off
 
 codemirrir: &codemirror
   - lib/codemirror/lib/codemirror.js
@@ -109,6 +109,7 @@ javascripts:
     - lib/envision/demos/data/data.js
   js/hsd-envision-demos:
     - js/envision/demos.js
+    - js/envision/demos/realtime.js
     - js/envision/demos/timeseries.js
     - js/envision/demos/finance.js
     - js/envision/demos/custom.js

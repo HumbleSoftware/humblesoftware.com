@@ -2,37 +2,35 @@ compress_assets: off
 
 javascripts:
 
+# envision
+  js/envision:
+    - lib/envision/envision.js
+  js/envision.min:
+    - lib/envision/envision.min.js
+
+#envision demos
+  js/envision/realtime-demo:
+    - js/envision/demos/realtime.js
   js/envision/timeseries-demo:
     - js/envision/demos/timeseries.js
-
   js/envision/finance-demo:
     - js/envision/demos/finance.js
-
   js/envision/ajax-demo:
     - js/envision/demos/ajax.js
-
   js/envision/custom-demo:
     - js/envision/demos/custom.js
-
   js/envision/fractal-demo:
     - js/envision/demos/fractal.js
 
+# flotr
   js/hsd-flotr2-examples:
     - lib/flotr2/flotr2.examples.types.js
     - lib/flotr2/flotr2.examples.min.js
     - js/flotr2/driver.js
-
   js/flotr2.min:
     - lib/flotr2/flotr2.min.js
-
   js/flotr2-DefaultOptions:
     - lib/flotr2/js/DefaultOptions.js
-
-  js/envision:
-    - lib/envision/envision.js
-
-  js/envision.min:
-    - lib/envision/envision.min.js
 
 stylesheets:
 

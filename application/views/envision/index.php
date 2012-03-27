@@ -7,6 +7,23 @@ Envision.js is a library for creating fast, dynamic and interactive HTML5 visual
 
 <div class="demo">
 
+  <h3><a href="<?php echo base_url() ?>envision/demos/realtime " title="HTML5 time series chart with real-time data">Real-Time:</a></h3>
+
+  <div class="image" id="realtime-demo"></div>
+
+  <p>
+    HTML5 time series chart.  This uses the TimeSeries template.  Templates provide
+    pre-built interactive visualizations matching common use-cases.  TimeSeries 
+    comes with zoom support.
+    <span class="link">
+      (<a href="<?php echo base_url() ?>envision/demos/timeseries" title="HTML5 time series chart with real-time data">click to code</a>)
+    </span>
+  </p>
+
+</div>
+
+<div class="demo">
+
   <h3><a href="<?php echo base_url() ?>envision/demos/timeseries" title="HTML5 time series chart">TimeSeries:</a></h3>
 
   <div class="image" id="timeseries-demo"></div>

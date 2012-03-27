@@ -19,6 +19,8 @@ $(function () {
       $('body').removeClass('no-select');
     });
 
+    var timeseries = realtime_demo(document.getElementById('realtime-demo'));
+
     var timeseriesContainer = document.getElementById('timeseries-demo');
     var timeseries = timeseries_demo(timeseriesContainer);
     // Do some fancy animation
