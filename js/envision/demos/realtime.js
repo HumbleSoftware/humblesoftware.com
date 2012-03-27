@@ -43,11 +43,12 @@ function realtime_demo (container) {
   // or streaming / long-polling data source.
   function getNewData () {
     i++;
+
+    // Short circuit (no need to keep going!  you get the idea)
+    if (i > 1000) return;
+
     sample(i);
     animate(i);
-
-    // Pretend new data comes in every second
-    setTimeout(getNewData, 1000);
   }
 
   // Initial request for new data
@@ -92,6 +93,9 @@ function realtime_demo (container) {
 
       if (tick < length) {
         setTimeout(frame, 20);
+      } else {
+        // Pretend new data comes in every second
+        setTimeout(getNewData, 500);
       }
     })();
   }
