@@ -1,5 +1,5 @@
 embed_assets: off
-compress_assets: off
+compress_assets: on
 
 codemirrir: &codemirror
   - lib/codemirror/lib/codemirror.js
