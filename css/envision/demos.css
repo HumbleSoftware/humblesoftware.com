@@ -78,9 +78,11 @@ body.no-select {
 }
 
 /* Realtime Demo */
-#demo.realtime .envision-timeseries-summary .envision-component {
+#demo.realtime .envision-timeseries-summary .envision-component,
+#realtime-demo .envision-timeseries-summary .envision-component {
   cursor : default;
 }
+  cursor : default;
 
 /* Ajax Demo */
 #demos #ajax-demo .envision-finance-summary .flotr-grid-label {
