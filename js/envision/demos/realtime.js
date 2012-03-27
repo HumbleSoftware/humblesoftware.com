@@ -7,16 +7,19 @@ function realtime_demo (container) {
     data = [[x, dataA], [x, dataB]],
     options, i, timesries;
 
+  // Mock Data:
   function sample(i) {
     x.push(i);
     dataA.push(Math.sin(i / 6) * (Math.random() + 1) / 2);
-    dataB.push(Math.sin(i / 6) * (Math.random() + 1) / 2);
+    dataB.push(Math.sin(i / 6 + Math.PI / 2) * (Math.random() + 1) / 2);
   }
 
-  for (i = 0; i < 50; i++) {
+  // Initial Data:
+  for (i = 0; i < 100; i++) {
     sample(i);
   }
 
+  // Envision Timeseries Options
   options = {
     container : container,
     data : {
@@ -25,37 +28,52 @@ function realtime_demo (container) {
     }
   }
 
+  // Render the timeseries
   timeseries = new envision.templates.TimeSeries(options);
 
+  // Method to get new data
+  // This could be part of an Ajax callback, a websocket callback,
+  // or streaming / long-polling data source.
   function getNewData () {
     i++;
     sample(i);
     animate(i);
+
+    // Pretend new data comes in every second
     setTimeout(getNewData, 1000);
   }
 
+  // Initial request for new data
+  getNewData();
+
+  // Animate the new data
   function animate (i) {
 
     var
-      length = 500,
       start = (new Date()).getTime(),
-      min = i - 51,
-      max = i - 1,
-      offset = 0;
+      length = 500, // 500ms animation length
+      max = i - 1,  // One new point comes in at a time
+      min = i - 51, // Show 50 in the top
+      offset = 0;   // Animation frame offset
 
-    function frame () {
+    // Render animation frame
+    (function frame () {
 
       var
         time = (new Date()).getTime(),
         tick = time - start,
         offset = (Math.sin(Math.PI * (tick) / length - Math.PI / 2) + 1) / 2;
 
+      // Draw the summary first
       timeseries.summary.draw(null, {
         xaxis : {
           min : 0,
           max : max + offset
         }
       });
+
+      // Trigger the select interaction.
+      // Update the select region and draw the detail graph.
       timeseries.summary.trigger('select', {
         data : {
           x : {
@@ -68,11 +86,6 @@ function realtime_demo (container) {
       if (tick < length) {
         setTimeout(frame, 20);
       }
-    }
-
-    frame();
+    })();
   }
-
-  getNewData();
-
 }
