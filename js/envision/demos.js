@@ -60,8 +60,9 @@ $(function () {
     fractal_demo(document.getElementById('fractal-demo'));
 
     // Kickoff animate
-    console.log($.ua);
-    setTimeout(animate, 750);
+    if (!('ontouchstart' in demosDiv) && (!$.browser.ie || $.browser.ie >= 9)) {
+      setTimeout(animate, 750);
+    }
 
   } else if (demoDiv) {
 
