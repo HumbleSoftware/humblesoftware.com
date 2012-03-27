@@ -147,7 +147,9 @@ stylesheets:
   css/hsd-envision:
     - lib/flotr2/examples/editor.css
     - lib/codemirror/lib/codemirror.css
-    - lib/envision/envision.css
+    - lib/envision/css/flotr.css
+    - lib/envision/css/templates/finance.css
+    - lib/envision/css/templates/timeseries.css
     - css/documentation.css
     - css/envision/editor.css
     - css/envision/demos.css
