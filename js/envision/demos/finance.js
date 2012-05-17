@@ -1,6 +1,8 @@
 function finance_demo (container) {
 
-  var options = {
+  var
+    summaryTicks = financeData.summaryTicks,
+    options = {
     container : container,
     data : {
       price : financeData.price,
@@ -10,11 +12,11 @@ function finance_demo (container) {
     trackFormatter : function (o) {
 
       var
-        data = financeData,
-        index = o.index,
+        data = o.series.data,
+        index = data[o.index][0],
         value;
 
-      value = data.summaryTicks[index].date + ': $' + data.price[1][index] + ", Vol: " + data.volume[1][index];
+      value = summaryTicks[index].date + ': $' + summaryTicks[index].close + ", Vol: " + summaryTicks[index].volume;
 
       return value;
     },
