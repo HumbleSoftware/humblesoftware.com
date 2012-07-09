@@ -1,7 +1,6 @@
 <div class="feedback">
   <h2><a name="Feedback"></a>Feedback:</h2>
-
-  <?php echo form_open(base_url().$page); ?>
+  <form method="post" action="<?php echo base_url(); echo uri_string(); ?>">
     <div class="errors"><?php echo validation_errors(); ?></div>
     <input type="hidden" name="action" value="feedback" />
     <fieldset>
