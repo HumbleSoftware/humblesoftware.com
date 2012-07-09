@@ -24,6 +24,7 @@ javascripts:
 
 # flotr
   js/hsd-flotr2-examples:
+    - lib/jquery/jquery.ba-hashchange.min.js
     - lib/flotr2/flotr2.examples.types.js
     - lib/flotr2/flotr2.examples.min.js
     - js/flotr2/driver.js
