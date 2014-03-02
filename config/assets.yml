@@ -61,7 +61,7 @@ envision: &envision
 javascripts:
 
   js/hsd:
-    - lib/jquery/jquery-1.7.1.min.js
+    - lib/jquery/dist/jquery.js
     - lib/google-code-prettify/prettify.js
     - *codemirror
     - js/HSD.js
