@@ -123,10 +123,11 @@ javascripts:
 
 stylesheets:
 
-  css/hsd:
-    - css/styles.css
-    - css/button.css
-    - lib/google-code-prettify/prettify.css
+# migrated to grunt less build!
+#  css/hsd:
+#    - css/styles.css
+#    - css/button.css
+#    - lib/google-code-prettify/prettify.css
 
   css/projects:
     - lib/envision/envision.css
