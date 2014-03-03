@@ -1,0 +1,23 @@
+{
+  "name": "humblesoftware.com",
+  "version": "0.0.1",
+  "description": "Humble Software website.",
+  "main": "Gruntfile.js",
+  "author": "Carl Sutherland",
+  "homepage": "http://www.humblesoftware.com",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/HumbleSoftware/humblesoftware.com.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HumbleSoftware/humblesoftware.com/issues"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.2",
+    "grunt-contrib-concat": "^0.3.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-contrib-watch": "^0.5.3",
+    "grunt-recess": "^0.6.0"
+  }
+}
