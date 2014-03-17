@@ -7,6 +7,7 @@ module.exports = function ( grunt ) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-recess');
 
   /**
@@ -111,6 +112,20 @@ module.exports = function ( grunt ) {
       }
     },
 
+    less: {
+      development: {
+        options: {
+          paths: [
+            'less',
+            'lib/bootstrap/less'
+          ]
+        },
+        files: {
+          '<%= build_dir %>/css/hsd.css': '<%= app_files.less %>'
+        }
+      }
+    },
+
     delta: {
       options: {
       },
@@ -131,7 +146,7 @@ module.exports = function ( grunt ) {
        */
       less: {
         files: [ 'less/**/*.less' ],
-        tasks: [ 'recess:build', 'concat:build_css' ]
+        tasks: [ 'less', 'concat:build_css' ]
       }
     }
   };
@@ -142,7 +157,7 @@ module.exports = function ( grunt ) {
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('watch', ['build', 'delta']);
   grunt.registerTask('build', [
-    'recess:build', 'concat:build_css'
+    'less', 'concat:build_css'
   ]);
 
 };
