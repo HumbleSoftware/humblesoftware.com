@@ -15,3 +15,4 @@ $router->get('/', 'Controller@home');
 $router->get('/projects', 'Controller@projects');
 $router->get('/demos', 'Controller@demos');
 $router->get('/contact', 'Controller@contact');
+$router->get('/terms', 'Controller@terms');

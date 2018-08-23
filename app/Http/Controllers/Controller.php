@@ -27,4 +27,8 @@ class Controller extends BaseController
   function contact () {
     return $this->view('contact');
   }
+
+  function terms () {
+    return $this->view('terms');
+  }
 }
