@@ -1,0 +1,28 @@
+{
+  "name": "humblesoftware.com",
+  "version": "1.0.0",
+  "description": "The humblesoftware.com website.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "webpack --config webpack.config.js",
+    "up": "docker-compose start",
+    "logs": "docker-compose logs -f"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HumbleSoftware/humblesoftware.com.git"
+  },
+  "author": "Carl Sutherland",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HumbleSoftware/humblesoftware.com/issues"
+  },
+  "homepage": "https://github.com/HumbleSoftware/humblesoftware.com#readme",
+  "devDependencies": {
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
+  }
+}
