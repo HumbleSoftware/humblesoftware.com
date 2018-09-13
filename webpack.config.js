@@ -10,6 +10,14 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
     filename: '[name].js'
   },
+	devServer: {
+		proxy: {
+      '*': {
+        target: 'http://localhost:8080/',
+        changeOrigin: true,
+      }
+		}
+	},
   plugins: [
     new MiniCssExtractPlugin({
       filename: "[name].css",
