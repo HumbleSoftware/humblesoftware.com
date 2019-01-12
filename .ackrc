@@ -1,2 +1,4 @@
 --ignore-dir=storage/framework
 --ignore-dir=vendor/
+--ignore-dir=storage/
+--ignore-file=is:composer.phar
