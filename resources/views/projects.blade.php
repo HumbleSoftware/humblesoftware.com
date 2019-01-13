@@ -4,6 +4,8 @@
 
 @section('content')
 
+<h2>Projects:</h2>
+
 <div class="project feature">
   <span class="title">
     <a href="/envision">Envision.js</a> <span>Dynamic Interactive HTML5 Visualizations</span>
@@ -13,8 +15,6 @@
     Envision.js is a library for building fast, dynamic, interactive HTML5 visualizations.
   </span>
 </div>
-
-<h3>Projects:</h3>
 
 <div class="project wide">
   <span class="title">
@@ -46,7 +46,7 @@
     <a href="/finance/index">HumbleFinance</a>
   </span>
   <span class="icon">
-    <a href="/finance/index"><img alt="Project: HumbleFinance" src="/products/finance-icon.jpg" /></a>
+    <a href="/finance/index"><img alt="Project: HumbleFinance" src="/images/products/finance-icon.jpg" /></a>
   </span>
   <span class="description">
     Dynamic charts with HTML5, Canvas, and Flotr for Prototype.  
@@ -61,7 +61,7 @@
     <a href="/movemytaxes/">Move My Taxes</a>
   </span>
   <span class="icon">
-    <a href="/movemytaxes/"><img alt="Project: Move My Taxes" src="/products/movemytaxes-icon.jpg" /></a>
+    <a href="/movemytaxes/"><img alt="Project: Move My Taxes" src="/images/products/movemytaxes-icon.jpg" /></a>
   </span>
   <span class="description">
     Move My Taxes was created for the <a href="http://www.datavizchallenge.org">
@@ -74,7 +74,7 @@
     <a href="http://www.github.com/HumbleSoftware/js-imagediff/">js-imagediff</a>
   </span>
   <span class="icon">
-    <a href="http://www.github.com/HumbleSoftware/js-imagediff/"><img style="border: 0px;" alt="Sample image diff." src="/products/js-imagediff.png" /></a>
+    <a href="http://www.github.com/HumbleSoftware/js-imagediff/"><img style="border: 0px;" alt="Sample image diff." src="/images/products/js-imagediff.png" /></a>
   </span>
   <span class="description">
     A JS / Canvas imagediff utilitity.  Brings image diff to the browser and Canvas
@@ -87,7 +87,7 @@
     <a href="/helloreddit/home">HelloReddit</a>
   </span>
   <span class="icon">
-    <a href="/helloreddit/home"><img alt="Project: HelloReddit" src="/products/helloreddit-icon.jpg" /></a>
+    <a href="/helloreddit/home"><img alt="Project: HelloReddit" src="/images/products/helloreddit-icon.jpg" /></a>
   </span>
   <span class="description">
     A mobile BlackBerry app for browsing <a href="http://www.reddit.com/">Reddit</a>.
