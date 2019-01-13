@@ -1,0 +1,6 @@
+[submodule "resources/lib/envisionjs"]
+	path = resources/lib/envisionjs
+	url = git@github.com:HumbleSoftware/envisionjs.git
+[submodule "resources/lib/flotr2"]
+	path = resources/lib/flotr2
+	url = git@github.com:HumbleSoftware/Flotr2.git
