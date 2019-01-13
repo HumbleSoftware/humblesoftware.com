@@ -1,6 +1,7 @@
 let mix = require('laravel-mix');
 
 mix
+  .copyDirectory('resources/images', 'public/images')
   .js('resources/js/index.js', 'public')
   .combine([
     'resources/lib/envisionjs/envision.js',
