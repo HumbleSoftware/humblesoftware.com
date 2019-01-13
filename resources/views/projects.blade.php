@@ -16,28 +16,30 @@
   </span>
 </div>
 
-<div class="project wide">
+<div class="project">
   <span class="title">
     <a href="/flotr2/index">Flotr2</a>
   </span>
   <span class="description">
     A modern graphing library for Canvas written in JavaScript.
   </span>
-  <div id="flotr-demo">
-    <a class="project-flotr-demo-link" title="flotr examples" href="/flotr2/index">
-      <div class="project-flotr-demo a"></div>
-      <div class="project-flotr-demo b"></div>
-    </a>
-  </div>
-  <div class="features">
-    <p>Features:</p>
-    <ul>
-      <li>mobile support</li>
-      <li>framework independent</li>
-      <li>lines, bars, bubbles and more</li>
-      <li>extensible plugin framework</li>
-      <li>FF, Chrome, IE6+</li>
-    </ul>
+  <div class="row">
+    <div class="col-md-6 features">
+      <p>Features:</p>
+      <ul>
+        <li>mobile support</li>
+        <li>framework independent</li>
+        <li>lines, bars, bubbles and more</li>
+        <li>extensible plugin framework</li>
+        <li>FF, Chrome, IE6+</li>
+      </ul>
+    </div>
+    <div class="col-md-6" id="flotr-demo">
+      <a class="project-flotr-demo-link" title="flotr examples" href="/flotr2/index">
+        <div class="project-flotr-demo a"></div>
+        <div class="project-flotr-demo b"></div>
+      </a>
+    </div>
   </div>
 </div>
 

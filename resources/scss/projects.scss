@@ -1,0 +1,15 @@
+#flotr-demo {
+  position: relative;
+  width: 480px;
+  height: 320px;
+  .project-flotr-demo {
+    position: absolute;
+    &, > div {
+      width: 480px;
+      height: 320px;
+    }
+    &.b {
+      visibility: hidden;
+    }
+  }
+}

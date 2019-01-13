@@ -1,6 +1,5 @@
 const finance = require('./envision/demos/finance');
 const financeData = require('./envision/demos/data');
-//const envision = require('./lib/envisionjs/envision');
 
 $(function () {
 
@@ -57,8 +56,8 @@ $(function () {
   // Flotr
   (function () {
     var
-      a = $('.project-flotr-demo.a'),
-      b = $('.project-flotr-demo.b'),
+      $a = $('.project-flotr-demo.a'),
+      $b = $('.project-flotr-demo.b'),
       link = $('.project-flotr-demo-link'),
       href = link.attr('href'),
       examples = [
@@ -81,13 +80,13 @@ $(function () {
       timeout;
 
     // Init
-    b.css({
+    $b.css({
       'visibility' : 'hidden',
       'opacity' : 0
     });
 
-    execute(examples[0], a[0]);
-    execute(examples[1], b[0]);
+    execute(examples[0], $a[0]);
+    execute(examples[1], $b[0]);
     setLink(examples[0]);
 
     // Rotation
@@ -99,7 +98,7 @@ $(function () {
     // Start after 5 seconds
     setTimeout (function () {
       timeout = setTimeout(intervalCallback, interval - 2 * fadeTime);
-    }, 5000);
+    }, 5);
 
     // Hover pause rotation
     link.hover(function () {
@@ -109,26 +108,25 @@ $(function () {
     });
 
     function swapGraphs () {
-      a.fadeOut(fadeTime, function () {
-        b.css({
+      $a.fadeOut(fadeTime, function () {
+        $b.css({
           'display' : 'none',
           'opacity' : 1,
           'visibility' : 'visible'
         });
         setLink(examples[index]);
-        b.fadeIn(fadeTime, function () {
-          var
-            swap = b;
+        $b.fadeIn(fadeTime, function () {
+          var $swap = $b;
           index++;
           if (index >= examples.length) index = 0;
-          b = a;
-          a = swap;
-          b.css({
+          $b = $a;
+          $a = $swap;
+          $b.css({
             'visibility' : 'hidden',
             'display' : 'block',
             'opacity' : 0
           });
-          execute(examples[index], b[0]);
+          execute(examples[index], $b[0]);
         });
       });
     }
