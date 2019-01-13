@@ -11,6 +11,7 @@ mix
     'resources/lib/envisionjs/envision.css',
     'resources/styles/style.css',
   ], 'public/styles.css')
+  .sourceMaps()
   .browserSync({
     open: false,
     files: [
