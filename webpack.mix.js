@@ -1,9 +1,11 @@
 let mix = require('laravel-mix');
 
 mix
+  // Static assets:
   .copyDirectory('resources/images', 'public/images')
+
+  // JS:
   .js('resources/js/index.js', 'public')
-  .sass('resources/scss/index.scss', 'public')
   .combine([
     'resources/lib/envisionjs/envision.js',
     'resources/lib/flotr2/js/types/bubbles.js',
@@ -19,16 +21,22 @@ mix
     'resources/lib/flotr2/js/plugins/spreadsheet.js',
     'resources/lib/flotr2/flotr2.examples.types.js',
   ], 'public/libs.js')
+
+  // Styles:
+  .sass('resources/scss/index.scss', 'public')
   .styles([
     'resources/lib/envisionjs/envision.css',
     'public/index.css',
   ], 'public/styles.css')
+
+  // Dev:
   .sourceMaps()
   .browserSync({
     open: false,
     files: [
       'resources/views/**/*',
-      'public/**/*'
+      'public/styles.css',
+      'public/index.js'
     ],
     proxy: 'localhost:8080'
   });
