@@ -20,8 +20,8 @@ class Controller extends BaseController
     return $this->view('projects');
   }
 
-  function demos () {
-    return $this->view('demos');
+  function demos ($demo = null) {
+    return $this->view('demos'.$this->sanitizeView($demo ?? ''));
   }
 
   function contact () {
@@ -30,5 +30,9 @@ class Controller extends BaseController
 
   function terms () {
     return $this->view('terms');
+  }
+
+  protected function sanitizeView ($view) {
+    return $view ? '/'.basename($view) : '';
   }
 }
