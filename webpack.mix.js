@@ -27,6 +27,7 @@ mix
   .styles([
     'resources/lib/envisionjs/envision.css',
     'public/index.css',
+    'node_modules/code-prettify/src/prettify.css'
   ], 'public/styles.css')
 
   // Dev:
