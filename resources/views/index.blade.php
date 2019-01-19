@@ -16,7 +16,7 @@
   <body>
     <div class="container">
       @include('partials.nav')
-      <main>
+      <main class="@yield('content-class')">
       @yield('content')
       </main>
       @include('partials.footer')

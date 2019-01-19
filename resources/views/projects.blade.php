@@ -1,7 +1,7 @@
 @extends('index')
 
 @section('title', 'projects')
-
+@section('content-class', 'projects')
 @section('content')
 
 <h2>Projects:</h2>
