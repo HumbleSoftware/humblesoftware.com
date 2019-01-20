@@ -1,13 +1,13 @@
 (function () {
 
-if (typeof(Humble) == 'undefined') window.Humble = {};
-Humble.Trig = {};
-Humble.Trig.init = init;
-
 var unit = 100,
+    drawSeconds = 0,
+    t = 0,
     canvas, context, canvas2, context2,
     height, width, xAxis, yAxis,
     draw;
+
+init();
 
 /**
  * Init function.
@@ -42,7 +42,7 @@ function init() {
  * This function draws one frame of the animation, waits 20ms, and then calls
  * itself again.
  */
-draw = function () {
+function draw () {
     
     // Clear the canvas
     context.clearRect(0, 0, width, height);
@@ -58,29 +58,27 @@ draw = function () {
     context.fillStyle = '#fff';
     context.lineWidth = 2;
 
-    // Draw the sine curve at time draw.t, as well as the circle.
+    // Draw the sine curve at time t, as well as the circle.
     context.beginPath();
-    drawSine(draw.t);
+    drawSine(t);
     drawCircle();
     context.stroke();
     
     // Draw the arrow at time t in its own path.
-    drawArrow(draw.t);
+    drawArrow(t);
     
     // Restore original styles
     context.restore();
     
     // Draw the xAxis PI tick and the time
     context.fillText("π", xAxis + 59+3*unit, 18+xAxis);
-    context.fillText("t = "+Math.floor(Math.abs(draw.seconds)), 10, 20);
+    context.fillText("t = "+Math.floor(Math.abs(drawSeconds)), 10, 20);
     
     // Update the time and draw again
-    draw.seconds = draw.seconds - .007;
-    draw.t = draw.seconds*Math.PI;
-    setTimeout(draw, 35);
+    drawSeconds = drawSeconds - .01;
+    t = drawSeconds*Math.PI;
+    setTimeout(draw, 1000 / 60);
 };
-draw.seconds = 0;
-draw.t = 0;
 
 /**
  * Function to draw axes
