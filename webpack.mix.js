@@ -20,6 +20,7 @@ mix
     'resources/lib/flotr2/js/plugins/grid.js',
     'resources/lib/flotr2/js/plugins/spreadsheet.js',
     'resources/lib/flotr2/flotr2.examples.types.js',
+    'resources/lib/d3.min.js',
   ], 'public/libs.js')
 
   // Styles:
