@@ -17,7 +17,7 @@
   </div>
 
   @component('components.code-block', ['title' => 'trig.js'])
-    @listing(demos/Trig.js)
+    @listing(demos/trig.js)
   @endcomponent
 
 @endsection
