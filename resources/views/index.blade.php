@@ -38,5 +38,6 @@
     ></script>
     <script src="/libs.js"></script>
     <script src="/index.js"></script>
+    @stack('scripts')
   </body>
 </html>

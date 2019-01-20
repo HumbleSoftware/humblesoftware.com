@@ -1,6 +1,7 @@
 @extends('index')
 
 @section('title', 'demos - fortune 500')
+@section('content-class', 'demos demos-fortune-500')
 
 @section('content')
 
@@ -165,4 +166,10 @@ function calculate() {
 }
 @endcomponent
 
+@push('scripts')
+  <script type="text/javascript" src="/js/demos/f500.min.js"></script>
+  <script type="text/javascript" src="/js/demos/fortune.js"></script>
+@endpush
+
 @endsection
+

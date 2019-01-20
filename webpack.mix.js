@@ -3,6 +3,7 @@ let mix = require('laravel-mix');
 mix
   // Static assets:
   .copyDirectory('resources/images', 'public/images')
+  .copyDirectory('resources/js/demos', 'public/js/demos')
 
   // JS:
   .js('resources/js/index.js', 'public')

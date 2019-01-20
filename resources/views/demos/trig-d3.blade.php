@@ -1,6 +1,7 @@
 @extends('index')
 
 @section('title', 'demos - trig (d3)')
+@section('content-class', 'demos demos-trig')
 
 @section('content')
 
@@ -19,3 +20,7 @@
   @endcomponent
 
 @endsection
+
+@push('scripts')
+  <script type="text/javascript" src="/js/demos/trig-d3.js"></script>
+@endpush
