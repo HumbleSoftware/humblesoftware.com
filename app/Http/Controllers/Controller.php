@@ -8,6 +8,7 @@ class Controller extends BaseController
 {
   private function view ($partial, $data = []) {
     return view($partial, array_merge([
+      'base_url' => '/',
       'current_route' => $partial
     ], $data));
   }
@@ -22,6 +23,19 @@ class Controller extends BaseController
 
   function demos ($demo = null) {
     return $this->view('demos'.$this->sanitizeView($demo ?? ''));
+  }
+
+  function envision ($page = null) {
+    $page = $page ?: 'index';
+    return $this->view('envision'.$this->sanitizeView($page ?? ''), [
+      'base' => '/envision'
+    ]);
+  }
+
+  function envisionDemos ($page = null) {
+    return $this->view('envision/demos', [
+      'demo' => $this->sanitizeView($page ?? '')
+    ]);
   }
 
   function contact () {
