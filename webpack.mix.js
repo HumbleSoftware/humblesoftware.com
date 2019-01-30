@@ -4,6 +4,7 @@ mix
   // Static assets:
   .copyDirectory('resources/images', 'public/images')
   .copyDirectory('resources/js/demos', 'public/js/demos')
+  .copyDirectory('resources/js/envision/demos', 'public/js/envision')
 
   // JS:
   .js('resources/js/index.js', 'public')

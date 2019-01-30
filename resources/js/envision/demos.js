@@ -82,7 +82,7 @@ $(function () {
     $(demoDiv).addClass(key);
 
     if (key) {
-      $.get(HSD_BASE + 'static/js/envision/'+key+'-demo.js', function (example) {
+      $.get('/js/envision/'+key+'.js', function (example) {
         var
           Editor = Flotr.Examples.Editor,
           container = demoDiv,
@@ -101,5 +101,4 @@ $(function () {
       });
     }
   }
-  HSD.envisionExample = function () {};
 });

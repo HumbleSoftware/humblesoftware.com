@@ -1,6 +1,8 @@
 const finance = require('./envision/demos/finance');
 const financeData = require('./envision/demos/data');
 
+window.financeData = financeData;
+
 $(function () {
 
   var

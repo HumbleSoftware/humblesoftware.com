@@ -1,4 +1,4 @@
-function finance_demo (container, financeData) {
+function finance_demo (container) {
 
   var
     summaryTicks = financeData.summaryTicks,
@@ -37,5 +37,3 @@ function finance_demo (container, financeData) {
 
   return new envision.templates.Finance(options);
 }
-
-module.exports = finance_demo;
