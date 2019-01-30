@@ -47,6 +47,8 @@ mix
 
     // Libs:
     'resources/lib/envisionjs/envision.css',
+    'resources/lib/envisionjs/css/templates/finance.css',
+    'resources/lib/envisionjs/css/templates/timeseries.css',
     'resources/lib/flotr2/examples/lib/codemirror/lib/codemirror.css',
     'resources/lib/flotr2/examples/editor.css',
     'node_modules/code-prettify/src/prettify.css',
