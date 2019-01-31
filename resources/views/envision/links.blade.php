@@ -1,6 +1,6 @@
 <ul>
   <li>
-    <a href="{{$base_url}}envision/index"><span>demos</span></a>
+    <a href="{{$base_url}}envision"><span>demos</span></a>
   </li>
   <li>
     <a href="{{$base_url}}envision/documentation"><span>docs</span></a>

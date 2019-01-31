@@ -33,7 +33,7 @@ class Controller extends BaseController
   }
 
   function envisionDemos ($page = null) {
-    return $this->view('envision/demos', [
+    return $this->view('envision.index', [
       'demo' => $this->sanitizeView($page ?? '')
     ]);
   }
