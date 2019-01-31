@@ -1,7 +1,7 @@
 $(function () {
 
   var
-    demosDiv = document.getElementById('demos'),
+    demosDiv = document.getElementById('envision-demos'),
     demoDiv = document.getElementById('demo');
 
   if (demosDiv) {
@@ -82,22 +82,20 @@ $(function () {
     $(demoDiv).addClass(key);
 
     if (key) {
-      $.get('/js/envision/'+key+'.js', function (example) {
-        var
-          Editor = Flotr.Examples.Editor,
-          container = demoDiv,
-          source = example,
-          editor;
+      var
+        Editor = Flotr.Examples.Editor,
+        container = demoDiv,
+        source = eval(key+'_demo.toString()'),//example,
+        editor;
 
-        editor = new Editor(container, {
-          example : source,
-          teardown : function () {
-            var
-              render = $(container).find('.render')[0],
-              vis = envision.bonzo(render).data('envision');
-            if (vis) vis.destroy();
-          }
-        });
+      editor = new Editor(container, {
+        example : source,
+        teardown : function () {
+          var
+            render = $(container).find('.render')[0],
+            vis = envision.bonzo(render).data('envision');
+          if (vis) vis.destroy();
+        }
       });
     }
   }

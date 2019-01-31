@@ -14,7 +14,15 @@ Envision.js is a library for creating fast, dynamic and interactive HTML5 visual
   @include('envision.demos'.$demo)
 </div>
 @else
-  @include('envision.demos')
+  <div id="envision-demos">@include('envision.demos')</div>
 @endisset
+
+@push('scripts')
+  <script type="text/javascript" src="/js/envision/realtime.js"></script>
+  <script type="text/javascript" src="/js/envision/timeseries.js"></script>
+  <script type="text/javascript" src="/js/envision/finance.js"></script>
+  <script type="text/javascript" src="/js/envision/ajax.js"></script>
+  <script type="text/javascript" src="/js/envision/fractal.js"></script>
+@endpush
 
 @endsection
