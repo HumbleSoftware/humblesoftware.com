@@ -19,15 +19,12 @@
         cursor: all-scroll;
       }
     </style>
-    <link rel="stylesheet" type="text/css" href="<?php static_css(); ?>envision.min.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/envision.min.css" />
   </head>
   <body>
     <div id="container"></div>
     <p>Click and drag on the bottom chart.</p>
-    <!--[if IE]>
-    <script type="text/javascript" src="<?php static_lib(); ?>FlashCanvas/bin/flashcanvas.js"></script>
-    <![endif]-->
-    <script type="text/javascript" src="<?php static_js(); ?>envision.min.js"></script>
+    <script type="text/javascript" src="/lib/envision.min.js"></script>
     <script type="text/javascript">
       (function () {
 
@@ -111,4 +108,3 @@
     </script>
   </body>
 </html>
-

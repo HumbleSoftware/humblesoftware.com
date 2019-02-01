@@ -21,21 +21,25 @@ class Controller extends BaseController
     return $this->view('projects');
   }
 
-  function demos ($demo = null) {
-    return $this->view('demos'.$this->sanitizeView($demo ?? ''));
+  function demos ($demo = '') {
+    return $this->view('demos'.$this->sanitizeView($demo));
   }
 
-  function envision ($page = null) {
+  function envision ($page = '') {
     $page = $page ?: 'index';
-    return $this->view('envision'.$this->sanitizeView($page ?? ''), [
+    return $this->view('envision'.$this->sanitizeView($page), [
       'base' => '/envision'
     ]);
   }
 
-  function envisionDemos ($page = null) {
+  function envisionDemos ($page = '') {
     return $this->view('envision.index', [
-      'demo' => $this->sanitizeView($page ?? '')
+      'demo' => $this->sanitizeView($page)
     ]);
+  }
+
+  function envisionExample ($page = '') {
+    return $this->view('envision.standalone'.$this->sanitizeView($page));
   }
 
   function contact () {
@@ -46,7 +50,7 @@ class Controller extends BaseController
     return $this->view('terms');
   }
 
-  protected function sanitizeView ($view) {
-    return $view ? '/'.basename($view) : '';
+  protected function sanitizeView ($view = '') {
+    return $view ? '.'.basename($view) : '';
   }
 }
