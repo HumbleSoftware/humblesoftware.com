@@ -7,6 +7,12 @@ mix
   .copyDirectory('resources/js/demos',          'public/js/demos')
   .copyDirectory('resources/js/envision/demos', 'public/js/envision')
 
+  // Built static libs
+  .copy([
+    'resources/lib/envisionjs/envision.min.js',
+    'resources/lib/envisionjs/envision.min.css',
+  ], 'public/lib')
+
   // JS:
   .js('resources/js/index.js', 'public')
   .combine([
