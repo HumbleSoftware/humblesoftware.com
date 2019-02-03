@@ -4,3 +4,6 @@
 [submodule "resources/lib/flotr2"]
 	path = resources/lib/flotr2
 	url = git@github.com:HumbleSoftware/Flotr2.git
+[submodule "humblesoftware.v1"]
+	path = humblesoftware.v1
+	url = git@github.com:HumbleSoftware/humblesoftware.com.git
