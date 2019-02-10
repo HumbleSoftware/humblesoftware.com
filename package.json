@@ -14,6 +14,7 @@
     "logs": "docker-compose logs -f",
     "prod": "npm run production",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "shell":  "sudo docker exec -ti humblesoftware_php_1 /bin/bash",
     "start": "npm run watch",
     "up": "docker-compose start"
   },
