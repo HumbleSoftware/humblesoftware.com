@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use Laravel\Lumen\Routing\Controller as BaseController;
+use App\Mail\Contact as ContactMail;
 
 class Contact extends BaseController
 {
@@ -16,35 +18,47 @@ class Contact extends BaseController
 
   function index () {
     return $this->view('contact', [
-      'sitekey' => env('RECAPTCHA_SITEKEY'),
-      'thanks' => false
+      'sitekey'  => env('RECAPTCHA_SITEKEY'),
+      'thanks'   => false,
+      'name'     => '',
+      'email'    => '',
+      'subject'  => '',
+      'feedback' => ''
     ]);
   }
 
   function contact (Request $request) {
 
-    $name = $request->get('name');
-    $email = $request->get('email');
-    $subject = $request->get('subject');
-    $feedback = $request->get('feedback');
+    $name      = $request->get('name');
+    $email     = $request->get('email');
+    $subject   = $request->get('subject');
+    $feedback  = $request->get('feedback');
     $recaptcha = $request->get('g-recaptcha-response');
+    $recipient = 'carl@humblesoftware.com';
 
     if ($this->validateRecaptcha($recaptcha)) {
+      $mail = (new ContactMail(['body' => $feedback]))
+        ->from(config('mail.from.address'), $name)
+        ->subject($subject)
+        ->replyTo('cesutherland@gmail.com');
 
-      $message    = "{$feedback}\r\n\r\n{$name}\r\n";
-      $recipient  = 'carl@humblesoftware.com';
-      $headers    = "From: feedback@humblesoftware.com\r\n";
-      if ($email) $headers .= "Reply-To: {$email}\r\n";
-
-      $result = mail($recipient, $subject, $message, $headers);
-
-      $success = true;
+      try {
+        Mail::to($recipient)
+  //        ->cc($email)
+          ->send($mail);
+      } catch (Exception $e) {
+        // Swallow exceptions?
+        $recaptcha = false;
+      }
     }
 
     return $this->view('contact', [
-      'sitekey' => env('RECAPTCHA_SITEKEY'),
-      'thanks' => $success ?? false,
-      'name' => $name
+      'sitekey'  => env('RECAPTCHA_SITEKEY'),
+      'thanks'   => (!!$recaptcha) ?? false,
+      'name'     => $name,
+      'email'    => $email,
+      'subject'  => $subject,
+      'feedback' => $feedback
     ]);
   }
 

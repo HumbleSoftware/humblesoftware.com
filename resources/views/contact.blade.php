@@ -38,28 +38,28 @@
       <div class="form-group row">
         <label class="col-sm-2 col-form-label" for="name">Name:</label>
         <div class="col-sm-10">
-          <input class="form-control" type="text" id="name" name="name" value=""/>
+          <input class="form-control" type="text" id="name" name="name" value="{{$name}}"/>
         </div>
       </div>
 
       <div class="form-group row">
         <label class="col-sm-2 col-form-label" for="email">Email:</label>
         <div class="col-sm-10">
-          <input class="form-control" type="email" id="email" name="email" required value="" />
+          <input class="form-control" type="email" id="email" name="email" required value="{{$email}}" />
         </div>
       </div>
 
       <div class="form-group row">
         <label class="col-sm-2 col-form-label" for="subject">Subject:</label>
         <div class="col-sm-10">
-          <input class="form-control" type="text" id="subject" name="subject" value="" />
+          <input class="form-control" type="text" id="subject" name="subject" value="{{$subject}}" />
         </div>
       </div>
 
       <div class="form-group row">
         <label class="col-sm-2 col-form-label" for="feedback">Message:</label>
         <div class="col-sm-10">
-          <textarea class="form-control" id="feedback" name="feedback" rows="14" cols="80" required></textarea>
+          <textarea class="form-control" id="feedback" name="feedback" rows="14" cols="80" required>{{$feedback}}</textarea>
         </div>
       </div>
 
